@@ -12,9 +12,14 @@ import type {
   TncampReportDetail,
   TncampContribution,
   TncampExpenditure,
+  TncampFormOptions,
+  TncampDistrict,
+  TncampOffice,
+  TncampElectionYear,
 } from '../types.js'
 import { parseResultsTable, parsePaginationInfo } from '../parsers/tncamp-results.js'
 import { parseReportDetail } from '../parsers/tncamp-report.js'
+import { parseFormOptions, parseDistrictsJson } from '../parsers/tncamp-form.js'
 
 const BASE = 'https://apps.tn.gov/tncamp/public'
 const SEARCH_BASE = 'https://apps.tn.gov/tncamp/search/pub'
@@ -127,6 +132,81 @@ function delay(ms: number): Promise<void> {
 const ALL_REPORT_SELECTIONS = Array.from({ length: 16 }, (_, i) => String(i + 1))
 
 // ============================================================
+// Form options & district lookup (office-by-district search)
+// ============================================================
+
+const FORM_CACHE_TTL_MS = 30 * 60 * 1000 // 30 minutes
+let formOptionsCache: { data: TncampFormOptions; fetchedAt: number } | null = null
+const districtCache = new Map<string, { data: TncampDistrict[]; fetchedAt: number }>()
+
+export async function getFormOptions(): Promise<TncampFormOptions> {
+  if (formOptionsCache && Date.now() - formOptionsCache.fetchedAt < FORM_CACHE_TTL_MS) {
+    return formOptionsCache.data
+  }
+
+  const response = await fetchWithTimeout(`${BASE}/cpsearch.htm`)
+  const html = await decodeBody(response)
+  const options = parseFormOptions(html)
+
+  formOptionsCache = { data: options, fetchedAt: Date.now() }
+  return options
+}
+
+export async function getDistricts(officeId: string): Promise<TncampDistrict[]> {
+  const cached = districtCache.get(officeId)
+  if (cached && Date.now() - cached.fetchedAt < FORM_CACHE_TTL_MS) {
+    return cached.data
+  }
+
+  // Districts endpoint returns JSON, no session cookie needed
+  const response = await fetchWithTimeout(`${BASE}/districts.htm?officeId=${officeId}`, {
+    method: 'POST',
+  })
+  const json = await response.text()
+  const districts = parseDistrictsJson(json, officeId)
+
+  districtCache.set(officeId, { data: districts, fetchedAt: Date.now() })
+  return districts
+}
+
+export async function resolveOffice(nameOrId: string): Promise<TncampOffice | null> {
+  const options = await getFormOptions()
+  const q = nameOrId.toLowerCase()
+  // Try exact ID match first
+  const byId = options.offices.find(o => o.id === nameOrId)
+  if (byId) return byId
+  // Case-insensitive includes match
+  return options.offices.find(o => o.name.toLowerCase().includes(q)) || null
+}
+
+export async function resolveDistrict(officeId: string, labelOrId: string): Promise<TncampDistrict | null> {
+  const districts = await getDistricts(officeId)
+  // Try exact ID match
+  const byId = districts.find(d => d.id === labelOrId)
+  if (byId) return byId
+  // Case-insensitive label match
+  const q = labelOrId.toLowerCase()
+  return districts.find(d => d.label.toLowerCase() === q) || null
+}
+
+export async function resolveElectionYear(yearStr: string): Promise<TncampElectionYear | null> {
+  const options = await getFormOptions()
+  // Try exact ID match
+  const byId = options.electionYears.find(y => y.id === yearStr)
+  if (byId) return byId
+  // Match by year label (e.g., "2026" matches "2026")
+  return options.electionYears.find(y => y.label.startsWith(yearStr)) || null
+}
+
+export async function resolveParty(nameOrId: string): Promise<{ id: string; name: string } | null> {
+  const options = await getFormOptions()
+  const byId = options.parties.find(p => p.id === nameOrId)
+  if (byId) return byId
+  const q = nameOrId.toLowerCase()
+  return options.parties.find(p => p.name.toLowerCase().includes(q)) || null
+}
+
+// ============================================================
 // Public API
 // ============================================================
 
@@ -142,10 +222,14 @@ export interface CandidateSearchParams {
 export async function searchCandidates(params: CandidateSearchParams): Promise<TncampCandidate[]> {
   const session = await startSession()
 
+  // Office-based search (no name) requires searchType=candidate.
+  // Name-based search uses searchType=both (searchType=candidate without
+  // office params returns 200 form re-display).
+  const isOfficeSearch = !params.name && params.officeId
+  const searchType = isOfficeSearch ? 'candidate' : 'both'
+
   const form = new URLSearchParams()
-  // Always use 'both' — searchType=candidate/pac returns 200 (form re-display)
-  // without additional required fields. Filter results client-side instead.
-  form.set('searchType', 'both')
+  form.set('searchType', searchType)
   form.set('name', params.name || '')
   form.set('officeSelection', params.officeId || '')
   form.set('districtSelection', params.district || '')

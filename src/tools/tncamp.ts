@@ -6,6 +6,12 @@ import {
   getReportDetail,
   searchContributions,
   searchExpenditures,
+  getFormOptions,
+  getDistricts,
+  resolveOffice,
+  resolveDistrict,
+  resolveElectionYear,
+  resolveParty,
 } from '../api/tncamp-client.js'
 
 export function registerTncampTools(server: McpServer) {
@@ -14,28 +20,79 @@ export function registerTncampTools(server: McpServer) {
   // ============================================================
   server.tool(
     'search_state_candidates',
-    'Search Tennessee state-level candidates and PACs in the tncamp system (apps.tn.gov/tncamp). Covers Governor, state Senate, state House, judges, DAs, and statewide PACs. Returns candidate name, party, office, district, election year, and candidate ID. Use the candidate ID with get_candidate_reports to see filed reports. Name search accepts last name or full name. For county-level candidates, use search_county_filers instead.',
+    'Search Tennessee state-level candidates and PACs in the tncamp system (apps.tn.gov/tncamp). Covers Governor, state Senate, state House, judges, DAs, and statewide PACs. Two search modes: (1) By name: provide name param. (2) By office: provide office param (and optionally district) to find all candidates for a seat — year is REQUIRED for office search. Use the candidate ID with get_candidate_reports to see filed reports. For county-level candidates, use search_county_filers instead.',
     {
       name: z.string().optional().describe('Candidate or PAC name (last name or full name)'),
+      office: z.string().optional().describe('Office name (e.g., "circuit court", "governor", "district attorney"). Use list_tncamp_offices to see available offices.'),
+      district: z.string().optional().describe('District label (e.g., "18-2", "22"). Use list_tncamp_districts to see available districts for an office.'),
+      year: z.string().optional().describe('Election year (e.g., "2026"). Required when searching by office without name.'),
+      party: z.string().optional().describe('Party name (e.g., "Republican", "Democrat")'),
       search_type: z.enum(['candidate', 'pac', 'both']).optional().describe('Search candidates, PACs, or both (default: both)'),
       limit: z.number().optional().describe('Max results (default 50, 0 for all)'),
     },
-    async ({ name, search_type, limit }) => {
+    async ({ name, office, district, year, party, search_type, limit }) => {
       try {
-        if (!name) {
-          return { content: [{ type: 'text' as const, text: 'A name parameter is required for candidate search.' }] }
+        if (!name && !office) {
+          return { content: [{ type: 'text' as const, text: 'Either name or office is required. Use name for candidate search, or office (+ district, year) to find all candidates for a seat.' }] }
         }
 
-        let results = await searchCandidates({ name, searchType: search_type })
+        // Resolve office/district/year/party to tncamp IDs
+        let officeId: string | undefined
+        let districtId: string | undefined
+        let yearId: string | undefined
+        let partyId: string | undefined
+
+        if (office) {
+          const resolved = await resolveOffice(office)
+          if (!resolved) {
+            const options = await getFormOptions()
+            const available = options.offices.map(o => o.name).join(', ')
+            return { content: [{ type: 'text' as const, text: `Office "${office}" not found. Available: ${available}` }] }
+          }
+          officeId = resolved.id
+
+          if (district) {
+            const resolvedDist = await resolveDistrict(officeId, district)
+            if (!resolvedDist) {
+              const dists = await getDistricts(officeId)
+              const available = dists.slice(0, 20).map(d => d.label).join(', ')
+              return { content: [{ type: 'text' as const, text: `District "${district}" not found for ${resolved.name}. Available: ${available}${dists.length > 20 ? ` (${dists.length} total)` : ''}` }] }
+            }
+            districtId = resolvedDist.id
+          }
+        }
+
+        if (year) {
+          const resolvedYear = await resolveElectionYear(year)
+          if (!resolvedYear) {
+            return { content: [{ type: 'text' as const, text: `Election year "${year}" not found. Try a year like "2026" or "2024".` }] }
+          }
+          yearId = resolvedYear.id
+        } else if (office && !name) {
+          return { content: [{ type: 'text' as const, text: 'Year is required when searching by office without a name. Add year: "2026" (or another election year).' }] }
+        }
+
+        if (party) {
+          const resolvedParty = await resolveParty(party)
+          if (resolvedParty) partyId = resolvedParty.id
+        }
+
+        let results = await searchCandidates({
+          name,
+          searchType: search_type,
+          officeId,
+          district: districtId,
+          electionYearId: yearId,
+          partyId,
+        })
 
         // If multi-word name returned nothing, retry with last word (likely last name)
         // tncamp searches "Last, First" format — "Bill Lee" won't match but "Lee" will
-        if (results.length === 0 && name.includes(' ')) {
+        if (results.length === 0 && name && name.includes(' ')) {
           const words = name.trim().split(/\s+/)
           const lastName = words[words.length - 1]
-          results = await searchCandidates({ name: lastName, searchType: search_type })
+          results = await searchCandidates({ name: lastName, searchType: search_type, officeId, district: districtId, electionYearId: yearId, partyId })
           if (results.length > 0) {
-            // Filter to entries that also match the first name
             const firstName = words[0].toLowerCase()
             const filtered = results.filter(c =>
               c.name.toLowerCase().includes(firstName),
@@ -45,7 +102,8 @@ export function registerTncampTools(server: McpServer) {
         }
 
         if (results.length === 0) {
-          return { content: [{ type: 'text' as const, text: `No state candidates or PACs found matching "${name}".` }] }
+          const searchDesc = name ? `name "${name}"` : `office "${office}"${district ? ` district "${district}"` : ''}${year ? ` year ${year}` : ''}`
+          return { content: [{ type: 'text' as const, text: `No state candidates or PACs found matching ${searchDesc}.` }] }
         }
 
         const effectiveLimit = limit === undefined ? 50 : limit
@@ -355,6 +413,70 @@ export function registerTncampTools(server: McpServer) {
           content: [{
             type: 'text' as const,
             text: `Financials for ${candidate.name} (${candidate.officeSought} ${candidate.district}):\n\n${JSON.stringify(financials, null, 2)}`,
+          }],
+        }
+      } catch (error) {
+        return {
+          content: [{ type: 'text' as const, text: `Error: ${error instanceof Error ? error.message : String(error)}` }],
+          isError: true,
+        }
+      }
+    },
+  )
+
+  // ============================================================
+  // list_tncamp_offices
+  // ============================================================
+  server.tool(
+    'list_tncamp_offices',
+    'List all offices available in the tncamp campaign finance system. Returns office names and IDs for use with search_state_candidates office parameter. Covers Governor, state legislature, courts (Circuit, Criminal, Chancery, Probate, Court of Appeals, Court of Criminal Appeals, Supreme Court), District Attorney, and Public Defender.',
+    {},
+    async () => {
+      try {
+        const options = await getFormOptions()
+        return {
+          content: [{
+            type: 'text' as const,
+            text: `${options.offices.length} office(s) available:\n\n${JSON.stringify(options.offices, null, 2)}`,
+          }],
+        }
+      } catch (error) {
+        return {
+          content: [{ type: 'text' as const, text: `Error: ${error instanceof Error ? error.message : String(error)}` }],
+          isError: true,
+        }
+      }
+    },
+  )
+
+  // ============================================================
+  // list_tncamp_districts
+  // ============================================================
+  server.tool(
+    'list_tncamp_districts',
+    'List districts for a given office in the tncamp system. Returns district labels and IDs. Use with search_state_candidates to find all candidates for a specific seat (e.g., Circuit Court 18-2). Some offices like Governor have no districts.',
+    {
+      office: z.string().describe('Office name or ID (e.g., "circuit court", "10", "district attorney")'),
+    },
+    async ({ office }) => {
+      try {
+        const resolved = await resolveOffice(office)
+        if (!resolved) {
+          const options = await getFormOptions()
+          const available = options.offices.map(o => o.name).join(', ')
+          return { content: [{ type: 'text' as const, text: `Office "${office}" not found. Available: ${available}` }] }
+        }
+
+        const districts = await getDistricts(resolved.id)
+
+        if (districts.length === 0) {
+          return { content: [{ type: 'text' as const, text: `${resolved.name} has no districts.` }] }
+        }
+
+        return {
+          content: [{
+            type: 'text' as const,
+            text: `${resolved.name} — ${districts.length} district(s):\n\n${JSON.stringify(districts, null, 2)}`,
           }],
         }
       } catch (error) {

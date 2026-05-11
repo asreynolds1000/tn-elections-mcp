@@ -95,6 +95,32 @@ export interface EasyVoteDistribution {
 // tncamp (state-level campaign finance) — Phase 2
 // ============================================================
 
+/** Office from cpsearch form dropdown */
+export interface TncampOffice {
+  id: string       // "10"
+  name: string     // "Circuit Court"
+}
+
+/** District from districts.htm JSON endpoint */
+export interface TncampDistrict {
+  id: string       // "369"
+  label: string    // "18-2"
+  officeId: string // "10"
+}
+
+/** Election year from cpsearch form dropdown */
+export interface TncampElectionYear {
+  id: string       // "234"
+  label: string    // "2026"
+}
+
+/** Parsed dropdowns from cpsearch.htm form page */
+export interface TncampFormOptions {
+  offices: TncampOffice[]
+  electionYears: TncampElectionYear[]
+  parties: { id: string; name: string }[]
+}
+
 /** Candidate/PAC from cpsearch results */
 export interface TncampCandidate {
   name: string
@@ -251,4 +277,35 @@ export interface SumnerReportData {
   extractionModel: string
   extractionConfidence: 'high' | 'medium' | 'low'
   warnings: string[]
+}
+
+// ============================================================
+// TN Secretary of State Candidate Filings (sos.tn.gov)
+// ============================================================
+
+/** Official filed candidate from SOS Excel spreadsheet */
+export interface SosFiledCandidate {
+  office: string           // "State Senate District 5"
+  candidateName: string    // Full name as filed
+  party: string            // Republican, Democratic, Independent
+  city: string
+  filingDate: string       // Normalized to YYYY-MM-DD
+  status: string           // Usually "Signatures Approved"
+  officeCategory: string   // "Governor", "TN Senate", etc.
+}
+
+/** Office category from SOS candidate list page */
+export interface SosOfficeCategory {
+  name: string             // "Governor", "U.S. Senate", etc.
+  xlsxUrl: string
+  pdfUrl: string
+  candidateCount: number
+}
+
+/** Full cached result from SOS page scrape + xlsx parsing */
+export interface SosCandidateIndex {
+  year: number
+  offices: SosOfficeCategory[]
+  candidates: SosFiledCandidate[]
+  fetchedAt: number        // Date.now() for cache TTL
 }
