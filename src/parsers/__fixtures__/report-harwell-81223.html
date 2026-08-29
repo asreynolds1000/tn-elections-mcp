@@ -1,0 +1,720 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+   <!-- InstanceBegin template="/Templates/template.dwt" codeOutsideHTMLIsLocked="false" -->
+   <head>
+      <!-- InstanceBeginEditable name="namespaces" -->
+      <!-- Place namespace tags here. -->
+      <!-- InstanceEndEditable -->
+      <meta charset="utf-8"/>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+      <meta name="viewport" content="width=device-width"/>
+      <!-- InstanceBeginEditable name="title" -->
+      <title>Report - Online Campaign Finance</title>
+      <!-- InstanceEndEditable -->
+      <script>
+	var digitalData = {
+		page: {
+			pageInfo: {
+				pageName: "public full report",  // maps to pageName variable (s.pageName)
+				securePage: "false",  // set secure status: (auth = true; guest = false); as per public TN.gov, value should be "false"
+				deptName: "tref",  // set name of the Department (e.g., for FOIL app, sets to "correction")
+				rsidValue: "oirtn"  // set report suite id, e.g., for Production, set to: "oirtn", for Test, set to: "oirtnstaging"
+			}
+		}
+	};
+</script>
+<script src="https://assets.adobedtm.com/f213d7ed4603/b5fbb0638724/launch-5b3fa8e23e9e.min.js" async></script>
+
+      <script src="/apps/js/tngov12.js"></script>
+      <!-- App-specific Issues -->
+      <script src="/tncamp/js/issues.js" type="text/javascript"></script>
+      <!-- Included CSS Files -->
+      <link rel="stylesheet" href="/apps/css/foundation.css"/>
+      <link rel="stylesheet" href="/apps/css/custom.css"/>
+      <!--[if (lt IE 9)&(!IEMobile 7)]>
+      <script src="/apps/js/respond.min.js"></script>
+      <![endif]-->
+      <!-- InstanceBeginEditable name="head" -->
+      <!--_________________________________________________________________________________
+         Place APP SPECIFIC style and js references HERE
+         _________________________________________________________________________________-->
+      <link rel="stylesheet" href="/tncamp/css/tncamp_print.css" type="text/css" media="print" />
+      <style>
+         .dataTables_wrapper .row:last-of-type {
+         display:none;
+         }
+         .report-row-dashed {
+         border-top:1px dashed #ccc;
+         padding-top:15px;
+         }
+         .report-row-solid {
+         border-top:2px solid #ccc;
+         padding-top:15px;
+         }
+         .certify, .certify a:link, .certify a:visited, .certify a:active {
+         font-weight: bold;
+         color:#990000;
+         }
+
+         h2 {
+            margin-top:50px !important;
+         }
+      </style>
+      <script type="text/javascript">
+         function onSubmitLater()
+         {
+             if(document.report.elements["amountDollars"] != null
+                && document.report.elements["amountCents"] != null)
+             {
+                 var dollarAmount = document.report.elements["amountDollars"].value;
+                 var centsAmount = document.report.elements["amountCents"].value;
+             }
+             else
+             {
+                 var dollarAmount = 0;
+                 var centsAmount = 0;
+             }
+
+             window.location = "/tncamp/user/submitLater.htm?reportId=81223&dollarAmount=" +
+                               dollarAmount +
+                               "&centsAmount=" +
+                               centsAmount;
+         }
+         window.onload = function() {
+         setPopUps();
+         setIcoHelp();
+         }
+
+      </script>
+      <!-- InstanceEndEditable -->
+      <!-- InstanceParam name="class" type="text" value="bgwrap" -->
+   </head>
+   <body class="bgwrap">
+      <!-- container -->
+      <div class="app">
+         <div id="hd-wrap" class="container">
+            <header id="hd" class="row">
+               <div class="two columns">
+                  <p id="logo"></p>
+               </div>
+               <div class="ten columns">
+                  <p id="appname">Online Campaign Finance</p>
+               </div>
+            </header>
+            <!--/header hd row-->
+         </div>
+         <!--/hd-wrap-->
+         <div id="bd-wrap" class="container">
+            <section id="bd" class="row">
+               <div id="content" class="twelve columns">
+                  <!-- InstanceBeginEditable name="content" -->
+                  <a class="right btn" href="/tncamp/public/search.htm">Home</a>
+                  <a href="/tncamp/search/pub/fullReportExcelExportPublic.htm?generateLists=true" class="right btn">Download Full Report</a>
+                  <a href="javascript:window.print()" class="right btn btn-black">Print Page</a>
+                  <h1>
+                     
+                     
+                        2018 
+                     
+                     4th Quarter
+                     
+                     for BETH  HARWELL submitted on 01/23/2019
+                  </h1>
+                  <div class="frame">
+
+
+
+                     <h2 class="beginning-balance">Beginning Balance</h2>
+                     <div class="row control-group report-row-solid">
+                        <div class="six columns control-label text-left">
+                           <label class="no-margin">Beginning Balance</label>
+                        </div>
+                        <div class="six columns control inline-block text-right">
+                           $1,483,196.35
+                        </div>
+                     </div>
+                     <!-- close row -->
+
+
+
+                     
+                        <h2>Receipts</h2>
+                     
+                     
+                     
+                        <div class="row control-group report-row-dashed">
+                           <div class="five columns control-label text-left">
+                              Monetary Contributions, Unitemized<br />
+                           </div>
+                           <div class="seven columns control inline-block text-right text-right">
+                              $0.00
+                           </div>
+                        </div>
+                        <div class="row control-group report-row-dashed">
+                           <div class="five columns control-label text-left">
+                              Monetary Contributions, Itemized<br />
+                           </div>
+                           <div class="seven columns control inline-block text-right">
+                              
+                                 $0.00
+                              
+                           </div>
+                        </div>
+                        
+                        <div class="row control-group report-row-solid">
+                           <div class="five columns control-label text-left">
+                              TOTAL CONTRIBUTIONS<br />
+                              <small>(other than adjustments, loans, and interest)</small>
+                           </div>
+                           <div class="seven columns control inline-block text-right">
+                              <strong>
+                                 $0.00
+                              </strong>
+                           </div>
+                        </div>
+                        <br />
+                        <div class="row control-group report-row-dashed">
+                           
+                           <div class="five columns control-label text-left">
+                              Contribution Adjustments
+                           </div>
+                           <div class="seven columns control inline-block text-right">
+                              
+                                 $0.00
+                              
+                           </div>
+                        </div>
+                     
+                     <div class="row control-group report-row-dashed">
+                        <div class="five columns control-label text-left">
+                           Loans Received
+                        </div>
+                        <div class="seven columns control inline-block text-right">
+                           
+                              $0.00
+                           
+                        </div>
+                     </div>
+                      
+
+                     
+                     
+                        <div class="row control-group report-row-dashed">
+                           <div class="five columns control-label text-left">
+                              Interest Received This Reporting Period
+                           </div>
+                           <div class="seven columns control inline-block text-right">
+                              $0.00
+                           </div>
+                        </div>
+                     
+                     
+                        <div class="row control-group report-row-solid">
+                           <div class="five columns control-label text-left">
+                              TOTAL RECEIPTS
+                           </div>
+                           <div class="seven columns control inline-block text-right">
+                              <strong>
+                                 $0.00
+                              </strong>
+                           </div>
+                        </div>
+                     
+                     
+                        
+
+
+                        <h2>Disbursements</h2>
+                        <div class="row control-group report-row-dashed">
+                           <div class="five columns control-label text-left">
+                              Expenditures, Unitemized
+                           </div>
+                           <div class="seven columns control inline-block text-right">
+                              
+                                 $0.00
+                              
+                           </div>
+                        </div>
+                        
+                        <div class="row control-group report-row-dashed">
+                           <div class="five columns control-label text-left">
+                              Expenditures, Itemized
+                           </div>
+                           <div class="seven columns control inline-block text-right">
+                              
+                           </div>
+                        </div>
+                        
+                           
+<table class="responsive" id="expenditure">
+<thead>
+<tr>
+<th class="sortable sorted order1">
+<a href="?d-7583981-o=1&amp;d-7583981-p=1&amp;reportId=81223&amp;d-7583981-s=0">Vendor</a></th>
+<th class="sortable">
+<a href="?d-7583981-o=2&amp;d-7583981-p=1&amp;reportId=81223&amp;d-7583981-s=1">C/P</a></th>
+<th class="sortable">
+<a href="?d-7583981-o=2&amp;d-7583981-p=1&amp;reportId=81223&amp;d-7583981-s=2">Purpose</a></th>
+<th class="sortable">
+<a href="?d-7583981-o=2&amp;d-7583981-p=1&amp;reportId=81223&amp;d-7583981-s=3">Date</a></th>
+<th class="text-right sortable">
+<a href="?d-7583981-o=2&amp;d-7583981-p=1&amp;reportId=81223&amp;d-7583981-s=4">Amount</a></th></tr></thead>
+<tbody>
+<tr class="odd">
+<td>
+                                 DRIVER PRODUCTIONS
+                                 <br />
+                                 232 LARKSPUR AVE
+                                 <br />
+                                 STANWICK
+                                 ,
+                                 TN
+                                 37139
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 PROFESSIONAL SERVICES
+                              </td>
+<td>
+                                 12/28/2018
+                              </td>
+<td class="text-right">
+                                 $545.00
+                              </td></tr></tbody></table>
+                        
+                        <div class="row control-group report-row-dashed">
+                           <div class="five columns control-label text-left">
+                              Loan Payments
+                           </div>
+                           <div class="seven columns control inline-block text-right">
+                              
+                           </div>
+                        </div>
+                        
+                           
+<table class="responsive" id="wrapper">
+<thead>
+<tr>
+<th>Loan Source</th>
+<th class="text-right">Payment</th>
+<th class="text-right"></th></tr></thead>
+<tbody>
+<tr class="odd">
+<td class="responsive">
+                                 
+                                    
+                                       Self-Endorsed
+                                    
+                                    
+                                 
+                              </td>
+<td class="text-right">
+                                 
+                                    $1,591,401.57
+                                 
+                              </td>
+<td class="text-right">
+                                    
+                                       Written Off (
+                                       $1,591,401.57
+                                       on
+                                       01/23/2019
+                                       )
+                                    
+                                 </td></tr>
+<tr class="even">
+<td class="responsive">
+                                 
+                                    
+                                       Self-Endorsed
+                                    
+                                    
+                                 
+                              </td>
+<td class="text-right">
+                                 
+                                    $1,508,598.43
+                                 
+                              </td>
+<td class="text-right">
+                                    
+                                 </td></tr></tbody></table>
+                        
+                        <div class="row control-group report-row-dashed">
+                           <div class="five columns control-label text-left">
+                              Obligation Payments
+                           </div>
+                           <div class="seven columns control inline-block text-right">
+                              
+                                 $0.00
+                              
+                           </div>
+                        </div>
+                        
+                        <div class="row control-group report-row-solid">
+                           <div class="five columns control-label text-left">
+                              TOTAL EXPENDITURES<br />
+                              <small>(other than adjustments)</small>
+                           </div>
+                           <div class="seven columns control inline-block text-right">
+                              <strong>
+                                 $1,509,143.43
+                              </strong>
+                           </div>
+                        </div>
+                        <br />
+                        <div class="row control-group report-row-dashed">
+                           <div class="five columns control-label text-left">
+                              Expenditures, Adjustments
+                           </div>
+                           <div class="seven columns control inline-block text-right">
+                              
+                           </div>
+                        </div>
+                        
+                           
+<table class="responsive" id="expenditure">
+<thead>
+<tr>
+<th class="sortable sorted order1">
+<a href="?d-7583981-o=1&amp;d-7583981-p=1&amp;reportId=81223&amp;d-7583981-s=0">Vendor</a></th>
+<th class="sortable">
+<a href="?d-7583981-o=2&amp;d-7583981-p=1&amp;reportId=81223&amp;d-7583981-s=1">C/P</a></th>
+<th class="sortable">
+<a href="?d-7583981-o=2&amp;d-7583981-p=1&amp;reportId=81223&amp;d-7583981-s=2">Purpose</a></th>
+<th class="sortable">
+<a href="?d-7583981-o=2&amp;d-7583981-p=1&amp;reportId=81223&amp;d-7583981-s=3">Date</a></th>
+<th class="text-right sortable">
+<a href="?d-7583981-o=2&amp;d-7583981-p=1&amp;reportId=81223&amp;d-7583981-s=4">Amount</a></th></tr></thead>
+<tbody>
+<tr class="odd">
+<td>
+                                 COMCAST
+                                 <br />
+                                 331 ORCHARD BLVD
+                                 <br />
+                                 GLENDOWER
+                                 ,
+                                 TN
+                                 37679
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 ADVERTISING
+                              </td>
+<td>
+                                 10/25/2018
+                              </td>
+<td class="text-right">
+                                 [
+                                 $19,200.00
+                                 ]
+                              </td></tr>
+<tr class="even">
+<td>
+                                 CUMULUS RADIO
+                                 <br />
+                                 746 HAWTHORN RD
+                                 <br />
+                                 STANWICK
+                                 ,
+                                 TN
+                                 37184
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 ADVERTISING
+                              </td>
+<td>
+                                 11/09/2018
+                              </td>
+<td class="text-right">
+                                 [
+                                 $25.50
+                                 ]
+                              </td></tr>
+<tr class="odd">
+<td>
+                                 LOW AND TRITT
+                                 <br />
+                                 906 HAWTHORN PL
+                                 <br />
+                                 HARTLEIGH
+                                 ,
+                                 TN
+                                 37695
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 ADVERTISING
+                              </td>
+<td>
+                                 10/25/2018
+                              </td>
+<td class="text-right">
+                                 [
+                                 $9,277.66
+                                 ]
+                              </td></tr></tbody></table>
+                        
+                        <div class="row control-group report-row-solid">
+                           <div class="five columns control-label text-left">
+                              TOTAL DISBURSEMENTS
+                           </div>
+                           <div class="seven columns control inline-block text-right">
+                              <strong>
+                                 $1,480,640.27
+                              </strong>
+                           </div>
+                        </div>
+                     
+                     
+
+
+                     <h2>Ending Balance</h2>
+                     <div class="row control-group report-row-solid">
+                        <div class="five columns control-label text-left">
+                           ENDING BALANCE
+                        </div>
+                        <div class="seven columns control inline-block text-right">
+                           
+                              <strong>
+                                 $2,556.08
+                              </strong>
+                           
+                           
+                        </div>
+                     </div>
+                     <br />
+                     <hr />
+                     
+                        <h2>Outstanding Loans</h2>
+                        <br />
+                        <div class="row control-group report-row-dashed">
+                           <div class="five columns control-label text-left">
+                              TOTAL OUTSTANDING LOAN BALANCE</a>
+                           </div>
+                           <div class="seven columns control inline-block text-right">
+                              
+                                 <strong>
+                                    $0.00
+                                 </strong>
+                              
+                              
+                           </div>
+                        </div>
+                        
+                           
+<table class="responsive nosort" id="wrapper">
+<thead>
+<tr>
+<th>Loans</th>
+<th class="text-right">Beg Balance</th>
+<th class="text-right">Paid</th>
+<th class="text-right">End Balance*</th></tr></thead>
+<tbody>
+<tr class="odd">
+<td>
+                                 
+                                    Self-Endorsed
+                                 
+                                 
+                              </td>
+<td class="text-right">
+                                 
+                                    $3,100,000.00
+                                 
+                                 
+                              </td>
+<td class="text-right">
+                                 
+                                    $3,100,000.00
+                                 
+                                 
+                              </td>
+<td class="text-right">
+                                 
+                                    $0.00
+                                 
+                                 
+                              </td></tr>
+<tr class="even">
+<td>
+                                 
+                                 
+                                    
+                                    
+                                 
+                              </td>
+<td class="text-right">
+                                 
+                                 
+                              </td>
+<td class="text-right">
+                                 
+                                 
+                              </td>
+<td class="text-right">
+                                 
+                                 
+                              </td></tr>
+<tr class="odd">
+<td>
+                                 
+                                 
+                                    
+                                    
+                                 
+                              </td>
+<td class="text-right">
+                                 
+                                 
+                              </td>
+<td class="text-right">
+                                 
+                                 
+                              </td>
+<td class="text-right">
+                                 
+                                 
+                              </td></tr></tbody></table>
+                        
+                     
+                     
+                        <h2>In-Kind Contributions</h2>
+                        <p><em>In-Kind Contributions are not included in the report ending balance.</em></p>
+                        <div class="row control-group report-row-dashed">
+                           <div class="five columns control-label text-left">
+                              Unitemized
+                           </div>
+                           <div class="seven columns control inline-block text-right">
+                              $0.00
+                           </div>
+                        </div>
+                        <div class="row control-group report-row-dashed">
+                           <div class="five columns control-label text-left">
+                              Itemized
+                           </div>
+                           <div class="seven columns control inline-block text-right">
+                              
+                                 $0.00
+                              
+                           </div>
+                        </div>
+                        
+                        <div class="row control-group report-row-solid">
+                           <div class="five columns control-label text-left">
+                              TOTAL IN-KIND CONTRIBUTIONS
+                           </div>
+                           <div class="seven columns control inline-block text-right">
+                              <strong>
+                                 $0.00
+                              </strong>
+                           </div>
+                        </div>
+                     
+                     
+
+
+                     <h2>Obligations</h2>
+                     <p><em>Obligations are not included in the report ending balance.</em></p>
+                     
+                        <div class="row control-group report-row-dashed">
+                           <div class="five columns control-label text-left">
+                              Unitemized
+                           </div>
+                           <div class="seven columns control inline-block text-right">
+                              $0.00
+                           </div>
+                        </div>
+                     
+                     <div class="row control-group report-row-dashed">
+                        <div class="five columns control-label text-left">
+                           Itemized
+                        </div>
+                        <div class="seven columns control inline-block text-right">
+                           
+                              $0.00
+                           
+                        </div>
+                     </div>
+                     
+                     <div class="row control-group report-row-dashed">
+                        <div class="nine columns control-label text-left">
+                           Obligations, Outstanding from Previous Reports
+                        </div>
+                        <div class="three columns control inline-block text-right">
+                           
+                              $0.00
+                           
+                        </div>
+                     </div>
+                     
+                     
+                     
+                        <div class="row control-group report-row-solid">
+                           <div class="five columns control-label text-left">
+                              TOTAL OBLIGATIONS OUTSTANDING
+                           </div>
+                           <div class="seven columns control inline-block text-right">
+                              <strong>
+                                 $0.00
+                              </strong>
+                           </div>
+                        </div>
+                     
+                     <br />
+                     <p class="center">
+                        <a class="primary button" href="
+                        
+                        ">Back to Search Results</a>
+                     </p>
+                  </div>
+                  <!-- InstanceEndEditable -->
+               </div>
+               <!--/rw-->
+            </section>
+            <!--/section bd row-->
+         </div>
+         <!--/bd-wrap-->
+         <div id="ft-wrap" class="container">
+            <footer id="ft" class="row">
+               <div class="twelve columns">
+                  <hr/>
+                  <!-- InstanceBeginEditable name="footer-logged-in" --><!-- #BeginLibraryItem "/Library/footer-logged-in.lbi" -->
+                  <ul id="app">
+                     <li><a href="/tncamp/">Application Home</a></li>
+                     <li><a href="/tncamp/public/search.htm">Search</a></li>
+                  </ul>
+                  <!-- #EndLibraryItem --><!-- InstanceEndEditable --> <!-- InstanceBeginEditable name="footer-demo" --><!-- InstanceEndEditable -->
+                  <ul id="html">
+                     <li class="first"><a class="pop" href="/tncamp/help.html" title="This link opens a new browser window.">Help and FAQs</a></li>
+                     <li><a href="https://www.tn.gov/web-policies/accessibility.html" target="_blank" title="This link opens a new browser window.">TN.gov - Accessibility Statement</a></li>
+                     <li class="last"><a class="pop" href="/apps/html/privacy.html" title="This link opens a new browser window.">Privacy Statement</a></li>
+                  </ul>
+                  <!-- InstanceBeginEditable name="footer-indexpg-only" --><!-- InstanceEndEditable -->
+               </div>
+            </footer>
+            <!--/footer row-->
+         </div>
+         <!--/ft-wrap-->
+      </div>
+      <!--/app-->
+      <div id="bgseal"></div>
+   </body>
+   <!-- InstanceEnd -->
+</html>

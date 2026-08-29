@@ -16,11 +16,24 @@ function buildPageUrl(year: number): string {
   return `https://sos.tn.gov/elections/${year}-candidate-lists`
 }
 
+/**
+ * ⚠️ sos.tn.gov 403s Node's DEFAULT User-Agent. Measured 2026-08-29 against
+ * https://sos.tn.gov/elections/2026-candidate-lists — default UA returns 403, a browser UA
+ * returns 200. Without this header all three SOS tools fail, and they fail with the misleading
+ * message "No candidate list files found", which reads like the page changed rather than like
+ * the request was refused.
+ */
+const BROWSER_UA =
+  'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0 Safari/537.36'
+
 async function fetchWithTimeout(url: string): Promise<Response> {
   const controller = new AbortController()
   const timeout = setTimeout(() => controller.abort(), TIMEOUT_MS)
   try {
-    const response = await fetch(url, { signal: controller.signal })
+    const response = await fetch(url, {
+      signal: controller.signal,
+      headers: { 'User-Agent': BROWSER_UA, Accept: 'text/html,application/xhtml+xml,*/*' },
+    })
     if (!response.ok) {
       throw new Error(`HTTP ${response.status} fetching ${url}`)
     }
@@ -38,6 +51,22 @@ async function fetchWithTimeout(url: string): Promise<Response> {
  * 3. Parses each into typed candidate records
  * 4. Caches the combined result for 15 minutes
  */
+
+const SOS_ALLOWED_HOSTS = new Set(['sos.tn.gov', 'www.sos.tn.gov', 'sos-prod.tnsosgovfiles.com'])
+
+/** Reject a scraped file URL that points anywhere but the SoS's own hosts, over https. */
+function assertSosHost(rawUrl: string): void {
+  let u: URL
+  try {
+    u = new URL(rawUrl)
+  } catch {
+    throw new Error(`Refusing to fetch malformed candidate-list URL: ${rawUrl}`)
+  }
+  if (u.protocol !== 'https:' || !SOS_ALLOWED_HOSTS.has(u.hostname)) {
+    throw new Error(`Refusing to fetch candidate list from unexpected host: ${u.hostname}`)
+  }
+}
+
 export async function getFiledCandidates(year: number = 2026): Promise<SosCandidateIndex> {
   // Check cache
   const cached = cache.get(year)
@@ -59,6 +88,11 @@ export async function getFiledCandidates(year: number = 2026): Promise<SosCandid
   // Download all xlsx files in parallel (small files, ~10-18KB each)
   const xlsxResults = await Promise.all(
     offices.map(async (office): Promise<{ office: SosOfficeCategory; buffer: ArrayBuffer }> => {
+      // ⚠️ The xlsx URL is scraped from the page's own href, so it is remote-controlled and the
+      // bytes go straight into XLSX.read (a parser with known unfixed advisories). Pin the host.
+      // NOTE the real links live on a DIFFERENT host than the page — sos.tn.gov serves the index,
+      // sos-prod.tnsosgovfiles.com serves the files — so a naive one-host check breaks the tool.
+      assertSosHost(office.xlsxUrl)
       const response = await fetchWithTimeout(office.xlsxUrl)
       const buffer = await response.arrayBuffer()
       return { office, buffer }

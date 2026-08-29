@@ -1,0 +1,1755 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+   <!-- InstanceBegin template="/Templates/template.dwt" codeOutsideHTMLIsLocked="false" -->
+   <head>
+      <!-- InstanceBeginEditable name="namespaces" -->
+      <!-- Place namespace tags here. -->
+      <!-- InstanceEndEditable -->
+      <meta charset="utf-8"/>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+      <meta name="viewport" content="width=device-width"/>
+      <!-- InstanceBeginEditable name="title" -->
+      <title>Report - Online Campaign Finance</title>
+      <!-- InstanceEndEditable -->
+      <script>
+	var digitalData = {
+		page: {
+			pageInfo: {
+				pageName: "public full report",  // maps to pageName variable (s.pageName)
+				securePage: "false",  // set secure status: (auth = true; guest = false); as per public TN.gov, value should be "false"
+				deptName: "tref",  // set name of the Department (e.g., for FOIL app, sets to "correction")
+				rsidValue: "oirtn"  // set report suite id, e.g., for Production, set to: "oirtn", for Test, set to: "oirtnstaging"
+			}
+		}
+	};
+</script>
+<script src="https://assets.adobedtm.com/f213d7ed4603/b5fbb0638724/launch-5b3fa8e23e9e.min.js" async></script>
+
+      <script src="/apps/js/tngov12.js"></script>
+      <!-- App-specific Issues -->
+      <script src="/tncamp/js/issues.js" type="text/javascript"></script>
+      <!-- Included CSS Files -->
+      <link rel="stylesheet" href="/apps/css/foundation.css"/>
+      <link rel="stylesheet" href="/apps/css/custom.css"/>
+      <!--[if (lt IE 9)&(!IEMobile 7)]>
+      <script src="/apps/js/respond.min.js"></script>
+      <![endif]-->
+      <!-- InstanceBeginEditable name="head" -->
+      <!--_________________________________________________________________________________
+         Place APP SPECIFIC style and js references HERE
+         _________________________________________________________________________________-->
+      <link rel="stylesheet" href="/tncamp/css/tncamp_print.css" type="text/css" media="print" />
+      <style>
+         .dataTables_wrapper .row:last-of-type {
+         display:none;
+         }
+         .report-row-dashed {
+         border-top:1px dashed #ccc;
+         padding-top:15px;
+         }
+         .report-row-solid {
+         border-top:2px solid #ccc;
+         padding-top:15px;
+         }
+         .certify, .certify a:link, .certify a:visited, .certify a:active {
+         font-weight: bold;
+         color:#990000;
+         }
+
+         h2 {
+            margin-top:50px !important;
+         }
+      </style>
+      <script type="text/javascript">
+         function onSubmitLater()
+         {
+             if(document.report.elements["amountDollars"] != null
+                && document.report.elements["amountCents"] != null)
+             {
+                 var dollarAmount = document.report.elements["amountDollars"].value;
+                 var centsAmount = document.report.elements["amountCents"].value;
+             }
+             else
+             {
+                 var dollarAmount = 0;
+                 var centsAmount = 0;
+             }
+
+             window.location = "/tncamp/user/submitLater.htm?reportId=126212&dollarAmount=" +
+                               dollarAmount +
+                               "&centsAmount=" +
+                               centsAmount;
+         }
+         window.onload = function() {
+         setPopUps();
+         setIcoHelp();
+         }
+
+      </script>
+      <!-- InstanceEndEditable -->
+      <!-- InstanceParam name="class" type="text" value="bgwrap" -->
+   </head>
+   <body class="bgwrap">
+      <!-- container -->
+      <div class="app">
+         <div id="hd-wrap" class="container">
+            <header id="hd" class="row">
+               <div class="two columns">
+                  <p id="logo"></p>
+               </div>
+               <div class="ten columns">
+                  <p id="appname">Online Campaign Finance</p>
+               </div>
+            </header>
+            <!--/header hd row-->
+         </div>
+         <!--/hd-wrap-->
+         <div id="bd-wrap" class="container">
+            <section id="bd" class="row">
+               <div id="content" class="twelve columns">
+                  <!-- InstanceBeginEditable name="content" -->
+                  <a class="right btn" href="/tncamp/public/search.htm">Home</a>
+                  <a href="/tncamp/search/pub/fullReportExcelExportPublic.htm?generateLists=true" class="right btn">Download Full Report</a>
+                  <a href="javascript:window.print()" class="right btn btn-black">Print Page</a>
+                  <h1>
+                     
+                        Amended 
+                     
+                     
+                        2026 
+                     
+                     1st Quarter
+                     
+                     for JOHN  LOUALLEN submitted on 07/27/2026
+                  </h1>
+                  <div class="frame">
+
+
+
+                     <h2 class="beginning-balance">Beginning Balance</h2>
+                     <div class="row control-group report-row-solid">
+                        <div class="six columns control-label text-left">
+                           <label class="no-margin">Beginning Balance</label>
+                        </div>
+                        <div class="six columns control inline-block text-right">
+                           $16,217.08
+                        </div>
+                     </div>
+                     <!-- close row -->
+
+
+
+                     
+                        <h2>Receipts</h2>
+                     
+                     
+                     
+                        <div class="row control-group report-row-dashed">
+                           <div class="five columns control-label text-left">
+                              Monetary Contributions, Unitemized<br />
+                           </div>
+                           <div class="seven columns control inline-block text-right text-right">
+                              $0.00
+                           </div>
+                        </div>
+                        <div class="row control-group report-row-dashed">
+                           <div class="five columns control-label text-left">
+                              Monetary Contributions, Itemized<br />
+                           </div>
+                           <div class="seven columns control inline-block text-right">
+                              
+                           </div>
+                        </div>
+                        
+                           
+<table class="responsive" id="contribution">
+<thead>
+<tr>
+<th class="sortable sorted order1">
+<a href="?d-5158846-s=0&amp;reportId=126212&amp;d-5158846-o=1&amp;d-5158846-p=1">Contributor</a></th>
+<th class="sortable">
+<a href="?d-5158846-s=1&amp;reportId=126212&amp;d-5158846-o=2&amp;d-5158846-p=1">C/P</a></th>
+<th class="sortable">
+<a href="?d-5158846-s=2&amp;reportId=126212&amp;d-5158846-o=2&amp;d-5158846-p=1">Rec'd For</a></th>
+<th class="sortable">
+<a href="?d-5158846-s=3&amp;reportId=126212&amp;d-5158846-o=2&amp;d-5158846-p=1">Date</a></th>
+<th class="text-right sortable">
+<a href="?d-5158846-s=4&amp;reportId=126212&amp;d-5158846-o=2&amp;d-5158846-p=1">Amount</a></th>
+<th class="text-right sortable">
+<a href="?d-5158846-s=5&amp;reportId=126212&amp;d-5158846-o=2&amp;d-5158846-p=1">Aggregate</a></th></tr></thead>
+<tbody>
+<tr class="odd">
+<td>
+                                 CALDWELL
+                                 
+                                 , GARETH
+                                 
+                                 <br />
+                                 862 ALDER LN
+                                 <br />
+                                 RIVERTON
+                                 ,
+                                 TN
+                                 37229
+                                 <br />
+                                 ILLUSTRATOR
+                                 <br />
+                                 DUNMORE HOLDINGS
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                    Primary
+                                 </td>
+<td>
+                                 03/07/2026
+                              </td>
+<td class="text-right">
+                                 $50.00
+                              </td>
+<td class="text-right">
+                                    $50.00
+                                 </td></tr>
+<tr class="even">
+<td>
+                                 GRANTHAM
+                                 
+                                 , XANTHE
+                                 
+                                 <br />
+                                 564 TAMARACK PKWY
+                                 <br />
+                                 GLENDOWER
+                                 ,
+                                 TN
+                                 37645
+                                 <br />
+                                 GLAZIER
+                                 <br />
+                                 DUNMORE HOLDINGS
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                    Primary
+                                 </td>
+<td>
+                                 02/25/2026
+                              </td>
+<td class="text-right">
+                                 $100.00
+                              </td>
+<td class="text-right">
+                                    $100.00
+                                 </td></tr>
+<tr class="odd">
+<td>
+                                 JESSUP
+                                 
+                                 , GARETH
+                                 
+                                 <br />
+                                 529 BIRCHFIELD TRL
+                                 <br />
+                                 RIVERTON
+                                 ,
+                                 TN
+                                 37022
+                                 <br />
+                                 ARCHITECT
+                                 <br />
+                                 GRANARY WORKS
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                    Primary
+                                 </td>
+<td>
+                                 03/07/2026
+                              </td>
+<td class="text-right">
+                                 $250.00
+                              </td>
+<td class="text-right">
+                                    $500.00
+                                 </td></tr>
+<tr class="even">
+<td>
+                                 WESTBROOK
+                                 
+                                 , BRIAR
+                                 
+                                 <br />
+                                 223 NIGHTJAR PL
+                                 <br />
+                                 FAIRMONT
+                                 ,
+                                 TN
+                                 37557
+                                 <br />
+                                 GLAZIER
+                                 <br />
+                                 DUNMORE HOLDINGS
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                    Primary
+                                 </td>
+<td>
+                                 03/07/2026
+                              </td>
+<td class="text-right">
+                                 $100.00
+                              </td>
+<td class="text-right">
+                                    $600.00
+                                 </td></tr>
+<tr class="odd">
+<td>
+                                 CRESSWELL
+                                 
+                                 , XANTHE
+                                 
+                                 <br />
+                                 886 ALDER AVE
+                                 <br />
+                                 GLENDOWER
+                                 ,
+                                 TN
+                                 37157
+                                 <br />
+                                 ARCHITECT
+                                 <br />
+                                 IVYBRIDGE LLC
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                    Primary
+                                 </td>
+<td>
+                                 03/07/2026
+                              </td>
+<td class="text-right">
+                                 $100.00
+                              </td>
+<td class="text-right">
+                                    $100.00
+                                 </td></tr>
+<tr class="even">
+<td>
+                                 VANCE
+                                 
+                                 , MERRIT
+                                 
+                                 <br />
+                                 827 ELMHURST AVE
+                                 <br />
+                                 RIVERTON
+                                 ,
+                                 TN
+                                 37551
+                                 <br />
+                                 JOINER
+                                 <br />
+                                 HAWTHORN &amp; SONS
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                    Primary
+                                 </td>
+<td>
+                                 03/17/2026
+                              </td>
+<td class="text-right">
+                                 $50.00
+                              </td>
+<td class="text-right">
+                                    $1,000.00
+                                 </td></tr>
+<tr class="odd">
+<td>
+                                 VANCE
+                                 
+                                 , MERRIT
+                                 
+                                 <br />
+                                 827 ELMHURST AVE
+                                 <br />
+                                 RIVERTON
+                                 ,
+                                 TN
+                                 37551
+                                 <br />
+                                 JOINER
+                                 <br />
+                                 HAWTHORN &amp; SONS
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                    Primary
+                                 </td>
+<td>
+                                 02/17/2026
+                              </td>
+<td class="text-right">
+                                 $50.00
+                              </td>
+<td class="text-right">
+                                    $1,000.00
+                                 </td></tr>
+<tr class="even">
+<td>
+                                 VANCE
+                                 
+                                 , MERRIT
+                                 
+                                 <br />
+                                 827 ELMHURST AVE
+                                 <br />
+                                 RIVERTON
+                                 ,
+                                 TN
+                                 37551
+                                 <br />
+                                 JOINER
+                                 <br />
+                                 HAWTHORN &amp; SONS
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                    Primary
+                                 </td>
+<td>
+                                 01/17/2026
+                              </td>
+<td class="text-right">
+                                 $50.00
+                              </td>
+<td class="text-right">
+                                    $1,000.00
+                                 </td></tr>
+<tr class="odd">
+<td>
+                                 DUNMORE
+                                 
+                                 , XANTHE
+                                 
+                                 <br />
+                                 457 QUARRY WAY
+                                 <br />
+                                 THORNDALE
+                                 ,
+                                 TN
+                                 37364
+                                 <br />
+                                 BOTANIST
+                                 <br />
+                                 DUNMORE HOLDINGS
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                    Primary
+                                 </td>
+<td>
+                                 03/18/2026
+                              </td>
+<td class="text-right">
+                                 $1,000.00
+                              </td>
+<td class="text-right">
+                                    $1,000.00
+                                 </td></tr>
+<tr class="even">
+<td>
+                                 GRANTHAM
+                                 
+                                 , AUBREY
+                                 
+                                 <br />
+                                 861 IVYBRIDGE AVE
+                                 <br />
+                                 MARLOWE
+                                 ,
+                                 TN
+                                 37007
+                                 <br />
+                                 HORTICULTURIST
+                                 <br />
+                                 CEDARMONT LABS
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                    Primary
+                                 </td>
+<td>
+                                 03/30/2026
+                              </td>
+<td class="text-right">
+                                 $1,000.00
+                              </td>
+<td class="text-right">
+                                    $1,450.00
+                                 </td></tr>
+<tr class="odd">
+<td>
+                                 ABERNETHY
+                                 
+                                 , CASSIAN
+                                 
+                                 <br />
+                                 623 PLOVER BLVD
+                                 <br />
+                                 KESWICK
+                                 ,
+                                 TN
+                                 37964
+                                 <br />
+                                 ARCHITECT
+                                 <br />
+                                 GRANARY WORKS
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                    Primary
+                                 </td>
+<td>
+                                 02/19/2026
+                              </td>
+<td class="text-right">
+                                 $100.00
+                              </td>
+<td class="text-right">
+                                    $100.00
+                                 </td></tr>
+<tr class="even">
+<td>
+                                 BRANNOCK
+                                 
+                                 , ISOLDE
+                                 
+                                 <br />
+                                 254 DUNWOODY WAY
+                                 <br />
+                                 NORTHFIELD
+                                 ,
+                                 TN
+                                 37971
+                                 <br />
+                                 EDITOR
+                                 <br />
+                                 GRANARY WORKS
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                    Primary
+                                 </td>
+<td>
+                                 03/08/2026
+                              </td>
+<td class="text-right">
+                                 $25.00
+                              </td>
+<td class="text-right">
+                                    $50.00
+                                 </td></tr>
+<tr class="odd">
+<td>
+                                 ELSWORTH
+                                 
+                                 , YARROW
+                                 
+                                 <br />
+                                 444 DUNWOODY PL
+                                 <br />
+                                 PEMBROOK
+                                 ,
+                                 TN
+                                 37350
+                                 <br />
+                                 HORTICULTURIST
+                                 <br />
+                                 JUNIPER&#039;S TRADING
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                    Primary
+                                 </td>
+<td>
+                                 02/04/2026
+                              </td>
+<td class="text-right">
+                                 $240.15
+                              </td>
+<td class="text-right">
+                                    $240.15
+                                 </td></tr></tbody></table>
+                        
+                        <div class="row control-group report-row-solid">
+                           <div class="five columns control-label text-left">
+                              TOTAL CONTRIBUTIONS<br />
+                              <small>(other than adjustments, loans, and interest)</small>
+                           </div>
+                           <div class="seven columns control inline-block text-right">
+                              <strong>
+                                 $3,115.15
+                              </strong>
+                           </div>
+                        </div>
+                        <br />
+                        <div class="row control-group report-row-dashed">
+                           
+                           <div class="five columns control-label text-left">
+                              Contribution Adjustments
+                           </div>
+                           <div class="seven columns control inline-block text-right">
+                              
+                                 $0.00
+                              
+                           </div>
+                        </div>
+                     
+                     <div class="row control-group report-row-dashed">
+                        <div class="five columns control-label text-left">
+                           Loans Received
+                        </div>
+                        <div class="seven columns control inline-block text-right">
+                           
+                              $0.00
+                           
+                        </div>
+                     </div>
+                      
+
+                     
+                     
+                        <div class="row control-group report-row-dashed">
+                           <div class="five columns control-label text-left">
+                              Interest Received This Reporting Period
+                           </div>
+                           <div class="seven columns control inline-block text-right">
+                              $0.00
+                           </div>
+                        </div>
+                     
+                     
+                        <div class="row control-group report-row-solid">
+                           <div class="five columns control-label text-left">
+                              TOTAL RECEIPTS
+                           </div>
+                           <div class="seven columns control inline-block text-right">
+                              <strong>
+                                 $3,115.15
+                              </strong>
+                           </div>
+                        </div>
+                     
+                     
+                        
+
+
+                        <h2>Disbursements</h2>
+                        <div class="row control-group report-row-dashed">
+                           <div class="five columns control-label text-left">
+                              Expenditures, Unitemized
+                           </div>
+                           <div class="seven columns control inline-block text-right">
+                              
+                                 $0.00
+                              
+                           </div>
+                        </div>
+                        
+                        <div class="row control-group report-row-dashed">
+                           <div class="five columns control-label text-left">
+                              Expenditures, Itemized
+                           </div>
+                           <div class="seven columns control inline-block text-right">
+                              
+                           </div>
+                        </div>
+                        
+                           
+<table class="responsive" id="expenditure">
+<thead>
+<tr>
+<th class="sortable sorted order1">
+<a href="?d-7583981-o=1&amp;d-7583981-p=1&amp;reportId=126212&amp;d-7583981-s=0">Vendor</a></th>
+<th class="sortable">
+<a href="?d-7583981-o=2&amp;d-7583981-p=1&amp;reportId=126212&amp;d-7583981-s=1">C/P</a></th>
+<th class="sortable">
+<a href="?d-7583981-o=2&amp;d-7583981-p=1&amp;reportId=126212&amp;d-7583981-s=2">Purpose</a></th>
+<th class="sortable">
+<a href="?d-7583981-o=2&amp;d-7583981-p=1&amp;reportId=126212&amp;d-7583981-s=3">Date</a></th>
+<th class="text-right sortable">
+<a href="?d-7583981-o=2&amp;d-7583981-p=1&amp;reportId=126212&amp;d-7583981-s=4">Amount</a></th></tr></thead>
+<tbody>
+<tr class="odd">
+<td>
+                                 ALL SPORTS EMBROIDERY
+                                 <br />
+                                 469 ROSEMARY BLVD
+                                 <br />
+                                 FAIRMONT
+                                 ,
+                                 TN
+                                 37796
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 CAMPAIGN SHIRTS/HATS
+                              </td>
+<td>
+                                 03/23/2026
+                              </td>
+<td class="text-right">
+                                 $240.00
+                              </td></tr>
+<tr class="even">
+<td>
+                                 ALL SPORTS EMBROIDERY
+                                 <br />
+                                 469 ROSEMARY BLVD
+                                 <br />
+                                 FAIRMONT
+                                 ,
+                                 TN
+                                 37796
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 CAMPAIGN SHIRTS/HATS
+                              </td>
+<td>
+                                 02/07/2026
+                              </td>
+<td class="text-right">
+                                 $300.00
+                              </td></tr>
+<tr class="odd">
+<td>
+                                 CHARLOTTE BALLPARK
+                                 <br />
+                                 222 SORREL DR
+                                 <br />
+                                 HARTLEIGH
+                                 ,
+                                 TN
+                                 37869
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 ADVERTISING
+                              </td>
+<td>
+                                 03/15/2026
+                              </td>
+<td class="text-right">
+                                 $250.00
+                              </td></tr>
+<tr class="even">
+<td>
+                                 COLLEGE PARK STUDIO
+                                 <br />
+                                 240 QUARRY RD
+                                 <br />
+                                 KESWICK
+                                 ,
+                                 TN
+                                 37517
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 EVENT SPACE
+                              </td>
+<td>
+                                 01/20/2026
+                              </td>
+<td class="text-right">
+                                 $312.50
+                              </td></tr>
+<tr class="odd">
+<td>
+                                 DIGITAL DOMINANCE GRAPHICS
+                                 <br />
+                                 602 MULBERRY BLVD
+                                 <br />
+                                 GLENDOWER
+                                 ,
+                                 TN
+                                 37320
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 CAMPAIGN SIGNS
+                              </td>
+<td>
+                                 03/13/2026
+                              </td>
+<td class="text-right">
+                                 $1,566.90
+                              </td></tr>
+<tr class="even">
+<td>
+                                 DIGITAL DOMINANCE GRAPHICS
+                                 <br />
+                                 602 MULBERRY BLVD
+                                 <br />
+                                 GLENDOWER
+                                 ,
+                                 TN
+                                 37320
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 ADVERTISING
+                              </td>
+<td>
+                                 02/04/2026
+                              </td>
+<td class="text-right">
+                                 $65.79
+                              </td></tr>
+<tr class="odd">
+<td>
+                                 DIGITAL DOMINANCE GRAPHICS
+                                 <br />
+                                 602 MULBERRY BLVD
+                                 <br />
+                                 GLENDOWER
+                                 ,
+                                 TN
+                                 37320
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 CAMPAIGN SIGNS
+                              </td>
+<td>
+                                 01/16/2026
+                              </td>
+<td class="text-right">
+                                 $1,833.72
+                              </td></tr>
+<tr class="even">
+<td>
+                                 EASTLAKE
+                                 
+                                 , ISOLDE
+                                 
+                                 <br />
+                                 242 QUARRY PKWY
+                                 <br />
+                                 NORTHFIELD
+                                 ,
+                                 TN
+                                 37334
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 TRAFFIC STUDY - SIGN PLACEMENT 
+                              </td>
+<td>
+                                 03/23/2026
+                              </td>
+<td class="text-right">
+                                 $1,000.00
+                              </td></tr>
+<tr class="odd">
+<td>
+                                 LAMAR
+                                 <br />
+                                 983 JUNIPER CT
+                                 <br />
+                                 MARLOWE
+                                 ,
+                                 TN
+                                 37835
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 ADVERTISING
+                              </td>
+<td>
+                                 01/16/2026
+                              </td>
+<td class="text-right">
+                                 $1,287.50
+                              </td></tr>
+<tr class="even">
+<td>
+                                 LEADERSHIP CHEATHAM COUNTY
+                                 <br />
+                                 513 PLOVER LN
+                                 <br />
+                                 FAIRMONT
+                                 ,
+                                 TN
+                                 37901
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 ADVERTISING
+                              </td>
+<td>
+                                 03/20/2026
+                              </td>
+<td class="text-right">
+                                 $200.00
+                              </td></tr>
+<tr class="odd">
+<td>
+                                 LEADERSHIP CHEATHAM COUNTY
+                                 <br />
+                                 513 PLOVER LN
+                                 <br />
+                                 FAIRMONT
+                                 ,
+                                 TN
+                                 37901
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 LEADERSHIP EVENT TABLE
+                              </td>
+<td>
+                                 03/02/2026
+                              </td>
+<td class="text-right">
+                                 $150.00
+                              </td></tr>
+<tr class="even">
+<td>
+                                 META
+                                 <br />
+                                 546 HAWTHORN CT
+                                 <br />
+                                 PEMBROOK
+                                 ,
+                                 TN
+                                 37818
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 FACEBOOK MARKETING
+                              </td>
+<td>
+                                 03/31/2026
+                              </td>
+<td class="text-right">
+                                 $491.30
+                              </td></tr>
+<tr class="odd">
+<td>
+                                 META
+                                 <br />
+                                 546 HAWTHORN CT
+                                 <br />
+                                 PEMBROOK
+                                 ,
+                                 TN
+                                 37818
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 ADVERTISING
+                              </td>
+<td>
+                                 02/28/2026
+                              </td>
+<td class="text-right">
+                                 $283.14
+                              </td></tr>
+<tr class="even">
+<td>
+                                 META
+                                 <br />
+                                 546 HAWTHORN CT
+                                 <br />
+                                 PEMBROOK
+                                 ,
+                                 TN
+                                 37818
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 ADVERTISING
+                              </td>
+<td>
+                                 01/30/2026
+                              </td>
+<td class="text-right">
+                                 $341.64
+                              </td></tr>
+<tr class="odd">
+<td>
+                                 PENHALIGON
+                                 
+                                 , FREYA
+                                 
+                                 <br />
+                                 721 ELMHURST RD
+                                 <br />
+                                 STANWICK
+                                 ,
+                                 TN
+                                 37454
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 CAMPAIGN PHOTOS
+                              </td>
+<td>
+                                 03/19/2026
+                              </td>
+<td class="text-right">
+                                 $250.00
+                              </td></tr>
+<tr class="even">
+<td>
+                                 PENHALIGON
+                                 
+                                 , FREYA
+                                 
+                                 <br />
+                                 721 ELMHURST RD
+                                 <br />
+                                 STANWICK
+                                 ,
+                                 TN
+                                 37454
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 CAMPAIGN PHOTOS
+                              </td>
+<td>
+                                 03/07/2026
+                              </td>
+<td class="text-right">
+                                 $200.00
+                              </td></tr>
+<tr class="odd">
+<td>
+                                 RB PROMOTIONS
+                                 <br />
+                                 115 HAWTHORN PKWY
+                                 <br />
+                                 FAIRMONT
+                                 ,
+                                 TN
+                                 37649
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 WEBSITE DEVELOPMENT 
+                              </td>
+<td>
+                                 03/17/2026
+                              </td>
+<td class="text-right">
+                                 $266.23
+                              </td></tr>
+<tr class="even">
+<td>
+                                 RB PROMOTIONS
+                                 <br />
+                                 115 HAWTHORN PKWY
+                                 <br />
+                                 FAIRMONT
+                                 ,
+                                 TN
+                                 37649
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 WEBSITE DEVELOPMENT 
+                              </td>
+<td>
+                                 01/25/2026
+                              </td>
+<td class="text-right">
+                                 $170.70
+                              </td></tr>
+<tr class="odd">
+<td>
+                                 ROBOCENT
+                                 <br />
+                                 944 BIRCHFIELD PKWY
+                                 <br />
+                                 THORNDALE
+                                 ,
+                                 TN
+                                 37271
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 ADVERTISING
+                              </td>
+<td>
+                                 02/09/2026
+                              </td>
+<td class="text-right">
+                                 $231.30
+                              </td></tr>
+<tr class="even">
+<td>
+                                 ROBOCENT
+                                 <br />
+                                 944 BIRCHFIELD PKWY
+                                 <br />
+                                 THORNDALE
+                                 ,
+                                 TN
+                                 37271
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 CAMPAIGN TEXTING 
+                              </td>
+<td>
+                                 01/20/2026
+                              </td>
+<td class="text-right">
+                                 $66.51
+                              </td></tr>
+<tr class="odd">
+<td>
+                                 ROBOCENT
+                                 <br />
+                                 944 BIRCHFIELD PKWY
+                                 <br />
+                                 THORNDALE
+                                 ,
+                                 TN
+                                 37271
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 CAMPAIGN TEXTING 
+                              </td>
+<td>
+                                 01/20/2026
+                              </td>
+<td class="text-right">
+                                 $90.75
+                              </td></tr>
+<tr class="even">
+<td>
+                                 ROBOCENT
+                                 <br />
+                                 944 BIRCHFIELD PKWY
+                                 <br />
+                                 THORNDALE
+                                 ,
+                                 TN
+                                 37271
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 VOTER DATA
+                              </td>
+<td>
+                                 01/16/2026
+                              </td>
+<td class="text-right">
+                                 $20.25
+                              </td></tr>
+<tr class="odd">
+<td>
+                                 ROBOCENT
+                                 <br />
+                                 944 BIRCHFIELD PKWY
+                                 <br />
+                                 THORNDALE
+                                 ,
+                                 TN
+                                 37271
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 ADVERTISING
+                              </td>
+<td>
+                                 01/16/2026
+                              </td>
+<td class="text-right">
+                                 $625.38
+                              </td></tr>
+<tr class="even">
+<td>
+                                 STAPLES
+                                 <br />
+                                 988 KESTREL WAY
+                                 <br />
+                                 STANWICK
+                                 ,
+                                 TN
+                                 37083
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 ADVERTISING
+                              </td>
+<td>
+                                 02/07/2026
+                              </td>
+<td class="text-right">
+                                 $76.81
+                              </td></tr>
+<tr class="odd">
+<td>
+                                 STAPLES
+                                 <br />
+                                 988 KESTREL WAY
+                                 <br />
+                                 STANWICK
+                                 ,
+                                 TN
+                                 37083
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 ADVERTISING
+                              </td>
+<td>
+                                 02/03/2026
+                              </td>
+<td class="text-right">
+                                 $54.86
+                              </td></tr>
+<tr class="even">
+<td>
+                                 TN GOP
+                                 <br />
+                                 570 SORREL CT
+                                 <br />
+                                 RIVERTON
+                                 ,
+                                 TN
+                                 37831
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 GOP CAMPAIGN FEE
+                              </td>
+<td>
+                                 01/16/2026
+                              </td>
+<td class="text-right">
+                                 $500.00
+                              </td></tr>
+<tr class="odd">
+<td>
+                                 TOWN OF ASHLAND CITY
+                                 <br />
+                                 845 CEDARMONT WAY
+                                 <br />
+                                 RIVERTON
+                                 ,
+                                 TN
+                                 37660
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 EVENT SPACE
+                              </td>
+<td>
+                                 02/04/2026
+                              </td>
+<td class="text-right">
+                                 $100.00
+                              </td></tr>
+<tr class="even">
+<td>
+                                 TURNBULL OUTDOORS
+                                 <br />
+                                 274 PLOVER PL
+                                 <br />
+                                 NORTHFIELD
+                                 ,
+                                 TN
+                                 37717
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 ADVERTISING
+                              </td>
+<td>
+                                 02/17/2026
+                              </td>
+<td class="text-right">
+                                 $200.00
+                              </td></tr>
+<tr class="odd">
+<td>
+                                 UNITED COMMUNITY BANK
+                                 <br />
+                                 403 LARKSPUR RD
+                                 <br />
+                                 KESWICK
+                                 ,
+                                 TN
+                                 37459
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 BANK FEES
+                              </td>
+<td>
+                                 03/25/2026
+                              </td>
+<td class="text-right">
+                                 $8.00
+                              </td></tr>
+<tr class="even">
+<td>
+                                 UNITED COMMUNITY BANK
+                                 <br />
+                                 403 LARKSPUR RD
+                                 <br />
+                                 KESWICK
+                                 ,
+                                 TN
+                                 37459
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 BANK FEES
+                              </td>
+<td>
+                                 02/04/2026
+                              </td>
+<td class="text-right">
+                                 $9.99
+                              </td></tr>
+<tr class="odd">
+<td>
+                                 CRESSWELL
+                                 
+                                 , LOWELL
+                                 
+                                 <br />
+                                 929 CEDARMONT PKWY
+                                 <br />
+                                 RIVERTON
+                                 ,
+                                 TN
+                                 37769
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 DOOR KNOCKING
+                              </td>
+<td>
+                                 03/17/2026
+                              </td>
+<td class="text-right">
+                                 $500.00
+                              </td></tr>
+<tr class="even">
+<td>
+                                 CRESSWELL
+                                 
+                                 , LOWELL
+                                 
+                                 <br />
+                                 929 CEDARMONT PKWY
+                                 <br />
+                                 RIVERTON
+                                 ,
+                                 TN
+                                 37769
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 CAMPAIGN CONSULTING
+                              </td>
+<td>
+                                 03/10/2026
+                              </td>
+<td class="text-right">
+                                 $400.00
+                              </td></tr>
+<tr class="odd">
+<td>
+                                 CRESSWELL
+                                 
+                                 , LOWELL
+                                 
+                                 <br />
+                                 929 CEDARMONT PKWY
+                                 <br />
+                                 RIVERTON
+                                 ,
+                                 TN
+                                 37769
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 CAMPAIGN CONSULTING 
+                              </td>
+<td>
+                                 02/04/2026
+                              </td>
+<td class="text-right">
+                                 $400.00
+                              </td></tr></tbody></table>
+                        
+                        <div class="row control-group report-row-dashed">
+                           <div class="five columns control-label text-left">
+                              Loan Payments
+                           </div>
+                           <div class="seven columns control inline-block text-right">
+                              
+                                 $0.00
+                              
+                           </div>
+                        </div>
+                        
+                        <div class="row control-group report-row-dashed">
+                           <div class="five columns control-label text-left">
+                              Obligation Payments
+                           </div>
+                           <div class="seven columns control inline-block text-right">
+                              
+                                 $0.00
+                              
+                           </div>
+                        </div>
+                        
+                        <div class="row control-group report-row-solid">
+                           <div class="five columns control-label text-left">
+                              TOTAL EXPENDITURES<br />
+                              <small>(other than adjustments)</small>
+                           </div>
+                           <div class="seven columns control inline-block text-right">
+                              <strong>
+                                 $12,493.27
+                              </strong>
+                           </div>
+                        </div>
+                        <br />
+                        <div class="row control-group report-row-dashed">
+                           <div class="five columns control-label text-left">
+                              Expenditures, Adjustments
+                           </div>
+                           <div class="seven columns control inline-block text-right">
+                              
+                                 $0.00
+                              
+                           </div>
+                        </div>
+                        
+                        <div class="row control-group report-row-solid">
+                           <div class="five columns control-label text-left">
+                              TOTAL DISBURSEMENTS
+                           </div>
+                           <div class="seven columns control inline-block text-right">
+                              <strong>
+                                 $12,493.27
+                              </strong>
+                           </div>
+                        </div>
+                     
+                     
+
+
+                     <h2>Ending Balance</h2>
+                     <div class="row control-group report-row-solid">
+                        <div class="five columns control-label text-left">
+                           ENDING BALANCE
+                        </div>
+                        <div class="seven columns control inline-block text-right">
+                           
+                              <strong>
+                                 $6,838.96
+                              </strong>
+                           
+                           
+                        </div>
+                     </div>
+                     <br />
+                     <hr />
+                     
+                        <h2>Outstanding Loans</h2>
+                        <br />
+                        <div class="row control-group report-row-dashed">
+                           <div class="five columns control-label text-left">
+                              TOTAL OUTSTANDING LOAN BALANCE</a>
+                           </div>
+                           <div class="seven columns control inline-block text-right">
+                              
+                              
+                                 $0.00
+                              
+                           </div>
+                        </div>
+                        
+                     
+                     
+                        <h2>In-Kind Contributions</h2>
+                        <p><em>In-Kind Contributions are not included in the report ending balance.</em></p>
+                        <div class="row control-group report-row-dashed">
+                           <div class="five columns control-label text-left">
+                              Unitemized
+                           </div>
+                           <div class="seven columns control inline-block text-right">
+                              $0.00
+                           </div>
+                        </div>
+                        <div class="row control-group report-row-dashed">
+                           <div class="five columns control-label text-left">
+                              Itemized
+                           </div>
+                           <div class="seven columns control inline-block text-right">
+                              
+                           </div>
+                        </div>
+                        
+                           
+<table class="responsive" id="contribution">
+<thead>
+<tr>
+<th class="sortable sorted order1">
+<a href="?d-5158846-s=0&amp;reportId=126212&amp;d-5158846-o=1&amp;d-5158846-p=1">Contributor</a></th>
+<th class="sortable">
+<a href="?d-5158846-s=1&amp;reportId=126212&amp;d-5158846-o=2&amp;d-5158846-p=1">C/P</a></th>
+<th class="sortable">
+<a href="?d-5158846-s=2&amp;reportId=126212&amp;d-5158846-o=2&amp;d-5158846-p=1">Rec'd For</a></th>
+<th class="sortable">
+<a href="?d-5158846-s=3&amp;reportId=126212&amp;d-5158846-o=2&amp;d-5158846-p=1">Details</a></th>
+<th class="sortable">
+<a href="?d-5158846-s=4&amp;reportId=126212&amp;d-5158846-o=2&amp;d-5158846-p=1">Date</a></th>
+<th class="text-right sortable">
+<a href="?d-5158846-s=5&amp;reportId=126212&amp;d-5158846-o=2&amp;d-5158846-p=1">Amount</a></th>
+<th class="text-right sortable">
+<a href="?d-5158846-s=6&amp;reportId=126212&amp;d-5158846-o=2&amp;d-5158846-p=1">Aggregate</a></th></tr></thead>
+<tbody>
+<tr class="odd">
+<td>
+                                 HAMPTON INN
+                                 <br />
+                                 639 ROSEMARY WAY
+                                 <br />
+                                 HARTLEIGH
+                                 ,
+                                 TN
+                                 37339
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                    Primary
+                                 </td>
+<td>
+                                 Event Fee Rental 
+                              </td>
+<td class="center">
+                                 03/07/2026
+                              </td>
+<td class="text-right">
+                                 $200.00
+                              </td>
+<td class="text-right">
+                                    $200.00
+                                 </td></tr></tbody></table>
+                        
+                        <div class="row control-group report-row-solid">
+                           <div class="five columns control-label text-left">
+                              TOTAL IN-KIND CONTRIBUTIONS
+                           </div>
+                           <div class="seven columns control inline-block text-right">
+                              <strong>
+                                 $200.00
+                              </strong>
+                           </div>
+                        </div>
+                     
+                     
+
+
+                     <h2>Obligations</h2>
+                     <p><em>Obligations are not included in the report ending balance.</em></p>
+                     
+                        <div class="row control-group report-row-dashed">
+                           <div class="five columns control-label text-left">
+                              Unitemized
+                           </div>
+                           <div class="seven columns control inline-block text-right">
+                              $0.00
+                           </div>
+                        </div>
+                     
+                     <div class="row control-group report-row-dashed">
+                        <div class="five columns control-label text-left">
+                           Itemized
+                        </div>
+                        <div class="seven columns control inline-block text-right">
+                           
+                              $0.00
+                           
+                        </div>
+                     </div>
+                     
+                     <div class="row control-group report-row-dashed">
+                        <div class="nine columns control-label text-left">
+                           Obligations, Outstanding from Previous Reports
+                        </div>
+                        <div class="three columns control inline-block text-right">
+                           
+                              $0.00
+                           
+                        </div>
+                     </div>
+                     
+                     
+                     
+                        <div class="row control-group report-row-solid">
+                           <div class="five columns control-label text-left">
+                              TOTAL OBLIGATIONS OUTSTANDING
+                           </div>
+                           <div class="seven columns control inline-block text-right">
+                              <strong>
+                                 $0.00
+                              </strong>
+                           </div>
+                        </div>
+                     
+                     <br />
+                     <p class="center">
+                        <a class="primary button" href="
+                        
+                        ">Back to Search Results</a>
+                     </p>
+                  </div>
+                  <!-- InstanceEndEditable -->
+               </div>
+               <!--/rw-->
+            </section>
+            <!--/section bd row-->
+         </div>
+         <!--/bd-wrap-->
+         <div id="ft-wrap" class="container">
+            <footer id="ft" class="row">
+               <div class="twelve columns">
+                  <hr/>
+                  <!-- InstanceBeginEditable name="footer-logged-in" --><!-- #BeginLibraryItem "/Library/footer-logged-in.lbi" -->
+                  <ul id="app">
+                     <li><a href="/tncamp/">Application Home</a></li>
+                     <li><a href="/tncamp/public/search.htm">Search</a></li>
+                  </ul>
+                  <!-- #EndLibraryItem --><!-- InstanceEndEditable --> <!-- InstanceBeginEditable name="footer-demo" --><!-- InstanceEndEditable -->
+                  <ul id="html">
+                     <li class="first"><a class="pop" href="/tncamp/help.html" title="This link opens a new browser window.">Help and FAQs</a></li>
+                     <li><a href="https://www.tn.gov/web-policies/accessibility.html" target="_blank" title="This link opens a new browser window.">TN.gov - Accessibility Statement</a></li>
+                     <li class="last"><a class="pop" href="/apps/html/privacy.html" title="This link opens a new browser window.">Privacy Statement</a></li>
+                  </ul>
+                  <!-- InstanceBeginEditable name="footer-indexpg-only" --><!-- InstanceEndEditable -->
+               </div>
+            </footer>
+            <!--/footer row-->
+         </div>
+         <!--/ft-wrap-->
+      </div>
+      <!--/app-->
+      <div id="bgseal"></div>
+   </body>
+   <!-- InstanceEnd -->
+</html>

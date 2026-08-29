@@ -1,0 +1,4050 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+   <!-- InstanceBegin template="/Templates/template.dwt" codeOutsideHTMLIsLocked="false" -->
+   <head>
+      <!-- InstanceBeginEditable name="namespaces" -->
+      <!-- Place namespace tags here. -->
+      <!-- InstanceEndEditable -->
+      <meta charset="utf-8"/>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+      <meta name="viewport" content="width=device-width"/>
+      <!-- InstanceBeginEditable name="title" -->
+      <title>Report - Online Campaign Finance</title>
+      <!-- InstanceEndEditable -->
+      <script>
+	var digitalData = {
+		page: {
+			pageInfo: {
+				pageName: "public full report",  // maps to pageName variable (s.pageName)
+				securePage: "false",  // set secure status: (auth = true; guest = false); as per public TN.gov, value should be "false"
+				deptName: "tref",  // set name of the Department (e.g., for FOIL app, sets to "correction")
+				rsidValue: "oirtn"  // set report suite id, e.g., for Production, set to: "oirtn", for Test, set to: "oirtnstaging"
+			}
+		}
+	};
+</script>
+<script src="https://assets.adobedtm.com/f213d7ed4603/b5fbb0638724/launch-5b3fa8e23e9e.min.js" async></script>
+
+      <script src="/apps/js/tngov12.js"></script>
+      <!-- App-specific Issues -->
+      <script src="/tncamp/js/issues.js" type="text/javascript"></script>
+      <!-- Included CSS Files -->
+      <link rel="stylesheet" href="/apps/css/foundation.css"/>
+      <link rel="stylesheet" href="/apps/css/custom.css"/>
+      <!--[if (lt IE 9)&(!IEMobile 7)]>
+      <script src="/apps/js/respond.min.js"></script>
+      <![endif]-->
+      <!-- InstanceBeginEditable name="head" -->
+      <!--_________________________________________________________________________________
+         Place APP SPECIFIC style and js references HERE
+         _________________________________________________________________________________-->
+      <link rel="stylesheet" href="/tncamp/css/tncamp_print.css" type="text/css" media="print" />
+      <style>
+         .dataTables_wrapper .row:last-of-type {
+         display:none;
+         }
+         .report-row-dashed {
+         border-top:1px dashed #ccc;
+         padding-top:15px;
+         }
+         .report-row-solid {
+         border-top:2px solid #ccc;
+         padding-top:15px;
+         }
+         .certify, .certify a:link, .certify a:visited, .certify a:active {
+         font-weight: bold;
+         color:#990000;
+         }
+
+         h2 {
+            margin-top:50px !important;
+         }
+      </style>
+      <script type="text/javascript">
+         function onSubmitLater()
+         {
+             if(document.report.elements["amountDollars"] != null
+                && document.report.elements["amountCents"] != null)
+             {
+                 var dollarAmount = document.report.elements["amountDollars"].value;
+                 var centsAmount = document.report.elements["amountCents"].value;
+             }
+             else
+             {
+                 var dollarAmount = 0;
+                 var centsAmount = 0;
+             }
+
+             window.location = "/tncamp/user/submitLater.htm?reportId=100136&dollarAmount=" +
+                               dollarAmount +
+                               "&centsAmount=" +
+                               centsAmount;
+         }
+         window.onload = function() {
+         setPopUps();
+         setIcoHelp();
+         }
+
+      </script>
+      <!-- InstanceEndEditable -->
+      <!-- InstanceParam name="class" type="text" value="bgwrap" -->
+   </head>
+   <body class="bgwrap">
+      <!-- container -->
+      <div class="app">
+         <div id="hd-wrap" class="container">
+            <header id="hd" class="row">
+               <div class="two columns">
+                  <p id="logo"></p>
+               </div>
+               <div class="ten columns">
+                  <p id="appname">Online Campaign Finance</p>
+               </div>
+            </header>
+            <!--/header hd row-->
+         </div>
+         <!--/hd-wrap-->
+         <div id="bd-wrap" class="container">
+            <section id="bd" class="row">
+               <div id="content" class="twelve columns">
+                  <!-- InstanceBeginEditable name="content" -->
+                  <a class="right btn" href="/tncamp/public/search.htm">Home</a>
+                  <a href="/tncamp/search/pub/fullReportExcelExportPublic.htm?generateLists=true" class="right btn">Download Full Report</a>
+                  <a href="javascript:window.print()" class="right btn btn-black">Print Page</a>
+                  <h1>
+                     
+                     
+                        2022 
+                     
+                     2nd Quarter
+                     
+                     for BILL  LEE submitted on 07/11/2022
+                  </h1>
+                  <div class="frame">
+
+
+
+                     <h2 class="beginning-balance">Beginning Balance</h2>
+                     <div class="row control-group report-row-solid">
+                        <div class="six columns control-label text-left">
+                           <label class="no-margin">Beginning Balance</label>
+                        </div>
+                        <div class="six columns control inline-block text-right">
+                           $4,635,189.61
+                        </div>
+                     </div>
+                     <!-- close row -->
+
+
+
+                     
+                        <h2>Receipts</h2>
+                     
+                     
+                     
+                        <div class="row control-group report-row-dashed">
+                           <div class="five columns control-label text-left">
+                              Monetary Contributions, Unitemized<br />
+                           </div>
+                           <div class="seven columns control inline-block text-right text-right">
+                              $160.00
+                           </div>
+                        </div>
+                        <div class="row control-group report-row-dashed">
+                           <div class="five columns control-label text-left">
+                              Monetary Contributions, Itemized<br />
+                           </div>
+                           <div class="seven columns control inline-block text-right">
+                              
+                           </div>
+                        </div>
+                        
+                           
+<table class="responsive" id="contribution">
+<thead>
+<tr>
+<th class="sortable sorted order1">
+<a href="?d-5158846-s=0&amp;reportId=100136&amp;d-5158846-o=1&amp;d-5158846-p=1">Contributor</a></th>
+<th class="sortable">
+<a href="?d-5158846-s=1&amp;reportId=100136&amp;d-5158846-o=2&amp;d-5158846-p=1">C/P</a></th>
+<th class="sortable">
+<a href="?d-5158846-s=2&amp;reportId=100136&amp;d-5158846-o=2&amp;d-5158846-p=1">Rec'd For</a></th>
+<th class="sortable">
+<a href="?d-5158846-s=3&amp;reportId=100136&amp;d-5158846-o=2&amp;d-5158846-p=1">Date</a></th>
+<th class="text-right sortable">
+<a href="?d-5158846-s=4&amp;reportId=100136&amp;d-5158846-o=2&amp;d-5158846-p=1">Amount</a></th>
+<th class="text-right sortable">
+<a href="?d-5158846-s=5&amp;reportId=100136&amp;d-5158846-o=2&amp;d-5158846-p=1">Aggregate</a></th></tr></thead>
+<tbody>
+<tr class="odd">
+<td>
+                                 VANCE
+                                 
+                                 , TOBIAS
+                                 
+                                 <br />
+                                 200 DUNWOODY TRL
+                                 <br />
+                                 RIVERTON
+                                 ,
+                                 TN
+                                 37511
+                                 </td>
+<td>
+                                 P
+                              </td>
+<td>
+                                    Primary
+                                 </td>
+<td>
+                                 05/05/2022
+                              </td>
+<td class="text-right">
+                                 $12,700.00
+                              </td>
+<td class="text-right">
+                                    $12,700.00
+                                 </td></tr>
+<tr class="even">
+<td>
+                                 ABERNETHY
+                                 
+                                 , ALDEN
+                                 
+                                 <br />
+                                 478 NIGHTJAR TRL
+                                 <br />
+                                 RIVERTON
+                                 ,
+                                 TN
+                                 37057
+                                 <br />
+                                 FLORIST
+                                 <br />
+                                 ELMHURST GROUP
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                    Primary
+                                 </td>
+<td>
+                                 06/30/2022
+                              </td>
+<td class="text-right">
+                                 $500.00
+                              </td>
+<td class="text-right">
+                                    $500.00
+                                 </td></tr>
+<tr class="odd">
+<td>
+                                 THORNBURY
+                                 
+                                 , PERRIN
+                                 
+                                 <br />
+                                 538 IVYBRIDGE DR
+                                 <br />
+                                 NORTHFIELD
+                                 ,
+                                 TN
+                                 37607
+                                 <br />
+                                 HORTICULTURIST
+                                 <br />
+                                 BRIARWOOD&#039;S WORKS
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                    Primary
+                                 </td>
+<td>
+                                 04/29/2022
+                              </td>
+<td class="text-right">
+                                 $1,000.00
+                              </td>
+<td class="text-right">
+                                    $1,000.00
+                                 </td></tr>
+<tr class="even">
+<td>
+                                 ASHFORD
+                                 
+                                 , AUBREY
+                                 
+                                 <br />
+                                 950 KESTREL PL
+                                 <br />
+                                 GLENDOWER
+                                 ,
+                                 TN
+                                 37023
+                                 <br />
+                                 BOTANIST
+                                 <br />
+                                 ALDERGROVE PARTNERS
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                    Primary
+                                 </td>
+<td>
+                                 04/29/2022
+                              </td>
+<td class="text-right">
+                                 $1,000.00
+                              </td>
+<td class="text-right">
+                                    $1,000.00
+                                 </td></tr>
+<tr class="odd">
+<td>
+                                 UNDERHILL
+                                 
+                                 , AUBREY
+                                 
+                                 <br />
+                                 720 PLOVER CT
+                                 <br />
+                                 KESWICK
+                                 ,
+                                 TN
+                                 37063
+                                 <br />
+                                 GLAZIER
+                                 <br />
+                                 CEDARMONT LABS
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                    Primary
+                                 </td>
+<td>
+                                 05/17/2022
+                              </td>
+<td class="text-right">
+                                 $500.00
+                              </td>
+<td class="text-right">
+                                    $2,050.00
+                                 </td></tr>
+<tr class="even">
+<td>
+                                 BLACKWOOD
+                                 
+                                 , TOBIAS
+                                 
+                                 <br />
+                                 794 ELMHURST PL
+                                 <br />
+                                 PEMBROOK
+                                 ,
+                                 TN
+                                 37862
+                                 <br />
+                                 GLAZIER
+                                 <br />
+                                 ELMHURST GROUP
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                    Primary
+                                 </td>
+<td>
+                                 06/24/2022
+                              </td>
+<td class="text-right">
+                                 $104.10
+                              </td>
+<td class="text-right">
+                                    $104.10
+                                 </td></tr>
+<tr class="odd">
+<td>
+                                 JESSUP
+                                 
+                                 , FREYA
+                                 
+                                 <br />
+                                 389 HAWTHORN PL
+                                 <br />
+                                 RIVERTON
+                                 ,
+                                 TN
+                                 37011
+                                 <br />
+                                 CARTOGRAPHER
+                                 <br />
+                                 BRIARWOOD&#039;S WORKS
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                    Primary
+                                 </td>
+<td>
+                                 05/13/2022
+                              </td>
+<td class="text-right">
+                                 $250.00
+                              </td>
+<td class="text-right">
+                                    $250.00
+                                 </td></tr>
+<tr class="even">
+<td>
+                                 MARCHETTI
+                                 
+                                 , ISOLDE
+                                 
+                                 <br />
+                                 979 CEDARMONT PL
+                                 <br />
+                                 FAIRMONT
+                                 ,
+                                 TN
+                                 37895
+                                 <br />
+                                 ARCHITECT
+                                 <br />
+                                 GRANARY WORKS
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                    General
+                                 </td>
+<td>
+                                 05/13/2022
+                              </td>
+<td class="text-right">
+                                 $700.00
+                              </td>
+<td class="text-right">
+                                    $700.00
+                                 </td></tr>
+<tr class="odd">
+<td>
+                                 MARCHETTI
+                                 
+                                 , ISOLDE
+                                 
+                                 <br />
+                                 979 CEDARMONT PL
+                                 <br />
+                                 FAIRMONT
+                                 ,
+                                 TN
+                                 37895
+                                 <br />
+                                 ARCHITECT
+                                 <br />
+                                 GRANARY WORKS
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                    Primary
+                                 </td>
+<td>
+                                 05/13/2022
+                              </td>
+<td class="text-right">
+                                 $4,300.00
+                              </td>
+<td class="text-right">
+                                    $4,300.00
+                                 </td></tr>
+<tr class="even">
+<td>
+                                 FEDEX CORPORATION PAC
+                                 <br />
+                                 954 ORCHARD LN
+                                 <br />
+                                 MARLOWE
+                                 ,
+                                 TN
+                                 37693
+                                 </td>
+<td>
+                                 P
+                              </td>
+<td>
+                                    Primary
+                                 </td>
+<td>
+                                 06/17/2022
+                              </td>
+<td class="text-right">
+                                 $2,500.00
+                              </td>
+<td class="text-right">
+                                    $2,500.00
+                                 </td></tr>
+<tr class="odd">
+<td>
+                                 QUARLES
+                                 
+                                 , DELIA
+                                 
+                                 <br />
+                                 204 FOXGLOVE PKWY
+                                 <br />
+                                 MARLOWE
+                                 ,
+                                 TN
+                                 37586
+                                 <br />
+                                 ARCHITECT
+                                 <br />
+                                 IVYBRIDGE LLC
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                    Primary
+                                 </td>
+<td>
+                                 06/23/2022
+                              </td>
+<td class="text-right">
+                                 $4,300.00
+                              </td>
+<td class="text-right">
+                                    $4,300.00
+                                 </td></tr>
+<tr class="even">
+<td>
+                                 NORWOOD
+                                 
+                                 , KEZIA
+                                 
+                                 <br />
+                                 842 HAWTHORN DR
+                                 <br />
+                                 THORNDALE
+                                 ,
+                                 TN
+                                 37397
+                                 <br />
+                                 CARTOGRAPHER
+                                 <br />
+                                 IVYBRIDGE LLC
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                    Primary
+                                 </td>
+<td>
+                                 06/28/2022
+                              </td>
+<td class="text-right">
+                                 $104.10
+                              </td>
+<td class="text-right">
+                                    $104.10
+                                 </td></tr>
+<tr class="odd">
+<td>
+                                 STOWE
+                                 
+                                 , KEZIA
+                                 
+                                 <br />
+                                 117 DUNWOODY RD
+                                 <br />
+                                 PEMBROOK
+                                 ,
+                                 TN
+                                 37677
+                                 <br />
+                                 DRAFTER
+                                 <br />
+                                 ELMHURST GROUP
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                    Primary
+                                 </td>
+<td>
+                                 04/29/2022
+                              </td>
+<td class="text-right">
+                                 $1,000.00
+                              </td>
+<td class="text-right">
+                                    $3,500.00
+                                 </td></tr>
+<tr class="even">
+<td>
+                                 OAKHAVEN
+                                 
+                                 , BRYNN
+                                 
+                                 <br />
+                                 667 PLOVER CT
+                                 <br />
+                                 RIVERTON
+                                 ,
+                                 TN
+                                 37060
+                                 <br />
+                                 JOINER
+                                 <br />
+                                 BRIARWOOD&#039;S WORKS
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                    Primary
+                                 </td>
+<td>
+                                 04/29/2022
+                              </td>
+<td class="text-right">
+                                 $3,000.00
+                              </td>
+<td class="text-right">
+                                    $3,000.00
+                                 </td></tr>
+<tr class="odd">
+<td>
+                                 SAVE AMERICA
+                                 <br />
+                                 293 FOXGLOVE PL
+                                 <br />
+                                 MARLOWE
+                                 ,
+                                 TN
+                                 37614
+                                 </td>
+<td>
+                                 P
+                              </td>
+<td>
+                                    Primary
+                                 </td>
+<td>
+                                 05/02/2022
+                              </td>
+<td class="text-right">
+                                 $5,000.00
+                              </td>
+<td class="text-right">
+                                    $5,000.00
+                                 </td></tr>
+<tr class="even">
+<td>
+                                 KIRKALDY
+                                 
+                                 , ZEPHYR
+                                 
+                                 <br />
+                                 990 GRANARY WAY
+                                 <br />
+                                 KESWICK
+                                 ,
+                                 TN
+                                 37541
+                                 <br />
+                                 DRAFTER
+                                 <br />
+                                 ELMHURST GROUP
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                    Primary
+                                 </td>
+<td>
+                                 04/29/2022
+                              </td>
+<td class="text-right">
+                                 $2,000.00
+                              </td>
+<td class="text-right">
+                                    $2,000.00
+                                 </td></tr>
+<tr class="odd">
+<td>
+                                 GRANTHAM
+                                 
+                                 , PERRIN
+                                 
+                                 <br />
+                                 961 SORREL PKWY
+                                 <br />
+                                 KESWICK
+                                 ,
+                                 TN
+                                 37455
+                                 <br />
+                                 JOINER
+                                 <br />
+                                 DUNMORE HOLDINGS
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                    Primary
+                                 </td>
+<td>
+                                 04/29/2022
+                              </td>
+<td class="text-right">
+                                 $500.00
+                              </td>
+<td class="text-right">
+                                    $1,500.00
+                                 </td></tr>
+<tr class="even">
+<td>
+                                 NORWOOD
+                                 
+                                 , URSULA
+                                 
+                                 <br />
+                                 439 MULBERRY LN
+                                 <br />
+                                 PEMBROOK
+                                 ,
+                                 TN
+                                 37752
+                                 <br />
+                                 HORTICULTURIST
+                                 <br />
+                                 IVYBRIDGE LLC
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                    Primary
+                                 </td>
+<td>
+                                 06/01/2022
+                              </td>
+<td class="text-right">
+                                 $500.00
+                              </td>
+<td class="text-right">
+                                    $500.00
+                                 </td></tr>
+<tr class="odd">
+<td>
+                                 UNDERHILL
+                                 
+                                 , JASPER
+                                 
+                                 <br />
+                                 135 QUARRY BLVD
+                                 <br />
+                                 MARLOWE
+                                 ,
+                                 TN
+                                 37022
+                                 <br />
+                                 ARCHITECT
+                                 <br />
+                                 ALDERGROVE PARTNERS
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                    Primary
+                                 </td>
+<td>
+                                 06/30/2022
+                              </td>
+<td class="text-right">
+                                 $500.00
+                              </td>
+<td class="text-right">
+                                    $500.00
+                                 </td></tr>
+<tr class="even">
+<td>
+                                 STOWE
+                                 
+                                 , DELIA
+                                 
+                                 <br />
+                                 971 SORREL RD
+                                 <br />
+                                 RIVERTON
+                                 ,
+                                 TN
+                                 37855
+                                 <br />
+                                 ILLUSTRATOR
+                                 <br />
+                                 DUNMORE HOLDINGS
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                    Primary
+                                 </td>
+<td>
+                                 06/28/2022
+                              </td>
+<td class="text-right">
+                                 $2,000.00
+                              </td>
+<td class="text-right">
+                                    $2,000.00
+                                 </td></tr>
+<tr class="odd">
+<td>
+                                 CRESSWELL
+                                 
+                                 , NOELLE
+                                 
+                                 <br />
+                                 548 LARKSPUR BLVD
+                                 <br />
+                                 KESWICK
+                                 ,
+                                 TN
+                                 37446
+                                 <br />
+                                 JOINER
+                                 <br />
+                                 GRANARY WORKS
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                    Primary
+                                 </td>
+<td>
+                                 06/27/2022
+                              </td>
+<td class="text-right">
+                                 $104.10
+                              </td>
+<td class="text-right">
+                                    $104.10
+                                 </td></tr></tbody></table>
+                        
+                        <div class="row control-group report-row-solid">
+                           <div class="five columns control-label text-left">
+                              TOTAL CONTRIBUTIONS<br />
+                              <small>(other than adjustments, loans, and interest)</small>
+                           </div>
+                           <div class="seven columns control inline-block text-right">
+                              <strong>
+                                 $42,722.30
+                              </strong>
+                           </div>
+                        </div>
+                        <br />
+                        <div class="row control-group report-row-dashed">
+                           
+                           <div class="five columns control-label text-left">
+                              Contribution Adjustments
+                           </div>
+                           <div class="seven columns control inline-block text-right">
+                              
+                                 $0.00
+                              
+                           </div>
+                        </div>
+                     
+                     <div class="row control-group report-row-dashed">
+                        <div class="five columns control-label text-left">
+                           Loans Received
+                        </div>
+                        <div class="seven columns control inline-block text-right">
+                           
+                              $0.00
+                           
+                        </div>
+                     </div>
+                      
+
+                     
+                     
+                        <div class="row control-group report-row-dashed">
+                           <div class="five columns control-label text-left">
+                              Interest Received This Reporting Period
+                           </div>
+                           <div class="seven columns control inline-block text-right">
+                              $0.00
+                           </div>
+                        </div>
+                     
+                     
+                        <div class="row control-group report-row-solid">
+                           <div class="five columns control-label text-left">
+                              TOTAL RECEIPTS
+                           </div>
+                           <div class="seven columns control inline-block text-right">
+                              <strong>
+                                 $42,722.30
+                              </strong>
+                           </div>
+                        </div>
+                     
+                     
+                        
+
+
+                        <h2>Disbursements</h2>
+                        <div class="row control-group report-row-dashed">
+                           <div class="five columns control-label text-left">
+                              Expenditures, Unitemized
+                           </div>
+                           <div class="seven columns control inline-block text-right">
+                              
+                           </div>
+                        </div>
+                        
+                           
+<table class="responsive" id="unitemized">
+<thead>
+<tr>
+<th class="sortable sorted order1">
+<a href="?d-2771438-s=0&amp;d-2771438-p=1&amp;reportId=100136&amp;d-2771438-o=1">Purpose</a></th>
+<th class="text-right sortable">
+<a href="?d-2771438-s=1&amp;d-2771438-p=1&amp;reportId=100136&amp;d-2771438-o=2">Amount</a></th></tr></thead>
+<tbody>
+<tr class="odd">
+<td>
+                                 FILING FEE
+                              </td>
+<td class="text-right">
+                                 $20.95
+                              </td></tr>
+<tr class="even">
+<td>
+                                 MEALS
+                              </td>
+<td class="text-right">
+                                 $862.65
+                              </td></tr>
+<tr class="odd">
+<td>
+                                 OFFICE SUPPLIES
+                              </td>
+<td class="text-right">
+                                 $33.05
+                              </td></tr>
+<tr class="even">
+<td>
+                                 PARKING
+                              </td>
+<td class="text-right">
+                                 $16.07
+                              </td></tr>
+<tr class="odd">
+<td>
+                                 SHIPPING
+                              </td>
+<td class="text-right">
+                                 $42.78
+                              </td></tr>
+<tr class="even">
+<td>
+                                 TRAVEL
+                              </td>
+<td class="text-right">
+                                 $177.63
+                              </td></tr></tbody></table>
+                        
+                        <div class="row control-group report-row-dashed">
+                           <div class="five columns control-label text-left">
+                              Expenditures, Itemized
+                           </div>
+                           <div class="seven columns control inline-block text-right">
+                              
+                           </div>
+                        </div>
+                        
+                           
+<table class="responsive" id="expenditure">
+<thead>
+<tr>
+<th class="sortable sorted order1">
+<a href="?d-7583981-o=1&amp;d-7583981-p=1&amp;reportId=100136&amp;d-7583981-s=0">Vendor</a></th>
+<th class="sortable">
+<a href="?d-7583981-o=2&amp;d-7583981-p=1&amp;reportId=100136&amp;d-7583981-s=1">C/P</a></th>
+<th class="sortable">
+<a href="?d-7583981-o=2&amp;d-7583981-p=1&amp;reportId=100136&amp;d-7583981-s=2">Purpose</a></th>
+<th class="sortable">
+<a href="?d-7583981-o=2&amp;d-7583981-p=1&amp;reportId=100136&amp;d-7583981-s=3">Date</a></th>
+<th class="text-right sortable">
+<a href="?d-7583981-o=2&amp;d-7583981-p=1&amp;reportId=100136&amp;d-7583981-s=4">Amount</a></th></tr></thead>
+<tbody>
+<tr class="odd">
+<td>
+                                 AMERICAN AIRLINES
+                                 <br />
+                                 313 ELMHURST WAY
+                                 <br />
+                                 KESWICK
+                                 ,
+                                 TN
+                                 37289
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 TRAVEL
+                              </td>
+<td>
+                                 06/09/2022
+                              </td>
+<td class="text-right">
+                                 $285.76
+                              </td></tr>
+<tr class="even">
+<td>
+                                 AMERICAN AIRLINES
+                                 <br />
+                                 313 ELMHURST WAY
+                                 <br />
+                                 KESWICK
+                                 ,
+                                 TN
+                                 37289
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 TRAVEL
+                              </td>
+<td>
+                                 06/08/2022
+                              </td>
+<td class="text-right">
+                                 $284.08
+                              </td></tr>
+<tr class="odd">
+<td>
+                                 AMERICAN AIRLINES
+                                 <br />
+                                 313 ELMHURST WAY
+                                 <br />
+                                 KESWICK
+                                 ,
+                                 TN
+                                 37289
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 TRAVEL
+                              </td>
+<td>
+                                 04/19/2022
+                              </td>
+<td class="text-right">
+                                 $2,072.21
+                              </td></tr>
+<tr class="even">
+<td>
+                                 AMERICAN AIRLINES
+                                 <br />
+                                 313 ELMHURST WAY
+                                 <br />
+                                 KESWICK
+                                 ,
+                                 TN
+                                 37289
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 TRAVEL
+                              </td>
+<td>
+                                 04/01/2022
+                              </td>
+<td class="text-right">
+                                 $198.10
+                              </td></tr>
+<tr class="odd">
+<td>
+                                 ANEDOT INC.
+                                 <br />
+                                 300 FOXGLOVE TRL
+                                 <br />
+                                 STANWICK
+                                 ,
+                                 TN
+                                 37711
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 CREDIT CARD FEES
+                              </td>
+<td>
+                                 05/04/2022
+                              </td>
+<td class="text-right">
+                                 $1.13
+                              </td></tr>
+<tr class="even">
+<td>
+                                 ANEDOT INC.
+                                 <br />
+                                 300 FOXGLOVE TRL
+                                 <br />
+                                 STANWICK
+                                 ,
+                                 TN
+                                 37711
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 CREDIT CARD FEES
+                              </td>
+<td>
+                                 06/30/2022
+                              </td>
+<td class="text-right">
+                                 $16.80
+                              </td></tr>
+<tr class="odd">
+<td>
+                                 ANEDOT INC.
+                                 <br />
+                                 300 FOXGLOVE TRL
+                                 <br />
+                                 STANWICK
+                                 ,
+                                 TN
+                                 37711
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 CREDIT CARD FEES
+                              </td>
+<td>
+                                 06/29/2022
+                              </td>
+<td class="text-right">
+                                 $1.13
+                              </td></tr>
+<tr class="even">
+<td>
+                                 ANEDOT INC.
+                                 <br />
+                                 300 FOXGLOVE TRL
+                                 <br />
+                                 STANWICK
+                                 ,
+                                 TN
+                                 37711
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 CREDIT CARD FEES
+                              </td>
+<td>
+                                 06/28/2022
+                              </td>
+<td class="text-right">
+                                 $66.30
+                              </td></tr>
+<tr class="odd">
+<td>
+                                 ANEDOT INC.
+                                 <br />
+                                 300 FOXGLOVE TRL
+                                 <br />
+                                 STANWICK
+                                 ,
+                                 TN
+                                 37711
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 CREDIT CARD FEES
+                              </td>
+<td>
+                                 06/01/2022
+                              </td>
+<td class="text-right">
+                                 $16.80
+                              </td></tr>
+<tr class="even">
+<td>
+                                 ANEDOT INC.
+                                 <br />
+                                 300 FOXGLOVE TRL
+                                 <br />
+                                 STANWICK
+                                 ,
+                                 TN
+                                 37711
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 CREDIT CARD FEES
+                              </td>
+<td>
+                                 05/25/2022
+                              </td>
+<td class="text-right">
+                                 $0.04
+                              </td></tr>
+<tr class="odd">
+<td>
+                                 ANEDOT INC.
+                                 <br />
+                                 300 FOXGLOVE TRL
+                                 <br />
+                                 STANWICK
+                                 ,
+                                 TN
+                                 37711
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 CREDIT CARD FEES
+                              </td>
+<td>
+                                 05/10/2022
+                              </td>
+<td class="text-right">
+                                 $1.13
+                              </td></tr>
+<tr class="even">
+<td>
+                                 ANEDOT INC.
+                                 <br />
+                                 300 FOXGLOVE TRL
+                                 <br />
+                                 STANWICK
+                                 ,
+                                 TN
+                                 37711
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 CREDIT CARD FEES
+                              </td>
+<td>
+                                 05/13/2022
+                              </td>
+<td class="text-right">
+                                 $173.85
+                              </td></tr>
+<tr class="odd">
+<td>
+                                 ANEDOT INC.
+                                 <br />
+                                 300 FOXGLOVE TRL
+                                 <br />
+                                 STANWICK
+                                 ,
+                                 TN
+                                 37711
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 CREDIT CARD FEES
+                              </td>
+<td>
+                                 05/17/2022
+                              </td>
+<td class="text-right">
+                                 $16.80
+                              </td></tr>
+<tr class="even">
+<td>
+                                 ATLANTIC WORLDWIDE GROUND TRANSPO
+                                 <br />
+                                 173 SORREL PL
+                                 <br />
+                                 GLENDOWER
+                                 ,
+                                 TN
+                                 37235
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 TRAVEL
+                              </td>
+<td>
+                                 04/19/2022
+                              </td>
+<td class="text-right">
+                                 $150.08
+                              </td></tr>
+<tr class="odd">
+<td>
+                                 ATMOS ENERGY
+                                 <br />
+                                 349 CEDARMONT AVE
+                                 <br />
+                                 FAIRMONT
+                                 ,
+                                 TN
+                                 37076
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 UTILITIES
+                              </td>
+<td>
+                                 06/16/2022
+                              </td>
+<td class="text-right">
+                                 $44.94
+                              </td></tr>
+<tr class="even">
+<td>
+                                 ATMOS ENERGY
+                                 <br />
+                                 349 CEDARMONT AVE
+                                 <br />
+                                 FAIRMONT
+                                 ,
+                                 TN
+                                 37076
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 UTILITIES
+                              </td>
+<td>
+                                 05/09/2022
+                              </td>
+<td class="text-right">
+                                 $78.70
+                              </td></tr>
+<tr class="odd">
+<td>
+                                 ATMOS ENERGY
+                                 <br />
+                                 349 CEDARMONT AVE
+                                 <br />
+                                 FAIRMONT
+                                 ,
+                                 TN
+                                 37076
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 UTILITIES
+                              </td>
+<td>
+                                 04/19/2022
+                              </td>
+<td class="text-right">
+                                 $102.23
+                              </td></tr>
+<tr class="even">
+<td>
+                                 REDFERN
+                                 
+                                 , AUBREY
+                                 
+                                 <br />
+                                 184 LARKSPUR WAY
+                                 <br />
+                                 MARLOWE
+                                 ,
+                                 TN
+                                 37812
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 TRAVEL
+                              </td>
+<td>
+                                 04/19/2022
+                              </td>
+<td class="text-right">
+                                 $516.72
+                              </td></tr>
+<tr class="odd">
+<td>
+                                 HOLLISTER
+                                 
+                                 , BRYNN
+                                 
+                                 <br />
+                                 632 KESTREL LN
+                                 <br />
+                                 NORTHFIELD
+                                 ,
+                                 TN
+                                 37499
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 CAMPAIGN WORKERS
+                              </td>
+<td>
+                                 06/30/2022
+                              </td>
+<td class="text-right">
+                                 $1,716.21
+                              </td></tr>
+<tr class="even">
+<td>
+                                 HOLLISTER
+                                 
+                                 , BRYNN
+                                 
+                                 <br />
+                                 632 KESTREL LN
+                                 <br />
+                                 NORTHFIELD
+                                 ,
+                                 TN
+                                 37499
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 CAMPAIGN WORKERS
+                              </td>
+<td>
+                                 06/15/2022
+                              </td>
+<td class="text-right">
+                                 $1,716.21
+                              </td></tr>
+<tr class="odd">
+<td>
+                                 COMCAST
+                                 <br />
+                                 331 ORCHARD BLVD
+                                 <br />
+                                 GLENDOWER
+                                 ,
+                                 TN
+                                 37679
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 OFFICE CABLE
+                              </td>
+<td>
+                                 06/15/2022
+                              </td>
+<td class="text-right">
+                                 $835.10
+                              </td></tr>
+<tr class="even">
+<td>
+                                 COMCAST
+                                 <br />
+                                 331 ORCHARD BLVD
+                                 <br />
+                                 GLENDOWER
+                                 ,
+                                 TN
+                                 37679
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 CABLE / INTERNET
+                              </td>
+<td>
+                                 04/01/2022
+                              </td>
+<td class="text-right">
+                                 $406.05
+                              </td></tr>
+<tr class="odd">
+<td>
+                                 CONRAD WASHINGTON DC
+                                 <br />
+                                 327 ROSEMARY DR
+                                 <br />
+                                 PEMBROOK
+                                 ,
+                                 TN
+                                 37430
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 TRAVEL
+                              </td>
+<td>
+                                 04/01/2022
+                              </td>
+<td class="text-right">
+                                 $134.80
+                              </td></tr>
+<tr class="even">
+<td>
+                                 CREATESEND.COM
+                                 <br />
+                                 329 QUARRY TRL
+                                 <br />
+                                 STANWICK
+                                 ,
+                                 TN
+                                 37497
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 INTERNET/COMMUNICATIONS
+                              </td>
+<td>
+                                 06/22/2022
+                              </td>
+<td class="text-right">
+                                 $705.29
+                              </td></tr>
+<tr class="odd">
+<td>
+                                 CREATESEND.COM
+                                 <br />
+                                 329 QUARRY TRL
+                                 <br />
+                                 STANWICK
+                                 ,
+                                 TN
+                                 37497
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 INTERNET/COMMUNICATIONS
+                              </td>
+<td>
+                                 05/20/2022
+                              </td>
+<td class="text-right">
+                                 $705.29
+                              </td></tr>
+<tr class="even">
+<td>
+                                 CREATESEND.COM
+                                 <br />
+                                 329 QUARRY TRL
+                                 <br />
+                                 STANWICK
+                                 ,
+                                 TN
+                                 37497
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 INTERNET/COMMUNICATIONS
+                              </td>
+<td>
+                                 04/22/2022
+                              </td>
+<td class="text-right">
+                                 $705.29
+                              </td></tr>
+<tr class="odd">
+<td>
+                                 CALDWELL
+                                 
+                                 , VESPER
+                                 
+                                 <br />
+                                 969 BIRCHFIELD BLVD
+                                 <br />
+                                 STANWICK
+                                 ,
+                                 TN
+                                 37518
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 CAMPAIGN WORKERS
+                              </td>
+<td>
+                                 06/30/2022
+                              </td>
+<td class="text-right">
+                                 $876.81
+                              </td></tr>
+<tr class="even">
+<td>
+                                 QUARLES
+                                 
+                                 , EAMON
+                                 
+                                 <br />
+                                 548 SORREL RD
+                                 <br />
+                                 FAIRMONT
+                                 ,
+                                 TN
+                                 37342
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 CAMPAIGN WORKERS
+                              </td>
+<td>
+                                 06/30/2022
+                              </td>
+<td class="text-right">
+                                 $1,479.44
+                              </td></tr>
+<tr class="odd">
+<td>
+                                 QUARLES
+                                 
+                                 , EAMON
+                                 
+                                 <br />
+                                 548 SORREL RD
+                                 <br />
+                                 FAIRMONT
+                                 ,
+                                 TN
+                                 37342
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 CAMPAIGN WORKERS
+                              </td>
+<td>
+                                 06/15/2022
+                              </td>
+<td class="text-right">
+                                 $1,479.43
+                              </td></tr>
+<tr class="even">
+<td>
+                                 ETCH RESTAURANT
+                                 <br />
+                                 115 CEDARMONT PKWY
+                                 <br />
+                                 GLENDOWER
+                                 ,
+                                 TN
+                                 37104
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 MEALS
+                              </td>
+<td>
+                                 04/19/2022
+                              </td>
+<td class="text-right">
+                                 $845.31
+                              </td></tr>
+<tr class="odd">
+<td>
+                                 FOUR POINTS BY SHERATON
+                                 <br />
+                                 857 ALDER DR
+                                 <br />
+                                 THORNDALE
+                                 ,
+                                 TN
+                                 37261
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 TRAVEL
+                              </td>
+<td>
+                                 06/29/2022
+                              </td>
+<td class="text-right">
+                                 $294.90
+                              </td></tr>
+<tr class="even">
+<td>
+                                 GRAHAM ADVISORS LLC
+                                 <br />
+                                 122 CEDARMONT CT
+                                 <br />
+                                 NORTHFIELD
+                                 ,
+                                 TN
+                                 37974
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 FUNDRAISING FEES
+                              </td>
+<td>
+                                 04/01/2022
+                              </td>
+<td class="text-right">
+                                 $344.00
+                              </td></tr>
+<tr class="odd">
+<td>
+                                 MARCHETTI
+                                 
+                                 , VESPER
+                                 
+                                 <br />
+                                 468 FOXGLOVE LN
+                                 <br />
+                                 GLENDOWER
+                                 ,
+                                 TN
+                                 37110
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 CAMPAIGN WORKERS
+                              </td>
+<td>
+                                 06/30/2022
+                              </td>
+<td class="text-right">
+                                 $1,680.31
+                              </td></tr>
+<tr class="even">
+<td>
+                                 MARCHETTI
+                                 
+                                 , VESPER
+                                 
+                                 <br />
+                                 468 FOXGLOVE LN
+                                 <br />
+                                 GLENDOWER
+                                 ,
+                                 TN
+                                 37110
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 CAMPAIGN WORKERS
+                              </td>
+<td>
+                                 06/15/2022
+                              </td>
+<td class="text-right">
+                                 $1,680.31
+                              </td></tr>
+<tr class="odd">
+<td>
+                                 BRANNOCK
+                                 
+                                 , KEZIA
+                                 
+                                 <br />
+                                 880 CEDARMONT PKWY
+                                 <br />
+                                 STANWICK
+                                 ,
+                                 TN
+                                 37365
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 CAMPAIGN WORKERS
+                              </td>
+<td>
+                                 06/30/2022
+                              </td>
+<td class="text-right">
+                                 $897.65
+                              </td></tr>
+<tr class="even">
+<td>
+                                 BRANNOCK
+                                 
+                                 , KEZIA
+                                 
+                                 <br />
+                                 880 CEDARMONT PKWY
+                                 <br />
+                                 STANWICK
+                                 ,
+                                 TN
+                                 37365
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 MILEAGE
+                              </td>
+<td>
+                                 06/29/2022
+                              </td>
+<td class="text-right">
+                                 $464.87
+                              </td></tr>
+<tr class="odd">
+<td>
+                                 BRANNOCK
+                                 
+                                 , KEZIA
+                                 
+                                 <br />
+                                 880 CEDARMONT PKWY
+                                 <br />
+                                 STANWICK
+                                 ,
+                                 TN
+                                 37365
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 MILEAGE
+                              </td>
+<td>
+                                 06/16/2022
+                              </td>
+<td class="text-right">
+                                 $256.94
+                              </td></tr>
+<tr class="even">
+<td>
+                                 BRANNOCK
+                                 
+                                 , KEZIA
+                                 
+                                 <br />
+                                 880 CEDARMONT PKWY
+                                 <br />
+                                 STANWICK
+                                 ,
+                                 TN
+                                 37365
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 CAMPAIGN WORKERS
+                              </td>
+<td>
+                                 06/15/2022
+                              </td>
+<td class="text-right">
+                                 $897.65
+                              </td></tr>
+<tr class="odd">
+<td>
+                                 BRANNOCK
+                                 
+                                 , KEZIA
+                                 
+                                 <br />
+                                 880 CEDARMONT PKWY
+                                 <br />
+                                 STANWICK
+                                 ,
+                                 TN
+                                 37365
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 CAMPAIGN WORKERS
+                              </td>
+<td>
+                                 05/31/2022
+                              </td>
+<td class="text-right">
+                                 $897.65
+                              </td></tr>
+<tr class="even">
+<td>
+                                 HUB INTERNATIONAL
+                                 <br />
+                                 511 GRANARY RD
+                                 <br />
+                                 STANWICK
+                                 ,
+                                 TN
+                                 37299
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 LIABILITY INSURANCE
+                              </td>
+<td>
+                                 05/10/2022
+                              </td>
+<td class="text-right">
+                                 $8,679.00
+                              </td></tr>
+<tr class="odd">
+<td>
+                                 HUB INTERNATIONAL
+                                 <br />
+                                 511 GRANARY RD
+                                 <br />
+                                 STANWICK
+                                 ,
+                                 TN
+                                 37299
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 LIABILITY INSURANCE
+                              </td>
+<td>
+                                 05/09/2022
+                              </td>
+<td class="text-right">
+                                 $8,679.00
+                              </td></tr>
+<tr class="even">
+<td>
+                                 GRANTHAM
+                                 
+                                 , DORIAN
+                                 
+                                 <br />
+                                 331 QUARRY CT
+                                 <br />
+                                 THORNDALE
+                                 ,
+                                 TN
+                                 37592
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 VIDEO / PHOTOGRAPHY
+                              </td>
+<td>
+                                 04/19/2022
+                              </td>
+<td class="text-right">
+                                 $2,500.00
+                              </td></tr>
+<tr class="odd">
+<td>
+                                 IDONATE PRO
+                                 <br />
+                                 897 KESTREL LN
+                                 <br />
+                                 FAIRMONT
+                                 ,
+                                 TN
+                                 37604
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 DIGITAL DATA SOFTWARE
+                              </td>
+<td>
+                                 06/15/2022
+                              </td>
+<td class="text-right">
+                                 $700.00
+                              </td></tr>
+<tr class="even">
+<td>
+                                 IDONATE PRO
+                                 <br />
+                                 897 KESTREL LN
+                                 <br />
+                                 FAIRMONT
+                                 ,
+                                 TN
+                                 37604
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 DIGITAL DATA SOFTWARE
+                              </td>
+<td>
+                                 04/01/2022
+                              </td>
+<td class="text-right">
+                                 $350.00
+                              </td></tr>
+<tr class="odd">
+<td>
+                                 IMGE LLC
+                                 <br />
+                                 852 ROSEMARY LN
+                                 <br />
+                                 NORTHFIELD
+                                 ,
+                                 TN
+                                 37155
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 WEBSITE DEVELOPMENT
+                              </td>
+<td>
+                                 06/16/2022
+                              </td>
+<td class="text-right">
+                                 $15,000.00
+                              </td></tr>
+<tr class="even">
+<td>
+                                 IMGE LLC
+                                 <br />
+                                 852 ROSEMARY LN
+                                 <br />
+                                 NORTHFIELD
+                                 ,
+                                 TN
+                                 37155
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 COMMUNICATIONS/ADMIN
+                              </td>
+<td>
+                                 06/16/2022
+                              </td>
+<td class="text-right">
+                                 $5,375.00
+                              </td></tr>
+<tr class="odd">
+<td>
+                                 IMGE LLC
+                                 <br />
+                                 852 ROSEMARY LN
+                                 <br />
+                                 NORTHFIELD
+                                 ,
+                                 TN
+                                 37155
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 COMMUNICATIONS/ADMIN
+                              </td>
+<td>
+                                 05/06/2022
+                              </td>
+<td class="text-right">
+                                 $5,375.00
+                              </td></tr>
+<tr class="even">
+<td>
+                                 IMGE LLC
+                                 <br />
+                                 852 ROSEMARY LN
+                                 <br />
+                                 NORTHFIELD
+                                 ,
+                                 TN
+                                 37155
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 COMMUNICATIONS/ADMIN
+                              </td>
+<td>
+                                 04/19/2022
+                              </td>
+<td class="text-right">
+                                 $10,375.00
+                              </td></tr>
+<tr class="odd">
+<td>
+                                 INTERNAL REVENUE SERVICE
+                                 <br />
+                                 689 ALDER BLVD
+                                 <br />
+                                 STANWICK
+                                 ,
+                                 TN
+                                 37020
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 EMPLOYEE PAYROLL TAX
+                              </td>
+<td>
+                                 06/24/2022
+                              </td>
+<td class="text-right">
+                                 $731.23
+                              </td></tr>
+<tr class="even">
+<td>
+                                 JW MARRIOTT NASHVILLE
+                                 <br />
+                                 523 KESTREL CT
+                                 <br />
+                                 PEMBROOK
+                                 ,
+                                 TN
+                                 37061
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 TRAVEL
+                              </td>
+<td>
+                                 06/16/2022
+                              </td>
+<td class="text-right">
+                                 $441.47
+                              </td></tr>
+<tr class="odd">
+<td>
+                                 KIMPTON AERTSON
+                                 <br />
+                                 652 PLOVER PL
+                                 <br />
+                                 NORTHFIELD
+                                 ,
+                                 TN
+                                 37205
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 TRAVEL
+                              </td>
+<td>
+                                 04/19/2022
+                              </td>
+<td class="text-right">
+                                 $253.00
+                              </td></tr>
+<tr class="even">
+<td>
+                                 LEVERAGE PUBLIC STRATEGIES LLC
+                                 <br />
+                                 159 DUNWOODY TRL
+                                 <br />
+                                 MARLOWE
+                                 ,
+                                 TN
+                                 37645
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 POLITICAL/ADMIN CONSULTING
+                              </td>
+<td>
+                                 06/16/2022
+                              </td>
+<td class="text-right">
+                                 $10,000.00
+                              </td></tr>
+<tr class="odd">
+<td>
+                                 LEVERAGE PUBLIC STRATEGIES LLC
+                                 <br />
+                                 159 DUNWOODY TRL
+                                 <br />
+                                 MARLOWE
+                                 ,
+                                 TN
+                                 37645
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 POLITICAL/ADMIN CONSULTING
+                              </td>
+<td>
+                                 05/09/2022
+                              </td>
+<td class="text-right">
+                                 $10,000.00
+                              </td></tr>
+<tr class="even">
+<td>
+                                 LEVERAGE PUBLIC STRATEGIES LLC
+                                 <br />
+                                 159 DUNWOODY TRL
+                                 <br />
+                                 MARLOWE
+                                 ,
+                                 TN
+                                 37645
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 POLITICAL/ADMIN CONSULTING
+                              </td>
+<td>
+                                 04/19/2022
+                              </td>
+<td class="text-right">
+                                 $10,000.00
+                              </td></tr>
+<tr class="odd">
+<td>
+                                 LEVERAGE PUBLIC STRATEGIES LLC
+                                 <br />
+                                 159 DUNWOODY TRL
+                                 <br />
+                                 MARLOWE
+                                 ,
+                                 TN
+                                 37645
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 POLITICAL/ADMIN CONSULTING
+                              </td>
+<td>
+                                 04/01/2022
+                              </td>
+<td class="text-right">
+                                 $10,000.00
+                              </td></tr>
+<tr class="even">
+<td>
+                                 MAILCHIMP
+                                 <br />
+                                 826 SORREL DR
+                                 <br />
+                                 GLENDOWER
+                                 ,
+                                 TN
+                                 37312
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 EMAIL COMMUNICATIONS
+                              </td>
+<td>
+                                 06/16/2022
+                              </td>
+<td class="text-right">
+                                 $112.00
+                              </td></tr>
+<tr class="odd">
+<td>
+                                 MAILCHIMP
+                                 <br />
+                                 826 SORREL DR
+                                 <br />
+                                 GLENDOWER
+                                 ,
+                                 TN
+                                 37312
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 EMAIL COMMUNICATIONS
+                              </td>
+<td>
+                                 04/19/2022
+                              </td>
+<td class="text-right">
+                                 $56.00
+                              </td></tr>
+<tr class="even">
+<td>
+                                 MAILCHIMP
+                                 <br />
+                                 826 SORREL DR
+                                 <br />
+                                 GLENDOWER
+                                 ,
+                                 TN
+                                 37312
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 EMAIL COMMUNICATIONS
+                              </td>
+<td>
+                                 04/01/2022
+                              </td>
+<td class="text-right">
+                                 $106.97
+                              </td></tr>
+<tr class="odd">
+<td>
+                                 MARRIOTT
+                                 <br />
+                                 292 TAMARACK PKWY
+                                 <br />
+                                 RIVERTON
+                                 ,
+                                 TN
+                                 37420
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 TRAVEL
+                              </td>
+<td>
+                                 05/16/2022
+                              </td>
+<td class="text-right">
+                                 $299.28
+                              </td></tr>
+<tr class="even">
+<td>
+                                 MARRIOTT KNOXVILLE DOWNTOWN
+                                 <br />
+                                 445 TAMARACK BLVD
+                                 <br />
+                                 RIVERTON
+                                 ,
+                                 TN
+                                 37776
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 TRAVEL
+                              </td>
+<td>
+                                 06/29/2022
+                              </td>
+<td class="text-right">
+                                 $489.82
+                              </td></tr>
+<tr class="odd">
+<td>
+                                 IRONSIDE
+                                 
+                                 , DORIAN
+                                 
+                                 <br />
+                                 761 PLOVER BLVD
+                                 <br />
+                                 THORNDALE
+                                 ,
+                                 TN
+                                 37371
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 CAMPAIGN WORKERS
+                              </td>
+<td>
+                                 06/30/2022
+                              </td>
+<td class="text-right">
+                                 $923.50
+                              </td></tr>
+<tr class="even">
+<td>
+                                 IRONSIDE
+                                 
+                                 , DORIAN
+                                 
+                                 <br />
+                                 761 PLOVER BLVD
+                                 <br />
+                                 THORNDALE
+                                 ,
+                                 TN
+                                 37371
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 CAMPAIGN WORKERS
+                              </td>
+<td>
+                                 06/15/2022
+                              </td>
+<td class="text-right">
+                                 $923.50
+                              </td></tr>
+<tr class="odd">
+<td>
+                                 IRONSIDE
+                                 
+                                 , DORIAN
+                                 
+                                 <br />
+                                 761 PLOVER BLVD
+                                 <br />
+                                 THORNDALE
+                                 ,
+                                 TN
+                                 37371
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 CAMPAIGN WORKERS
+                              </td>
+<td>
+                                 05/31/2022
+                              </td>
+<td class="text-right">
+                                 $923.50
+                              </td></tr>
+<tr class="even">
+<td>
+                                 MASENG COMMUNICATIONS
+                                 <br />
+                                 201 MULBERRY PKWY
+                                 <br />
+                                 KESWICK
+                                 ,
+                                 TN
+                                 37469
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 COMMUNICATIONS/ADMIN
+                              </td>
+<td>
+                                 04/01/2022
+                              </td>
+<td class="text-right">
+                                 $6,500.00
+                              </td></tr>
+<tr class="odd">
+<td>
+                                 MASENG COMMUNICATIONS
+                                 <br />
+                                 201 MULBERRY PKWY
+                                 <br />
+                                 KESWICK
+                                 ,
+                                 TN
+                                 37469
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 COMMUNICATIONS/ADMIN
+                              </td>
+<td>
+                                 05/09/2022
+                              </td>
+<td class="text-right">
+                                 $6,500.00
+                              </td></tr>
+<tr class="even">
+<td>
+                                 MASENG COMMUNICATIONS
+                                 <br />
+                                 201 MULBERRY PKWY
+                                 <br />
+                                 KESWICK
+                                 ,
+                                 TN
+                                 37469
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 COMMUNICATIONS/ADMIN
+                              </td>
+<td>
+                                 04/19/2022
+                              </td>
+<td class="text-right">
+                                 $6,500.00
+                              </td></tr>
+<tr class="odd">
+<td>
+                                 MASENG COMMUNICATIONS
+                                 <br />
+                                 201 MULBERRY PKWY
+                                 <br />
+                                 KESWICK
+                                 ,
+                                 TN
+                                 37469
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 COMMUNICATIONS/ADMIN
+                              </td>
+<td>
+                                 04/01/2022
+                              </td>
+<td class="text-right">
+                                 $6,500.00
+                              </td></tr>
+<tr class="even">
+<td>
+                                 MAURY COUNTY REPUBLICAN PARTY PAC
+                                 <br />
+                                 807 HAWTHORN PL
+                                 <br />
+                                 GLENDOWER
+                                 ,
+                                 TN
+                                 37722
+                                 </td>
+<td>
+                                 P
+                              </td>
+<td>
+                                 EVENT FEES
+                              </td>
+<td>
+                                 06/29/2022
+                              </td>
+<td class="text-right">
+                                 $225.00
+                              </td></tr>
+<tr class="odd">
+<td>
+                                 METRO SELF STORAGE
+                                 <br />
+                                 216 HAWTHORN AVE
+                                 <br />
+                                 PEMBROOK
+                                 ,
+                                 TN
+                                 37306
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 STORAGE
+                              </td>
+<td>
+                                 06/15/2022
+                              </td>
+<td class="text-right">
+                                 $529.00
+                              </td></tr>
+<tr class="even">
+<td>
+                                 METRO SELF STORAGE
+                                 <br />
+                                 216 HAWTHORN AVE
+                                 <br />
+                                 PEMBROOK
+                                 ,
+                                 TN
+                                 37306
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 STORAGE
+                              </td>
+<td>
+                                 04/01/2022
+                              </td>
+<td class="text-right">
+                                 $260.00
+                              </td></tr>
+<tr class="odd">
+<td>
+                                 MY CAMPAIGN STORE
+                                 <br />
+                                 567 JUNIPER TRL
+                                 <br />
+                                 HARTLEIGH
+                                 ,
+                                 TN
+                                 37281
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 SIGNS AND STICKERS
+                              </td>
+<td>
+                                 06/09/2022
+                              </td>
+<td class="text-right">
+                                 $2,728.00
+                              </td></tr>
+<tr class="even">
+<td>
+                                 MY CAMPAIGN STORE
+                                 <br />
+                                 567 JUNIPER TRL
+                                 <br />
+                                 HARTLEIGH
+                                 ,
+                                 TN
+                                 37281
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 SIGNS AND STICKERS
+                              </td>
+<td>
+                                 05/25/2022
+                              </td>
+<td class="text-right">
+                                 $2,728.00
+                              </td></tr>
+<tr class="odd">
+<td>
+                                 MY CAMPAIGN STORE
+                                 <br />
+                                 567 JUNIPER TRL
+                                 <br />
+                                 HARTLEIGH
+                                 ,
+                                 TN
+                                 37281
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 SIGNS AND STICKERS
+                              </td>
+<td>
+                                 05/03/2022
+                              </td>
+<td class="text-right">
+                                 $7,118.03
+                              </td></tr>
+<tr class="even">
+<td>
+                                 KIRKALDY
+                                 
+                                 , QUINCY
+                                 
+                                 <br />
+                                 996 MULBERRY PKWY
+                                 <br />
+                                 HARTLEIGH
+                                 ,
+                                 TN
+                                 37620
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 TRAVEL
+                              </td>
+<td>
+                                 04/19/2022
+                              </td>
+<td class="text-right">
+                                 $320.85
+                              </td></tr>
+<tr class="odd">
+<td>
+                                 PINNACLE BANK
+                                 <br />
+                                 337 SORREL RD
+                                 <br />
+                                 FAIRMONT
+                                 ,
+                                 TN
+                                 37555
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 BANK FEES
+                              </td>
+<td>
+                                 06/15/2022
+                              </td>
+<td class="text-right">
+                                 $51.16
+                              </td></tr>
+<tr class="even">
+<td>
+                                 PINNACLE BANK
+                                 <br />
+                                 337 SORREL RD
+                                 <br />
+                                 FAIRMONT
+                                 ,
+                                 TN
+                                 37555
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 BANK FEES
+                              </td>
+<td>
+                                 06/06/2022
+                              </td>
+<td class="text-right">
+                                 $64.05
+                              </td></tr>
+<tr class="odd">
+<td>
+                                 PINNACLE BANK
+                                 <br />
+                                 337 SORREL RD
+                                 <br />
+                                 FAIRMONT
+                                 ,
+                                 TN
+                                 37555
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 BANK FEES
+                              </td>
+<td>
+                                 06/03/2022
+                              </td>
+<td class="text-right">
+                                 $38.00
+                              </td></tr>
+<tr class="even">
+<td>
+                                 PINNACLE BANK
+                                 <br />
+                                 337 SORREL RD
+                                 <br />
+                                 FAIRMONT
+                                 ,
+                                 TN
+                                 37555
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 BANK FEES
+                              </td>
+<td>
+                                 06/02/2022
+                              </td>
+<td class="text-right">
+                                 $30.00
+                              </td></tr>
+<tr class="odd">
+<td>
+                                 PINNACLE BANK
+                                 <br />
+                                 337 SORREL RD
+                                 <br />
+                                 FAIRMONT
+                                 ,
+                                 TN
+                                 37555
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 BANK FEES
+                              </td>
+<td>
+                                 05/03/2022
+                              </td>
+<td class="text-right">
+                                 $65.00
+                              </td></tr>
+<tr class="even">
+<td>
+                                 PINNACLE BANK
+                                 <br />
+                                 337 SORREL RD
+                                 <br />
+                                 FAIRMONT
+                                 ,
+                                 TN
+                                 37555
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 BANK FEES
+                              </td>
+<td>
+                                 05/05/2022
+                              </td>
+<td class="text-right">
+                                 $56.25
+                              </td></tr>
+<tr class="odd">
+<td>
+                                 PINNACLE BANK
+                                 <br />
+                                 337 SORREL RD
+                                 <br />
+                                 FAIRMONT
+                                 ,
+                                 TN
+                                 37555
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 BANK FEES
+                              </td>
+<td>
+                                 04/04/2022
+                              </td>
+<td class="text-right">
+                                 $85.00
+                              </td></tr>
+<tr class="even">
+<td>
+                                 QUILL COMPANY
+                                 <br />
+                                 345 IVYBRIDGE RD
+                                 <br />
+                                 THORNDALE
+                                 ,
+                                 TN
+                                 37176
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 OFFICE SUPPLIES
+                              </td>
+<td>
+                                 06/16/2022
+                              </td>
+<td class="text-right">
+                                 $413.45
+                              </td></tr>
+<tr class="odd">
+<td>
+                                 SINEMAS
+                                 <br />
+                                 702 BIRCHFIELD LN
+                                 <br />
+                                 HARTLEIGH
+                                 ,
+                                 TN
+                                 37440
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 MEALS
+                              </td>
+<td>
+                                 04/19/2022
+                              </td>
+<td class="text-right">
+                                 $815.47
+                              </td></tr>
+<tr class="even">
+<td>
+                                 SOUTHWEST AIRLINES
+                                 <br />
+                                 368 IVYBRIDGE LN
+                                 <br />
+                                 KESWICK
+                                 ,
+                                 TN
+                                 37502
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 TRAVEL
+                              </td>
+<td>
+                                 06/10/2022
+                              </td>
+<td class="text-right">
+                                 $473.98
+                              </td></tr>
+<tr class="odd">
+<td>
+                                 SOUTHWEST AIRLINES
+                                 <br />
+                                 368 IVYBRIDGE LN
+                                 <br />
+                                 KESWICK
+                                 ,
+                                 TN
+                                 37502
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 TRAVEL
+                              </td>
+<td>
+                                 06/09/2022
+                              </td>
+<td class="text-right">
+                                 $473.98
+                              </td></tr>
+<tr class="even">
+<td>
+                                 ELSWORTH
+                                 
+                                 , SABLE
+                                 
+                                 <br />
+                                 267 NIGHTJAR AVE
+                                 <br />
+                                 KESWICK
+                                 ,
+                                 TN
+                                 37730
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 POLITICAL/ADMIN CONSULTING
+                              </td>
+<td>
+                                 06/29/2022
+                              </td>
+<td class="text-right">
+                                 $4,250.00
+                              </td></tr>
+<tr class="odd">
+<td>
+                                 ELSWORTH
+                                 
+                                 , SABLE
+                                 
+                                 <br />
+                                 267 NIGHTJAR AVE
+                                 <br />
+                                 KESWICK
+                                 ,
+                                 TN
+                                 37730
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 POLITICAL/ADMIN CONSULTING
+                              </td>
+<td>
+                                 06/15/2022
+                              </td>
+<td class="text-right">
+                                 $4,250.00
+                              </td></tr>
+<tr class="even">
+<td>
+                                 ELSWORTH
+                                 
+                                 , SABLE
+                                 
+                                 <br />
+                                 267 NIGHTJAR AVE
+                                 <br />
+                                 KESWICK
+                                 ,
+                                 TN
+                                 37730
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 POLITICAL/ADMIN CONSULTING
+                              </td>
+<td>
+                                 05/31/2022
+                              </td>
+<td class="text-right">
+                                 $4,250.00
+                              </td></tr>
+<tr class="odd">
+<td>
+                                 ELSWORTH
+                                 
+                                 , SABLE
+                                 
+                                 <br />
+                                 267 NIGHTJAR AVE
+                                 <br />
+                                 KESWICK
+                                 ,
+                                 TN
+                                 37730
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 MILEAGE
+                              </td>
+<td>
+                                 05/16/2022
+                              </td>
+<td class="text-right">
+                                 $359.21
+                              </td></tr>
+<tr class="even">
+<td>
+                                 ELSWORTH
+                                 
+                                 , SABLE
+                                 
+                                 <br />
+                                 267 NIGHTJAR AVE
+                                 <br />
+                                 KESWICK
+                                 ,
+                                 TN
+                                 37730
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 POLITICAL/ADMIN CONSULTING
+                              </td>
+<td>
+                                 05/13/2022
+                              </td>
+<td class="text-right">
+                                 $4,250.00
+                              </td></tr>
+<tr class="odd">
+<td>
+                                 ELSWORTH
+                                 
+                                 , SABLE
+                                 
+                                 <br />
+                                 267 NIGHTJAR AVE
+                                 <br />
+                                 KESWICK
+                                 ,
+                                 TN
+                                 37730
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 MILEAGE
+                              </td>
+<td>
+                                 04/28/2022
+                              </td>
+<td class="text-right">
+                                 $55.00
+                              </td></tr>
+<tr class="even">
+<td>
+                                 ELSWORTH
+                                 
+                                 , SABLE
+                                 
+                                 <br />
+                                 267 NIGHTJAR AVE
+                                 <br />
+                                 KESWICK
+                                 ,
+                                 TN
+                                 37730
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 POLITICAL/ADMIN CONSULTING
+                              </td>
+<td>
+                                 04/28/2022
+                              </td>
+<td class="text-right">
+                                 $4,250.00
+                              </td></tr>
+<tr class="odd">
+<td>
+                                 ELSWORTH
+                                 
+                                 , SABLE
+                                 
+                                 <br />
+                                 267 NIGHTJAR AVE
+                                 <br />
+                                 KESWICK
+                                 ,
+                                 TN
+                                 37730
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 POLITICAL/ADMIN CONSULTING
+                              </td>
+<td>
+                                 04/15/2022
+                              </td>
+<td class="text-right">
+                                 $4,250.00
+                              </td></tr>
+<tr class="even">
+<td>
+                                 ELSWORTH
+                                 
+                                 , SABLE
+                                 
+                                 <br />
+                                 267 NIGHTJAR AVE
+                                 <br />
+                                 KESWICK
+                                 ,
+                                 TN
+                                 37730
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 POLITICAL/ADMIN CONSULTING
+                              </td>
+<td>
+                                 04/01/2022
+                              </td>
+<td class="text-right">
+                                 $2,125.00
+                              </td></tr>
+<tr class="odd">
+<td>
+                                 ELSWORTH
+                                 
+                                 , SABLE
+                                 
+                                 <br />
+                                 267 NIGHTJAR AVE
+                                 <br />
+                                 KESWICK
+                                 ,
+                                 TN
+                                 37730
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 MILEAGE
+                              </td>
+<td>
+                                 04/01/2022
+                              </td>
+<td class="text-right">
+                                 $1,425.42
+                              </td></tr>
+<tr class="even">
+<td>
+                                 TROY BREWER CPA INC.
+                                 <br />
+                                 271 ROSEMARY DR
+                                 <br />
+                                 STANWICK
+                                 ,
+                                 TN
+                                 37137
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 COMPLIANCE/ACCOUNTING
+                              </td>
+<td>
+                                 06/30/2022
+                              </td>
+<td class="text-right">
+                                 $3,500.00
+                              </td></tr>
+<tr class="odd">
+<td>
+                                 TROY BREWER CPA INC.
+                                 <br />
+                                 271 ROSEMARY DR
+                                 <br />
+                                 STANWICK
+                                 ,
+                                 TN
+                                 37137
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 COMPLIANCE/ACCOUNTING
+                              </td>
+<td>
+                                 05/31/2022
+                              </td>
+<td class="text-right">
+                                 $3,500.00
+                              </td></tr>
+<tr class="even">
+<td>
+                                 TROY BREWER CPA INC.
+                                 <br />
+                                 271 ROSEMARY DR
+                                 <br />
+                                 STANWICK
+                                 ,
+                                 TN
+                                 37137
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 COMPLIANCE/ACCOUNTING
+                              </td>
+<td>
+                                 04/28/2022
+                              </td>
+<td class="text-right">
+                                 $3,500.00
+                              </td></tr>
+<tr class="odd">
+<td>
+                                 TROY BREWER CPA INC.
+                                 <br />
+                                 271 ROSEMARY DR
+                                 <br />
+                                 STANWICK
+                                 ,
+                                 TN
+                                 37137
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 COMPLIANCE/ACCOUNTING
+                              </td>
+<td>
+                                 04/01/2022
+                              </td>
+<td class="text-right">
+                                 $3,500.00
+                              </td></tr>
+<tr class="even">
+<td>
+                                 UBER
+                                 <br />
+                                 771 PLOVER DR
+                                 <br />
+                                 GLENDOWER
+                                 ,
+                                 TN
+                                 37575
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 TRAVEL
+                              </td>
+<td>
+                                 06/16/2022
+                              </td>
+<td class="text-right">
+                                 $64.90
+                              </td></tr>
+<tr class="odd">
+<td>
+                                 UBER
+                                 <br />
+                                 771 PLOVER DR
+                                 <br />
+                                 GLENDOWER
+                                 ,
+                                 TN
+                                 37575
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 TRAVEL
+                              </td>
+<td>
+                                 04/01/2022
+                              </td>
+<td class="text-right">
+                                 $29.77
+                              </td></tr>
+<tr class="even">
+<td>
+                                 UBER
+                                 <br />
+                                 771 PLOVER DR
+                                 <br />
+                                 GLENDOWER
+                                 ,
+                                 TN
+                                 37575
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 TRAVEL
+                              </td>
+<td>
+                                 04/19/2022
+                              </td>
+<td class="text-right">
+                                 $205.74
+                              </td></tr>
+<tr class="odd">
+<td>
+                                 WINRED
+                                 <br />
+                                 912 CEDARMONT AVE
+                                 <br />
+                                 THORNDALE
+                                 ,
+                                 TN
+                                 37350
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 CREDIT CARD FEES
+                              </td>
+<td>
+                                 06/30/2022
+                              </td>
+<td class="text-right">
+                                 $63.33
+                              </td></tr>
+<tr class="even">
+<td>
+                                 WINRED
+                                 <br />
+                                 912 CEDARMONT AVE
+                                 <br />
+                                 THORNDALE
+                                 ,
+                                 TN
+                                 37350
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 CREDIT CARD FEES
+                              </td>
+<td>
+                                 04/28/2022
+                              </td>
+<td class="text-right">
+                                 $39.40
+                              </td></tr>
+<tr class="odd">
+<td>
+                                 WP ENGINE
+                                 <br />
+                                 808 MULBERRY WAY
+                                 <br />
+                                 THORNDALE
+                                 ,
+                                 TN
+                                 37609
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 EMAIL HOSTING / WEBSITE
+                              </td>
+<td>
+                                 06/15/2022
+                              </td>
+<td class="text-right">
+                                 $290.00
+                              </td></tr>
+<tr class="even">
+<td>
+                                 WP ENGINE
+                                 <br />
+                                 808 MULBERRY WAY
+                                 <br />
+                                 THORNDALE
+                                 ,
+                                 TN
+                                 37609
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 EMAIL HOSTING / WEBSITE
+                              </td>
+<td>
+                                 05/20/2022
+                              </td>
+<td class="text-right">
+                                 $290.00
+                              </td></tr>
+<tr class="odd">
+<td>
+                                 WP ENGINE
+                                 <br />
+                                 808 MULBERRY WAY
+                                 <br />
+                                 THORNDALE
+                                 ,
+                                 TN
+                                 37609
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 EMAIL HOSTING / WEBSITE
+                              </td>
+<td>
+                                 04/21/2022
+                              </td>
+<td class="text-right">
+                                 $290.00
+                              </td></tr>
+<tr class="even">
+<td>
+                                 EASTLAKE
+                                 
+                                 , ALDEN
+                                 
+                                 <br />
+                                 146 HAWTHORN CT
+                                 <br />
+                                 THORNDALE
+                                 ,
+                                 TN
+                                 37453
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 CAMPAIGN WORKERS
+                              </td>
+<td>
+                                 06/30/2022
+                              </td>
+<td class="text-right">
+                                 $1,753.62
+                              </td></tr>
+<tr class="odd">
+<td>
+                                 EASTLAKE
+                                 
+                                 , ALDEN
+                                 
+                                 <br />
+                                 146 HAWTHORN CT
+                                 <br />
+                                 THORNDALE
+                                 ,
+                                 TN
+                                 37453
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 MILEAGE
+                              </td>
+<td>
+                                 06/16/2022
+                              </td>
+<td class="text-right">
+                                 $765.12
+                              </td></tr>
+<tr class="even">
+<td>
+                                 EASTLAKE
+                                 
+                                 , ALDEN
+                                 
+                                 <br />
+                                 146 HAWTHORN CT
+                                 <br />
+                                 THORNDALE
+                                 ,
+                                 TN
+                                 37453
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 CAMPAIGN WORKERS
+                              </td>
+<td>
+                                 06/15/2022
+                              </td>
+<td class="text-right">
+                                 $1,753.62
+                              </td></tr>
+<tr class="odd">
+<td>
+                                 EASTLAKE
+                                 
+                                 , ALDEN
+                                 
+                                 <br />
+                                 146 HAWTHORN CT
+                                 <br />
+                                 THORNDALE
+                                 ,
+                                 TN
+                                 37453
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 CAMPAIGN WORKERS
+                              </td>
+<td>
+                                 05/31/2022
+                              </td>
+<td class="text-right">
+                                 $1,753.62
+                              </td></tr></tbody></table>
+                        
+                        <div class="row control-group report-row-dashed">
+                           <div class="five columns control-label text-left">
+                              Loan Payments
+                           </div>
+                           <div class="seven columns control inline-block text-right">
+                              
+                                 $0.00
+                              
+                           </div>
+                        </div>
+                        
+                        <div class="row control-group report-row-dashed">
+                           <div class="five columns control-label text-left">
+                              Obligation Payments
+                           </div>
+                           <div class="seven columns control inline-block text-right">
+                              
+                                 $0.00
+                              
+                           </div>
+                        </div>
+                        
+                        <div class="row control-group report-row-solid">
+                           <div class="five columns control-label text-left">
+                              TOTAL EXPENDITURES<br />
+                              <small>(other than adjustments)</small>
+                           </div>
+                           <div class="seven columns control inline-block text-right">
+                              <strong>
+                                 $219,731.68
+                              </strong>
+                           </div>
+                        </div>
+                        <br />
+                        <div class="row control-group report-row-dashed">
+                           <div class="five columns control-label text-left">
+                              Expenditures, Adjustments
+                           </div>
+                           <div class="seven columns control inline-block text-right">
+                              
+                           </div>
+                        </div>
+                        
+                           
+<table class="responsive" id="expenditure">
+<thead>
+<tr>
+<th class="sortable sorted order1">
+<a href="?d-7583981-o=1&amp;d-7583981-p=1&amp;reportId=100136&amp;d-7583981-s=0">Vendor</a></th>
+<th class="sortable">
+<a href="?d-7583981-o=2&amp;d-7583981-p=1&amp;reportId=100136&amp;d-7583981-s=1">C/P</a></th>
+<th class="sortable">
+<a href="?d-7583981-o=2&amp;d-7583981-p=1&amp;reportId=100136&amp;d-7583981-s=2">Purpose</a></th>
+<th class="sortable">
+<a href="?d-7583981-o=2&amp;d-7583981-p=1&amp;reportId=100136&amp;d-7583981-s=3">Date</a></th>
+<th class="text-right sortable">
+<a href="?d-7583981-o=2&amp;d-7583981-p=1&amp;reportId=100136&amp;d-7583981-s=4">Amount</a></th></tr></thead>
+<tbody>
+<tr class="odd">
+<td>
+                                 SOUTHWEST AIRLINES
+                                 <br />
+                                 368 IVYBRIDGE LN
+                                 <br />
+                                 KESWICK
+                                 ,
+                                 TN
+                                 37502
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 TRAVEL
+                              </td>
+<td>
+                                 06/15/2022
+                              </td>
+<td class="text-right">
+                                 [
+                                 $165.00
+                                 ]
+                              </td></tr></tbody></table>
+                        
+                        <div class="row control-group report-row-solid">
+                           <div class="five columns control-label text-left">
+                              TOTAL DISBURSEMENTS
+                           </div>
+                           <div class="seven columns control inline-block text-right">
+                              <strong>
+                                 $219,566.68
+                              </strong>
+                           </div>
+                        </div>
+                     
+                     
+
+
+                     <h2>Ending Balance</h2>
+                     <div class="row control-group report-row-solid">
+                        <div class="five columns control-label text-left">
+                           ENDING BALANCE
+                        </div>
+                        <div class="seven columns control inline-block text-right">
+                           
+                              <strong>
+                                 $4,458,345.23
+                              </strong>
+                           
+                           
+                        </div>
+                     </div>
+                     <br />
+                     <hr />
+                     
+                        <h2>Outstanding Loans</h2>
+                        <br />
+                        <div class="row control-group report-row-dashed">
+                           <div class="five columns control-label text-left">
+                              TOTAL OUTSTANDING LOAN BALANCE</a>
+                           </div>
+                           <div class="seven columns control inline-block text-right">
+                              
+                                 <strong>
+                                    $4,583,000.00
+                                 </strong>
+                              
+                              
+                           </div>
+                        </div>
+                        
+                           
+<table class="responsive nosort" id="wrapper">
+<thead>
+<tr>
+<th>Loans</th>
+<th class="text-right">Beg Balance</th>
+<th class="text-right">Paid</th>
+<th class="text-right">End Balance*</th></tr></thead>
+<tbody>
+<tr class="odd">
+<td>
+                                 
+                                    Self-Endorsed
+                                 
+                                 
+                              </td>
+<td class="text-right">
+                                 
+                                    $300,000.00
+                                 
+                                 
+                              </td>
+<td class="text-right">
+                                 
+                                    $0.00
+                                 
+                                 
+                              </td>
+<td class="text-right">
+                                 
+                                    $300,000.00
+                                 
+                                 
+                              </td></tr>
+<tr class="even">
+<td>
+                                 
+                                    Self-Endorsed
+                                 
+                                 
+                              </td>
+<td class="text-right">
+                                 
+                                    $1,900,000.00
+                                 
+                                 
+                              </td>
+<td class="text-right">
+                                 
+                                    $0.00
+                                 
+                                 
+                              </td>
+<td class="text-right">
+                                 
+                                    $1,900,000.00
+                                 
+                                 
+                              </td></tr>
+<tr class="odd">
+<td>
+                                 
+                                    Self-Endorsed
+                                 
+                                 
+                              </td>
+<td class="text-right">
+                                 
+                                    $1,100,000.00
+                                 
+                                 
+                              </td>
+<td class="text-right">
+                                 
+                                    $0.00
+                                 
+                                 
+                              </td>
+<td class="text-right">
+                                 
+                                    $1,100,000.00
+                                 
+                                 
+                              </td></tr>
+<tr class="even">
+<td>
+                                 
+                                    Self-Endorsed
+                                 
+                                 
+                              </td>
+<td class="text-right">
+                                 
+                                    $908,000.00
+                                 
+                                 
+                              </td>
+<td class="text-right">
+                                 
+                                    $0.00
+                                 
+                                 
+                              </td>
+<td class="text-right">
+                                 
+                                    $908,000.00
+                                 
+                                 
+                              </td></tr>
+<tr class="odd">
+<td>
+                                 
+                                    Self-Endorsed
+                                 
+                                 
+                              </td>
+<td class="text-right">
+                                 
+                                    $375,000.00
+                                 
+                                 
+                              </td>
+<td class="text-right">
+                                 
+                                    $0.00
+                                 
+                                 
+                              </td>
+<td class="text-right">
+                                 
+                                    $375,000.00
+                                 
+                                 
+                              </td></tr></tbody></table>
+                        
+                     
+                     
+                        <h2>In-Kind Contributions</h2>
+                        <p><em>In-Kind Contributions are not included in the report ending balance.</em></p>
+                        <div class="row control-group report-row-dashed">
+                           <div class="five columns control-label text-left">
+                              Unitemized
+                           </div>
+                           <div class="seven columns control inline-block text-right">
+                              $0.00
+                           </div>
+                        </div>
+                        <div class="row control-group report-row-dashed">
+                           <div class="five columns control-label text-left">
+                              Itemized
+                           </div>
+                           <div class="seven columns control inline-block text-right">
+                              
+                                 $0.00
+                              
+                           </div>
+                        </div>
+                        
+                        <div class="row control-group report-row-solid">
+                           <div class="five columns control-label text-left">
+                              TOTAL IN-KIND CONTRIBUTIONS
+                           </div>
+                           <div class="seven columns control inline-block text-right">
+                              <strong>
+                                 $0.00
+                              </strong>
+                           </div>
+                        </div>
+                     
+                     
+
+
+                     <h2>Obligations</h2>
+                     <p><em>Obligations are not included in the report ending balance.</em></p>
+                     
+                        <div class="row control-group report-row-dashed">
+                           <div class="five columns control-label text-left">
+                              Unitemized
+                           </div>
+                           <div class="seven columns control inline-block text-right">
+                              $0.00
+                           </div>
+                        </div>
+                     
+                     <div class="row control-group report-row-dashed">
+                        <div class="five columns control-label text-left">
+                           Itemized
+                        </div>
+                        <div class="seven columns control inline-block text-right">
+                           
+                              $0.00
+                           
+                        </div>
+                     </div>
+                     
+                     <div class="row control-group report-row-dashed">
+                        <div class="nine columns control-label text-left">
+                           Obligations, Outstanding from Previous Reports
+                        </div>
+                        <div class="three columns control inline-block text-right">
+                           
+                              $0.00
+                           
+                        </div>
+                     </div>
+                     
+                     
+                     
+                        <div class="row control-group report-row-solid">
+                           <div class="five columns control-label text-left">
+                              TOTAL OBLIGATIONS OUTSTANDING
+                           </div>
+                           <div class="seven columns control inline-block text-right">
+                              <strong>
+                                 $0.00
+                              </strong>
+                           </div>
+                        </div>
+                     
+                     <br />
+                     <p class="center">
+                        <a class="primary button" href="
+                        
+                        ">Back to Search Results</a>
+                     </p>
+                  </div>
+                  <!-- InstanceEndEditable -->
+               </div>
+               <!--/rw-->
+            </section>
+            <!--/section bd row-->
+         </div>
+         <!--/bd-wrap-->
+         <div id="ft-wrap" class="container">
+            <footer id="ft" class="row">
+               <div class="twelve columns">
+                  <hr/>
+                  <!-- InstanceBeginEditable name="footer-logged-in" --><!-- #BeginLibraryItem "/Library/footer-logged-in.lbi" -->
+                  <ul id="app">
+                     <li><a href="/tncamp/">Application Home</a></li>
+                     <li><a href="/tncamp/public/search.htm">Search</a></li>
+                  </ul>
+                  <!-- #EndLibraryItem --><!-- InstanceEndEditable --> <!-- InstanceBeginEditable name="footer-demo" --><!-- InstanceEndEditable -->
+                  <ul id="html">
+                     <li class="first"><a class="pop" href="/tncamp/help.html" title="This link opens a new browser window.">Help and FAQs</a></li>
+                     <li><a href="https://www.tn.gov/web-policies/accessibility.html" target="_blank" title="This link opens a new browser window.">TN.gov - Accessibility Statement</a></li>
+                     <li class="last"><a class="pop" href="/apps/html/privacy.html" title="This link opens a new browser window.">Privacy Statement</a></li>
+                  </ul>
+                  <!-- InstanceBeginEditable name="footer-indexpg-only" --><!-- InstanceEndEditable -->
+               </div>
+            </footer>
+            <!--/footer row-->
+         </div>
+         <!--/ft-wrap-->
+      </div>
+      <!--/app-->
+      <div id="bgseal"></div>
+   </body>
+   <!-- InstanceEnd -->
+</html>

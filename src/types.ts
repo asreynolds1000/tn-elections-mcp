@@ -157,7 +157,10 @@ export interface TncampLineItem {
 export interface TncampReportDetail {
   reportId: number
   candidateName: string
+  /** Report type with any "Amended" prefix stripped, e.g. "Pre-Primary", "1st Quarter". */
   reportTitle: string
+  /** True when the filing is an amendment to a previously submitted report. */
+  amended: boolean
   beginningBalance: number
   totalContributions: number
   totalReceipts: number

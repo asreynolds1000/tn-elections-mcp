@@ -122,7 +122,7 @@ export function parseResultsTable<T extends RowResult>(
 
 export function parsePaginationInfo(html: string): TncampPaginationInfo | null {
   // Pattern: "845 results found, displaying 1 to 50."
-  const bannerMatch = html.match(/(\d+)\s*results?\s*found,\s*displaying\s+(\d+)\s+to\s+(\d+)/i)
+  const bannerMatch = html.match(/(\d{1,9})\s*results?\s*found,\s*displaying\s+(\d+)\s+to\s+(\d+)/i)
   if (!bannerMatch) return null
 
   const totalItems = parseInt(bannerMatch[1], 10)

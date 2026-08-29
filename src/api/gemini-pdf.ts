@@ -10,7 +10,7 @@
 
 import { execFile } from 'child_process'
 import { promisify } from 'util'
-import { writeFileSync, readFileSync, existsSync, mkdirSync, rmSync } from 'fs'
+import { writeFileSync, readFileSync, existsSync, mkdirSync, rmSync, mkdtempSync } from 'fs'
 import { join } from 'path'
 import { tmpdir } from 'os'
 import type { SumnerReportData } from '../types.js'
@@ -28,15 +28,36 @@ function getApiKey(): string | null {
 const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent`
 
 async function fetchPdf(url: string): Promise<Buffer> {
-  const response = await fetch(url)
-  if (!response.ok) {
-    throw new Error(`Failed to download PDF: ${response.status} ${response.statusText}`)
+  // ⚠️ Check Content-Length up front and stream with a running cap. Buffering the whole body
+  // first and checking afterwards means a 10GB response is fully resident before it is rejected.
+  // This fetch also had no timeout (the napkin's note about removing an AbortController applies
+  // to the Gemini call, not to this download).
+  const controller = new AbortController()
+  const timer = setTimeout(() => controller.abort(), 60_000)
+  try {
+    const response = await fetch(url, { signal: controller.signal })
+    if (!response.ok) {
+      throw new Error(`Failed to download PDF: ${response.status} ${response.statusText}`)
+    }
+    const declared = Number(response.headers.get('content-length') || 0)
+    if (declared > MAX_PDF_SIZE) {
+      throw new Error(`PDF too large: ${(declared / 1024 / 1024).toFixed(1)}MB (max ${MAX_PDF_SIZE / 1024 / 1024}MB)`)
+    }
+    if (!response.body) return Buffer.from(await response.arrayBuffer())
+
+    const chunks: Buffer[] = []
+    let total = 0
+    for await (const chunk of response.body as unknown as AsyncIterable<Uint8Array>) {
+      total += chunk.length
+      if (total > MAX_PDF_SIZE) {
+        throw new Error(`PDF too large: exceeded ${MAX_PDF_SIZE / 1024 / 1024}MB while downloading`)
+      }
+      chunks.push(Buffer.from(chunk))
+    }
+    return Buffer.concat(chunks)
+  } finally {
+    clearTimeout(timer)
   }
-  const buffer = Buffer.from(await response.arrayBuffer())
-  if (buffer.length > MAX_PDF_SIZE) {
-    throw new Error(`PDF too large: ${(buffer.length / 1024 / 1024).toFixed(1)}MB (max ${MAX_PDF_SIZE / 1024 / 1024}MB)`)
-  }
-  return buffer
 }
 
 const EXTRACTION_PROMPT = `Extract ALL data from this Tennessee campaign finance disclosure PDF into valid JSON.
@@ -231,8 +252,12 @@ export interface PdfImageFallback {
 const execFileAsync = promisify(execFile)
 
 async function convertPdfToImages(pdfBuffer: Buffer, maxPages: number = 10): Promise<PdfImageFallback> {
-  const tmpDir = join(tmpdir(), `tn-elections-pdf-${Date.now()}`)
-  mkdirSync(tmpDir, { recursive: true })
+  // ⚠️ mkdtempSync, NOT join(tmpdir(), predictable-name). `mkdirSync(..., {recursive:true})`
+  // succeeds on a pre-existing symlink and the subsequent write lands in the link target. On
+  // macOS os.tmpdir() is a private per-user dir so this is inert, but on Linux it is
+  // world-writable /tmp and Date.now() is guessable — an arbitrary-file-write primitive for
+  // anyone consuming this package there. mkdtempSync creates a fresh 0700 dir atomically.
+  const tmpDir = mkdtempSync(join(tmpdir(), 'tn-elections-pdf-'))
 
   const pdfPath = join(tmpDir, 'report.pdf')
   writeFileSync(pdfPath, pdfBuffer)

@@ -1,0 +1,1378 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+   <!-- InstanceBegin template="/Templates/template.dwt" codeOutsideHTMLIsLocked="false" -->
+   <head>
+      <!-- InstanceBeginEditable name="namespaces" -->
+      <!-- Place namespace tags here. -->
+      <!-- InstanceEndEditable -->
+      <meta charset="utf-8"/>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+      <meta name="viewport" content="width=device-width"/>
+      <!-- InstanceBeginEditable name="title" -->
+      <title>Report - Online Campaign Finance</title>
+      <!-- InstanceEndEditable -->
+      <script>
+	var digitalData = {
+		page: {
+			pageInfo: {
+				pageName: "public full report",  // maps to pageName variable (s.pageName)
+				securePage: "false",  // set secure status: (auth = true; guest = false); as per public TN.gov, value should be "false"
+				deptName: "tref",  // set name of the Department (e.g., for FOIL app, sets to "correction")
+				rsidValue: "oirtn"  // set report suite id, e.g., for Production, set to: "oirtn", for Test, set to: "oirtnstaging"
+			}
+		}
+	};
+</script>
+<script src="https://assets.adobedtm.com/f213d7ed4603/b5fbb0638724/launch-5b3fa8e23e9e.min.js" async></script>
+
+      <script src="/apps/js/tngov12.js"></script>
+      <!-- App-specific Issues -->
+      <script src="/tncamp/js/issues.js" type="text/javascript"></script>
+      <!-- Included CSS Files -->
+      <link rel="stylesheet" href="/apps/css/foundation.css"/>
+      <link rel="stylesheet" href="/apps/css/custom.css"/>
+      <!--[if (lt IE 9)&(!IEMobile 7)]>
+      <script src="/apps/js/respond.min.js"></script>
+      <![endif]-->
+      <!-- InstanceBeginEditable name="head" -->
+      <!--_________________________________________________________________________________
+         Place APP SPECIFIC style and js references HERE
+         _________________________________________________________________________________-->
+      <link rel="stylesheet" href="/tncamp/css/tncamp_print.css" type="text/css" media="print" />
+      <style>
+         .dataTables_wrapper .row:last-of-type {
+         display:none;
+         }
+         .report-row-dashed {
+         border-top:1px dashed #ccc;
+         padding-top:15px;
+         }
+         .report-row-solid {
+         border-top:2px solid #ccc;
+         padding-top:15px;
+         }
+         .certify, .certify a:link, .certify a:visited, .certify a:active {
+         font-weight: bold;
+         color:#990000;
+         }
+
+         h2 {
+            margin-top:50px !important;
+         }
+      </style>
+      <script type="text/javascript">
+         function onSubmitLater()
+         {
+             if(document.report.elements["amountDollars"] != null
+                && document.report.elements["amountCents"] != null)
+             {
+                 var dollarAmount = document.report.elements["amountDollars"].value;
+                 var centsAmount = document.report.elements["amountCents"].value;
+             }
+             else
+             {
+                 var dollarAmount = 0;
+                 var centsAmount = 0;
+             }
+
+             window.location = "/tncamp/user/submitLater.htm?reportId=128092&dollarAmount=" +
+                               dollarAmount +
+                               "&centsAmount=" +
+                               centsAmount;
+         }
+         window.onload = function() {
+         setPopUps();
+         setIcoHelp();
+         }
+
+      </script>
+      <!-- InstanceEndEditable -->
+      <!-- InstanceParam name="class" type="text" value="bgwrap" -->
+   </head>
+   <body class="bgwrap">
+      <!-- container -->
+      <div class="app">
+         <div id="hd-wrap" class="container">
+            <header id="hd" class="row">
+               <div class="two columns">
+                  <p id="logo"></p>
+               </div>
+               <div class="ten columns">
+                  <p id="appname">Online Campaign Finance</p>
+               </div>
+            </header>
+            <!--/header hd row-->
+         </div>
+         <!--/hd-wrap-->
+         <div id="bd-wrap" class="container">
+            <section id="bd" class="row">
+               <div id="content" class="twelve columns">
+                  <!-- InstanceBeginEditable name="content" -->
+                  <a class="right btn" href="/tncamp/public/search.htm">Home</a>
+                  <a href="/tncamp/search/pub/fullReportExcelExportPublic.htm?generateLists=true" class="right btn">Download Full Report</a>
+                  <a href="javascript:window.print()" class="right btn btn-black">Print Page</a>
+                  <h1>
+                     
+                     
+                        2026 
+                     
+                     Pre-Primary
+                     
+                     for BILL  HANCOCK submitted on 07/30/2026
+                  </h1>
+                  <div class="frame">
+
+
+
+                     <h2 class="beginning-balance">Beginning Balance</h2>
+                     <div class="row control-group report-row-solid">
+                        <div class="six columns control-label text-left">
+                           <label class="no-margin">Beginning Balance</label>
+                        </div>
+                        <div class="six columns control inline-block text-right">
+                           $204,827.18
+                        </div>
+                     </div>
+                     <!-- close row -->
+
+
+
+                     
+                        <h2>Receipts</h2>
+                     
+                     
+                     
+                        <div class="row control-group report-row-dashed">
+                           <div class="five columns control-label text-left">
+                              Monetary Contributions, Unitemized<br />
+                           </div>
+                           <div class="seven columns control inline-block text-right text-right">
+                              $75.00
+                           </div>
+                        </div>
+                        <div class="row control-group report-row-dashed">
+                           <div class="five columns control-label text-left">
+                              Monetary Contributions, Itemized<br />
+                           </div>
+                           <div class="seven columns control inline-block text-right">
+                              
+                           </div>
+                        </div>
+                        
+                           
+<table class="responsive" id="contribution">
+<thead>
+<tr>
+<th class="sortable sorted order1">
+<a href="?d-5158846-s=0&amp;reportId=128092&amp;d-5158846-o=1&amp;d-5158846-p=1">Contributor</a></th>
+<th class="sortable">
+<a href="?d-5158846-s=1&amp;reportId=128092&amp;d-5158846-o=2&amp;d-5158846-p=1">C/P</a></th>
+<th class="sortable">
+<a href="?d-5158846-s=2&amp;reportId=128092&amp;d-5158846-o=2&amp;d-5158846-p=1">Rec'd For</a></th>
+<th class="sortable">
+<a href="?d-5158846-s=3&amp;reportId=128092&amp;d-5158846-o=2&amp;d-5158846-p=1">Date</a></th>
+<th class="text-right sortable">
+<a href="?d-5158846-s=4&amp;reportId=128092&amp;d-5158846-o=2&amp;d-5158846-p=1">Amount</a></th>
+<th class="text-right sortable">
+<a href="?d-5158846-s=5&amp;reportId=128092&amp;d-5158846-o=2&amp;d-5158846-p=1">Aggregate</a></th></tr></thead>
+<tbody>
+<tr class="odd">
+<td>
+                                 THORNBURY
+                                 
+                                 , WYNN
+                                 
+                                 <br />
+                                 800 SORREL TRL
+                                 <br />
+                                 KESWICK
+                                 ,
+                                 TN
+                                 37819
+                                 <br />
+                                 EDITOR
+                                 <br />
+                                 GRANARY WORKS
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                    Primary
+                                 </td>
+<td>
+                                 07/27/2026
+                              </td>
+<td class="text-right">
+                                 $100.00
+                              </td>
+<td class="text-right">
+                                    $1,000.00
+                                 </td></tr>
+<tr class="even">
+<td>
+                                 ASHFORD
+                                 
+                                 , WYNN
+                                 
+                                 <br />
+                                 704 ALDER CT
+                                 <br />
+                                 NORTHFIELD
+                                 ,
+                                 TN
+                                 37874
+                                 <br />
+                                 HORTICULTURIST
+                                 <br />
+                                 BRIARWOOD&#039;S WORKS
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                    General
+                                 </td>
+<td>
+                                 07/17/2026
+                              </td>
+<td class="text-right">
+                                 $120.51
+                              </td>
+<td class="text-right">
+                                    $120.51
+                                 </td></tr>
+<tr class="odd">
+<td>
+                                 ASHFORD
+                                 
+                                 , WYNN
+                                 
+                                 <br />
+                                 704 ALDER CT
+                                 <br />
+                                 NORTHFIELD
+                                 ,
+                                 TN
+                                 37874
+                                 <br />
+                                 HORTICULTURIST
+                                 <br />
+                                 BRIARWOOD&#039;S WORKS
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                    Primary
+                                 </td>
+<td>
+                                 07/17/2026
+                              </td>
+<td class="text-right">
+                                 $1,379.49
+                              </td>
+<td class="text-right">
+                                    $1,900.00
+                                 </td></tr>
+<tr class="even">
+<td>
+                                 YARDLEY
+                                 
+                                 , EAMON
+                                 
+                                 <br />
+                                 121 TAMARACK RD
+                                 <br />
+                                 STANWICK
+                                 ,
+                                 TN
+                                 37641
+                                 <br />
+                                 EDITOR
+                                 <br />
+                                 DUNMORE HOLDINGS
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                    Primary
+                                 </td>
+<td>
+                                 07/17/2026
+                              </td>
+<td class="text-right">
+                                 $500.00
+                              </td>
+<td class="text-right">
+                                    $500.00
+                                 </td></tr>
+<tr class="odd">
+<td>
+                                 LOWERY
+                                 
+                                 , CASSIAN
+                                 
+                                 <br />
+                                 734 ALDER RD
+                                 <br />
+                                 GLENDOWER
+                                 ,
+                                 TN
+                                 37778
+                                 <br />
+                                 GLAZIER
+                                 <br />
+                                 ELMHURST GROUP
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                    Primary
+                                 </td>
+<td>
+                                 07/05/2026
+                              </td>
+<td class="text-right">
+                                 $104.48
+                              </td>
+<td class="text-right">
+                                    $104.48
+                                 </td></tr>
+<tr class="even">
+<td>
+                                 CRESSWELL
+                                 
+                                 , ALDEN
+                                 
+                                 <br />
+                                 997 NIGHTJAR AVE
+                                 <br />
+                                 RIVERTON
+                                 ,
+                                 TN
+                                 37738
+                                 <br />
+                                 ILLUSTRATOR
+                                 <br />
+                                 ELMHURST GROUP
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                    Primary
+                                 </td>
+<td>
+                                 07/21/2026
+                              </td>
+<td class="text-right">
+                                 $260.73
+                              </td>
+<td class="text-right">
+                                    $260.73
+                                 </td></tr>
+<tr class="odd">
+<td>
+                                 GRANTHAM
+                                 
+                                 , KEZIA
+                                 
+                                 <br />
+                                 122 QUARRY PL
+                                 <br />
+                                 GLENDOWER
+                                 ,
+                                 TN
+                                 37172
+                                 <br />
+                                 GLAZIER
+                                 <br />
+                                 DUNMORE HOLDINGS
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                    Primary
+                                 </td>
+<td>
+                                 07/27/2026
+                              </td>
+<td class="text-right">
+                                 $200.00
+                              </td>
+<td class="text-right">
+                                    $200.00
+                                 </td></tr>
+<tr class="even">
+<td>
+                                 LOWERY
+                                 
+                                 , BRIAR
+                                 
+                                 <br />
+                                 475 TAMARACK LN
+                                 <br />
+                                 KESWICK
+                                 ,
+                                 TN
+                                 37641
+                                 <br />
+                                 EDITOR
+                                 <br />
+                                 ALDERGROVE PARTNERS
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                    Primary
+                                 </td>
+<td>
+                                 07/13/2026
+                              </td>
+<td class="text-right">
+                                 $500.00
+                              </td>
+<td class="text-right">
+                                    $500.00
+                                 </td></tr>
+<tr class="odd">
+<td>
+                                 BRANNOCK
+                                 
+                                 , TOBIAS
+                                 
+                                 <br />
+                                 735 BIRCHFIELD CT
+                                 <br />
+                                 MARLOWE
+                                 ,
+                                 TN
+                                 37060
+                                 <br />
+                                 CARTOGRAPHER
+                                 <br />
+                                 FOXGLOVE STUDIO
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                    Primary
+                                 </td>
+<td>
+                                 07/11/2026
+                              </td>
+<td class="text-right">
+                                 $260.73
+                              </td>
+<td class="text-right">
+                                    $260.73
+                                 </td></tr>
+<tr class="even">
+<td>
+                                 GRANTHAM
+                                 
+                                 , ALDEN
+                                 
+                                 <br />
+                                 362 DUNWOODY RD
+                                 <br />
+                                 PEMBROOK
+                                 ,
+                                 TN
+                                 37058
+                                 <br />
+                                 HORTICULTURIST
+                                 <br />
+                                 CEDARMONT LABS
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                    Primary
+                                 </td>
+<td>
+                                 07/08/2026
+                              </td>
+<td class="text-right">
+                                 $1,041.98
+                              </td>
+<td class="text-right">
+                                    $1,041.98
+                                 </td></tr>
+<tr class="odd">
+<td>
+                                 EASTLAKE
+                                 
+                                 , BRYNN
+                                 
+                                 <br />
+                                 207 ALDER AVE
+                                 <br />
+                                 GLENDOWER
+                                 ,
+                                 TN
+                                 37113
+                                 <br />
+                                 BOTANIST
+                                 <br />
+                                 ALDERGROVE PARTNERS
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                    Primary
+                                 </td>
+<td>
+                                 07/02/2026
+                              </td>
+<td class="text-right">
+                                 $26.35
+                              </td>
+<td class="text-right">
+                                    $26.35
+                                 </td></tr>
+<tr class="even">
+<td>
+                                 KIRKALDY
+                                 
+                                 , KEZIA
+                                 
+                                 <br />
+                                 730 MULBERRY WAY
+                                 <br />
+                                 THORNDALE
+                                 ,
+                                 TN
+                                 37125
+                                 <br />
+                                 JOINER
+                                 <br />
+                                 DUNMORE HOLDINGS
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                    Primary
+                                 </td>
+<td>
+                                 07/09/2026
+                              </td>
+<td class="text-right">
+                                 $521.15
+                              </td>
+<td class="text-right">
+                                    $521.15
+                                 </td></tr>
+<tr class="odd">
+<td>
+                                 FAIRLEIGH
+                                 
+                                 , PERRIN
+                                 
+                                 <br />
+                                 532 HAWTHORN WAY
+                                 <br />
+                                 GLENDOWER
+                                 ,
+                                 TN
+                                 37286
+                                 <br />
+                                 HORTICULTURIST
+                                 <br />
+                                 BRIARWOOD&#039;S WORKS
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                    Primary
+                                 </td>
+<td>
+                                 07/02/2026
+                              </td>
+<td class="text-right">
+                                 $52.40
+                              </td>
+<td class="text-right">
+                                    $52.40
+                                 </td></tr>
+<tr class="even">
+<td>
+                                 OAKHAVEN
+                                 
+                                 , BRYNN
+                                 
+                                 <br />
+                                 569 LARKSPUR AVE
+                                 <br />
+                                 THORNDALE
+                                 ,
+                                 TN
+                                 37903
+                                 <br />
+                                 GLAZIER
+                                 <br />
+                                 ELMHURST GROUP
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                    Primary
+                                 </td>
+<td>
+                                 07/21/2026
+                              </td>
+<td class="text-right">
+                                 $200.00
+                              </td>
+<td class="text-right">
+                                    $200.00
+                                 </td></tr>
+<tr class="odd">
+<td>
+                                 YARDLEY
+                                 
+                                 , MERRIT
+                                 
+                                 <br />
+                                 329 TAMARACK TRL
+                                 <br />
+                                 NORTHFIELD
+                                 ,
+                                 TN
+                                 37550
+                                 <br />
+                                 CARTOGRAPHER
+                                 <br />
+                                 CEDARMONT LABS
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                    Primary
+                                 </td>
+<td>
+                                 07/08/2026
+                              </td>
+<td class="text-right">
+                                 $1,900.00
+                              </td>
+<td class="text-right">
+                                    $1,900.00
+                                 </td></tr>
+<tr class="even">
+<td>
+                                 NORWOOD
+                                 
+                                 , CORIN
+                                 
+                                 <br />
+                                 403 BIRCHFIELD CT
+                                 <br />
+                                 STANWICK
+                                 ,
+                                 TN
+                                 37440
+                                 <br />
+                                 JOINER
+                                 <br />
+                                 HAWTHORN &amp; SONS
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                    General
+                                 </td>
+<td>
+                                 07/17/2026
+                              </td>
+<td class="text-right">
+                                 $1,900.00
+                              </td>
+<td class="text-right">
+                                    $1,900.00
+                                 </td></tr>
+<tr class="odd">
+<td>
+                                 DEVEREUX
+                                 
+                                 , MERRIT
+                                 
+                                 <br />
+                                 681 DUNWOODY BLVD
+                                 <br />
+                                 NORTHFIELD
+                                 ,
+                                 TN
+                                 37301
+                                 <br />
+                                 ARCHITECT
+                                 <br />
+                                 ALDERGROVE PARTNERS
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                    General
+                                 </td>
+<td>
+                                 07/17/2026
+                              </td>
+<td class="text-right">
+                                 $1,900.00
+                              </td>
+<td class="text-right">
+                                    $1,900.00
+                                 </td></tr>
+<tr class="even">
+<td>
+                                 TODD FOR A BETTER TENNESSEE PAC
+                                 <br />
+                                 696 HAWTHORN BLVD
+                                 <br />
+                                 PEMBROOK
+                                 ,
+                                 TN
+                                 37153
+                                 </td>
+<td>
+                                 P
+                              </td>
+<td>
+                                    Primary
+                                 </td>
+<td>
+                                 07/21/2026
+                              </td>
+<td class="text-right">
+                                 $1,000.00
+                              </td>
+<td class="text-right">
+                                    $1,000.00
+                                 </td></tr>
+<tr class="odd">
+<td>
+                                 THORNBURY
+                                 
+                                 , HALCYON
+                                 
+                                 <br />
+                                 369 CEDARMONT RD
+                                 <br />
+                                 PEMBROOK
+                                 ,
+                                 TN
+                                 37437
+                                 <br />
+                                 BOTANIST
+                                 <br />
+                                 CEDARMONT LABS
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                    Primary
+                                 </td>
+<td>
+                                 07/01/2026
+                              </td>
+<td class="text-right">
+                                 $250.00
+                              </td>
+<td class="text-right">
+                                    $250.00
+                                 </td></tr>
+<tr class="even">
+<td>
+                                 MARCHETTI
+                                 
+                                 , JASPER
+                                 
+                                 <br />
+                                 151 ALDER LN
+                                 <br />
+                                 HARTLEIGH
+                                 ,
+                                 TN
+                                 37841
+                                 <br />
+                                 JOINER
+                                 <br />
+                                 ALDERGROVE PARTNERS
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                    Primary
+                                 </td>
+<td>
+                                 07/22/2026
+                              </td>
+<td class="text-right">
+                                 $250.00
+                              </td>
+<td class="text-right">
+                                    $250.00
+                                 </td></tr></tbody></table>
+                        
+                        <div class="row control-group report-row-solid">
+                           <div class="five columns control-label text-left">
+                              TOTAL CONTRIBUTIONS<br />
+                              <small>(other than adjustments, loans, and interest)</small>
+                           </div>
+                           <div class="seven columns control inline-block text-right">
+                              <strong>
+                                 $12,542.82
+                              </strong>
+                           </div>
+                        </div>
+                        <br />
+                        <div class="row control-group report-row-dashed">
+                           
+                           <div class="five columns control-label text-left">
+                              Contribution Adjustments
+                           </div>
+                           <div class="seven columns control inline-block text-right">
+                              
+                                 $0.00
+                              
+                           </div>
+                        </div>
+                     
+                     <div class="row control-group report-row-dashed">
+                        <div class="five columns control-label text-left">
+                           Loans Received
+                        </div>
+                        <div class="seven columns control inline-block text-right">
+                           
+                              $0.00
+                           
+                        </div>
+                     </div>
+                      
+
+                     
+                     
+                        <div class="row control-group report-row-dashed">
+                           <div class="five columns control-label text-left">
+                              Interest Received This Reporting Period
+                           </div>
+                           <div class="seven columns control inline-block text-right">
+                              $0.00
+                           </div>
+                        </div>
+                     
+                     
+                        <div class="row control-group report-row-solid">
+                           <div class="five columns control-label text-left">
+                              TOTAL RECEIPTS
+                           </div>
+                           <div class="seven columns control inline-block text-right">
+                              <strong>
+                                 $12,542.82
+                              </strong>
+                           </div>
+                        </div>
+                     
+                     
+                        
+
+
+                        <h2>Disbursements</h2>
+                        <div class="row control-group report-row-dashed">
+                           <div class="five columns control-label text-left">
+                              Expenditures, Unitemized
+                           </div>
+                           <div class="seven columns control inline-block text-right">
+                              
+                                 $0.00
+                              
+                           </div>
+                        </div>
+                        
+                        <div class="row control-group report-row-dashed">
+                           <div class="five columns control-label text-left">
+                              Expenditures, Itemized
+                           </div>
+                           <div class="seven columns control inline-block text-right">
+                              
+                           </div>
+                        </div>
+                        
+                           
+<table class="responsive" id="expenditure">
+<thead>
+<tr>
+<th class="sortable sorted order1">
+<a href="?d-7583981-o=1&amp;d-7583981-p=1&amp;reportId=128092&amp;d-7583981-s=0">Vendor</a></th>
+<th class="sortable">
+<a href="?d-7583981-o=2&amp;d-7583981-p=1&amp;reportId=128092&amp;d-7583981-s=1">C/P</a></th>
+<th class="sortable">
+<a href="?d-7583981-o=2&amp;d-7583981-p=1&amp;reportId=128092&amp;d-7583981-s=2">Purpose</a></th>
+<th class="sortable">
+<a href="?d-7583981-o=2&amp;d-7583981-p=1&amp;reportId=128092&amp;d-7583981-s=3">Date</a></th>
+<th class="text-right sortable">
+<a href="?d-7583981-o=2&amp;d-7583981-p=1&amp;reportId=128092&amp;d-7583981-s=4">Amount</a></th></tr></thead>
+<tbody>
+<tr class="odd">
+<td>
+                                 ANEDOT INC
+                                 <br />
+                                 831 MULBERRY LN
+                                 <br />
+                                 NORTHFIELD
+                                 ,
+                                 TN
+                                 37228
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 CREDIT CARD FEES
+                              </td>
+<td>
+                                 07/27/2026
+                              </td>
+<td class="text-right">
+                                 $210.02
+                              </td></tr>
+<tr class="even">
+<td>
+                                 ART AND COPY PARTNERS
+                                 <br />
+                                 348 ALDER BLVD
+                                 <br />
+                                 FAIRMONT
+                                 ,
+                                 TN
+                                 37301
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 PRINTING
+                              </td>
+<td>
+                                 07/24/2026
+                              </td>
+<td class="text-right">
+                                 $1,782.34
+                              </td></tr>
+<tr class="odd">
+<td>
+                                 ART AND COPY PARTNERS
+                                 <br />
+                                 348 ALDER BLVD
+                                 <br />
+                                 FAIRMONT
+                                 ,
+                                 TN
+                                 37301
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 DUES / SUBSCRIPTIONS
+                              </td>
+<td>
+                                 07/09/2026
+                              </td>
+<td class="text-right">
+                                 $25.00
+                              </td></tr>
+<tr class="even">
+<td>
+                                 RJD GROUP INC
+                                 <br />
+                                 904 KESTREL DR
+                                 <br />
+                                 GLENDOWER
+                                 ,
+                                 TN
+                                 37483
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 POLITICAL/ADMIN CONSULTING
+                              </td>
+<td>
+                                 07/27/2026
+                              </td>
+<td class="text-right">
+                                 $5,000.00
+                              </td></tr>
+<tr class="odd">
+<td>
+                                 THE CORNER PUB
+                                 <br />
+                                 359 PLOVER TRL
+                                 <br />
+                                 GLENDOWER
+                                 ,
+                                 TN
+                                 37297
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 CATERING
+                              </td>
+<td>
+                                 07/02/2026
+                              </td>
+<td class="text-right">
+                                 $578.26
+                              </td></tr>
+<tr class="even">
+<td>
+                                 WINRED TECHNOLOGIES
+                                 <br />
+                                 756 QUARRY WAY
+                                 <br />
+                                 NORTHFIELD
+                                 ,
+                                 TN
+                                 37605
+                                 </td>
+<td>
+                                 
+                              </td>
+<td>
+                                 CREDIT CARD FEES
+                              </td>
+<td>
+                                 07/27/2026
+                              </td>
+<td class="text-right">
+                                 $3.94
+                              </td></tr></tbody></table>
+                        
+                        <div class="row control-group report-row-dashed">
+                           <div class="five columns control-label text-left">
+                              Loan Payments
+                           </div>
+                           <div class="seven columns control inline-block text-right">
+                              
+                                 $0.00
+                              
+                           </div>
+                        </div>
+                        
+                        <div class="row control-group report-row-dashed">
+                           <div class="five columns control-label text-left">
+                              Obligation Payments
+                           </div>
+                           <div class="seven columns control inline-block text-right">
+                              
+                                 $0.00
+                              
+                           </div>
+                        </div>
+                        
+                        <div class="row control-group report-row-solid">
+                           <div class="five columns control-label text-left">
+                              TOTAL EXPENDITURES<br />
+                              <small>(other than adjustments)</small>
+                           </div>
+                           <div class="seven columns control inline-block text-right">
+                              <strong>
+                                 $7,599.56
+                              </strong>
+                           </div>
+                        </div>
+                        <br />
+                        <div class="row control-group report-row-dashed">
+                           <div class="five columns control-label text-left">
+                              Expenditures, Adjustments
+                           </div>
+                           <div class="seven columns control inline-block text-right">
+                              
+                                 $0.00
+                              
+                           </div>
+                        </div>
+                        
+                        <div class="row control-group report-row-solid">
+                           <div class="five columns control-label text-left">
+                              TOTAL DISBURSEMENTS
+                           </div>
+                           <div class="seven columns control inline-block text-right">
+                              <strong>
+                                 $7,599.56
+                              </strong>
+                           </div>
+                        </div>
+                     
+                     
+
+
+                     <h2>Ending Balance</h2>
+                     <div class="row control-group report-row-solid">
+                        <div class="five columns control-label text-left">
+                           ENDING BALANCE
+                        </div>
+                        <div class="seven columns control inline-block text-right">
+                           
+                              <strong>
+                                 $209,770.44
+                              </strong>
+                           
+                           
+                        </div>
+                     </div>
+                     <br />
+                     <hr />
+                     
+                        <h2>Outstanding Loans</h2>
+                        <br />
+                        <div class="row control-group report-row-dashed">
+                           <div class="five columns control-label text-left">
+                              TOTAL OUTSTANDING LOAN BALANCE</a>
+                           </div>
+                           <div class="seven columns control inline-block text-right">
+                              
+                                 <strong>
+                                    $398.22
+                                 </strong>
+                              
+                              
+                           </div>
+                        </div>
+                        
+                           
+<table class="responsive nosort" id="wrapper">
+<thead>
+<tr>
+<th>Loans</th>
+<th class="text-right">Beg Balance</th>
+<th class="text-right">Paid</th>
+<th class="text-right">End Balance*</th></tr></thead>
+<tbody>
+<tr class="odd">
+<td>
+                                 
+                                    Self-Endorsed
+                                 
+                                 
+                              </td>
+<td class="text-right">
+                                 
+                                    $1.00
+                                 
+                                 
+                              </td>
+<td class="text-right">
+                                 
+                                    $0.00
+                                 
+                                 
+                              </td>
+<td class="text-right">
+                                 
+                                    $1.00
+                                 
+                                 
+                              </td></tr>
+<tr class="even">
+<td>
+                                 
+                                    Self-Endorsed
+                                 
+                                 
+                              </td>
+<td class="text-right">
+                                 
+                                    $297.22
+                                 
+                                 
+                              </td>
+<td class="text-right">
+                                 
+                                    $0.00
+                                 
+                                 
+                              </td>
+<td class="text-right">
+                                 
+                                    $297.22
+                                 
+                                 
+                              </td></tr>
+<tr class="odd">
+<td>
+                                 
+                                    Self-Endorsed
+                                 
+                                 
+                              </td>
+<td class="text-right">
+                                 
+                                    $100.00
+                                 
+                                 
+                              </td>
+<td class="text-right">
+                                 
+                                    $0.00
+                                 
+                                 
+                              </td>
+<td class="text-right">
+                                 
+                                    $100.00
+                                 
+                                 
+                              </td></tr></tbody></table>
+                        
+                     
+                     
+                        <h2>In-Kind Contributions</h2>
+                        <p><em>In-Kind Contributions are not included in the report ending balance.</em></p>
+                        <div class="row control-group report-row-dashed">
+                           <div class="five columns control-label text-left">
+                              Unitemized
+                           </div>
+                           <div class="seven columns control inline-block text-right">
+                              $0.00
+                           </div>
+                        </div>
+                        <div class="row control-group report-row-dashed">
+                           <div class="five columns control-label text-left">
+                              Itemized
+                           </div>
+                           <div class="seven columns control inline-block text-right">
+                              
+                                 $0.00
+                              
+                           </div>
+                        </div>
+                        
+                        <div class="row control-group report-row-solid">
+                           <div class="five columns control-label text-left">
+                              TOTAL IN-KIND CONTRIBUTIONS
+                           </div>
+                           <div class="seven columns control inline-block text-right">
+                              <strong>
+                                 $0.00
+                              </strong>
+                           </div>
+                        </div>
+                     
+                     
+
+
+                     <h2>Obligations</h2>
+                     <p><em>Obligations are not included in the report ending balance.</em></p>
+                     
+                        <div class="row control-group report-row-dashed">
+                           <div class="five columns control-label text-left">
+                              Unitemized
+                           </div>
+                           <div class="seven columns control inline-block text-right">
+                              $0.00
+                           </div>
+                        </div>
+                     
+                     <div class="row control-group report-row-dashed">
+                        <div class="five columns control-label text-left">
+                           Itemized
+                        </div>
+                        <div class="seven columns control inline-block text-right">
+                           
+                              $0.00
+                           
+                        </div>
+                     </div>
+                     
+                     <div class="row control-group report-row-dashed">
+                        <div class="nine columns control-label text-left">
+                           Obligations, Outstanding from Previous Reports
+                        </div>
+                        <div class="three columns control inline-block text-right">
+                           
+                              $0.00
+                           
+                        </div>
+                     </div>
+                     
+                     
+                     
+                        <div class="row control-group report-row-solid">
+                           <div class="five columns control-label text-left">
+                              TOTAL OBLIGATIONS OUTSTANDING
+                           </div>
+                           <div class="seven columns control inline-block text-right">
+                              <strong>
+                                 $0.00
+                              </strong>
+                           </div>
+                        </div>
+                     
+                     <br />
+                     <p class="center">
+                        <a class="primary button" href="
+                        
+                        ">Back to Search Results</a>
+                     </p>
+                  </div>
+                  <!-- InstanceEndEditable -->
+               </div>
+               <!--/rw-->
+            </section>
+            <!--/section bd row-->
+         </div>
+         <!--/bd-wrap-->
+         <div id="ft-wrap" class="container">
+            <footer id="ft" class="row">
+               <div class="twelve columns">
+                  <hr/>
+                  <!-- InstanceBeginEditable name="footer-logged-in" --><!-- #BeginLibraryItem "/Library/footer-logged-in.lbi" -->
+                  <ul id="app">
+                     <li><a href="/tncamp/">Application Home</a></li>
+                     <li><a href="/tncamp/public/search.htm">Search</a></li>
+                  </ul>
+                  <!-- #EndLibraryItem --><!-- InstanceEndEditable --> <!-- InstanceBeginEditable name="footer-demo" --><!-- InstanceEndEditable -->
+                  <ul id="html">
+                     <li class="first"><a class="pop" href="/tncamp/help.html" title="This link opens a new browser window.">Help and FAQs</a></li>
+                     <li><a href="https://www.tn.gov/web-policies/accessibility.html" target="_blank" title="This link opens a new browser window.">TN.gov - Accessibility Statement</a></li>
+                     <li class="last"><a class="pop" href="/apps/html/privacy.html" title="This link opens a new browser window.">Privacy Statement</a></li>
+                  </ul>
+                  <!-- InstanceBeginEditable name="footer-indexpg-only" --><!-- InstanceEndEditable -->
+               </div>
+            </footer>
+            <!--/footer row-->
+         </div>
+         <!--/ft-wrap-->
+      </div>
+      <!--/app-->
+      <div id="bgseal"></div>
+   </body>
+   <!-- InstanceEnd -->
+</html>

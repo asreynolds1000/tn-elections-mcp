@@ -14,6 +14,15 @@ import {
   resolveParty,
 } from '../api/tncamp-client.js'
 
+
+/**
+ * Format a dollar amount for display. A bare `toLocaleString()` drops a trailing zero, so
+ * $102,086.90 rendered as "$102,086.9" — money always shows two decimals.
+ */
+function usd(n: number): string {
+  return n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
+}
+
 export function registerTncampTools(server: McpServer) {
   // ============================================================
   // search_state_candidates
@@ -207,10 +216,10 @@ export function registerTncampTools(server: McpServer) {
   // ============================================================
   server.tool(
     'search_state_contributions',
-    'Search campaign contributions across Tennessee state candidates and PACs. Search by donor name, candidate name, employer, occupation, or zip code. Year is REQUIRED. Fetches all pages (50/page, max 1000). IMPORTANT: candidate_name must be LAST NAME ONLY (e.g., "Powers" not "Powers, Bill"). For county-level contributions, use search_county_contributions instead.',
+    'Search campaign contributions across Tennessee state candidates and PACs. Search by donor name, recipient candidate name, employer, occupation, or zip code. Year is REQUIRED. Fetches all pages (50/page, max 1000). IMPORTANT: candidate_name must be LAST NAME ONLY (e.g., "Powers" not "Powers, Bill") and filters by who RECEIVED the contribution. For county-level contributions, use search_county_contributions instead.',
     {
       year: z.string().describe('Report year (REQUIRED, e.g., "2025")'),
-      candidate_name: z.string().optional().describe('Candidate LAST NAME ONLY'),
+      candidate_name: z.string().optional().describe('Recipient candidate/PAC LAST NAME ONLY — filters by who RECEIVED the contribution'),
       contributor_name: z.string().optional().describe('Donor/contributor name'),
       employer: z.string().optional().describe('Donor employer'),
       occupation: z.string().optional().describe('Donor occupation'),
@@ -221,15 +230,27 @@ export function registerTncampTools(server: McpServer) {
     },
     async (params) => {
       try {
-        if (!params.candidate_name && !params.contributor_name && !params.employer && !params.zip_code) {
+        // `occupation` is advertised in the schema and forwarded to the API, so it must count as
+        // a filter. Omitting it here rejected a valid occupation-only search before any request
+        // was made, with a message that did not even list it as an option.
+        if (
+          !params.candidate_name &&
+          !params.contributor_name &&
+          !params.employer &&
+          !params.occupation &&
+          !params.zip_code
+        ) {
           return {
-            content: [{ type: 'text' as const, text: 'At least one search filter (candidate_name, contributor_name, employer, or zip_code) is required in addition to year.' }],
+            content: [{ type: 'text' as const, text: 'At least one search filter (candidate_name, contributor_name, employer, occupation, or zip_code) is required in addition to year.' }],
           }
         }
 
         const { items, totalCount, truncated } = await searchContributions({
           year: params.year,
-          candName: params.candidate_name,
+          // tncamp IGNORES `candName` on the contributions form — `candName=X` and
+          // `candName=<nonsense>` both return the same unfiltered set. `recipientName` is the
+          // filter that actually works. Verified against apps.tn.gov 2026-08-29.
+          recipientName: params.candidate_name,
           contributorName: params.contributor_name,
           employer: params.employer,
           occupation: params.occupation,
@@ -249,8 +270,8 @@ export function registerTncampTools(server: McpServer) {
         const shownAmount = limited.reduce((sum, c) => sum + c.amount, 0)
 
         let header = effectiveLimit > 0 && items.length > effectiveLimit
-          ? `Showing ${limited.length} of ${totalCount} contributions ($${shownAmount.toLocaleString()} of $${totalAmount.toLocaleString()} total). Increase limit for more.\n\n`
-          : `${totalCount} contribution(s) totaling $${totalAmount.toLocaleString()}:\n\n`
+          ? `Showing ${limited.length} of ${totalCount} contributions ($${usd(shownAmount)} of $${usd(totalAmount)} total). Increase limit for more.\n\n`
+          : `${totalCount} contribution(s) totaling $${usd(totalAmount)}:\n\n`
 
         if (truncated) {
           header = `WARNING: Results were truncated at ${items.length} of ${totalCount} total (pagination limit). Narrow your search for complete results.\n\n` + header
@@ -311,8 +332,8 @@ export function registerTncampTools(server: McpServer) {
         const shownAmount = limited.reduce((sum, e) => sum + e.amount, 0)
 
         let header = effectiveLimit > 0 && items.length > effectiveLimit
-          ? `Showing ${limited.length} of ${totalCount} expenditures ($${shownAmount.toLocaleString()} of $${totalAmount.toLocaleString()} total). Increase limit for more.\n\n`
-          : `${totalCount} expenditure(s) totaling $${totalAmount.toLocaleString()}:\n\n`
+          ? `Showing ${limited.length} of ${totalCount} expenditures ($${usd(shownAmount)} of $${usd(totalAmount)} total). Increase limit for more.\n\n`
+          : `${totalCount} expenditure(s) totaling $${usd(totalAmount)}:\n\n`
 
         if (truncated) {
           header = `WARNING: Results were truncated at ${items.length} of ${totalCount} total (pagination limit). Narrow your search for complete results.\n\n` + header

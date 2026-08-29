@@ -118,9 +118,13 @@ export function registerSosTools(server: McpServer) {
         }
 
         // Build by-office breakdown
-        const byOffice: Record<string, Record<string, number>> = {}
-        const byParty: Record<string, number> = {}
+        const byOffice: Record<string, Record<string, number>> = Object.create(null)
+        const byParty: Record<string, number> = Object.create(null)
 
+        // ⚠️ Null-prototype maps: `cat` and `c.party` come from scraped sos.tn.gov text, and a
+        // value of "__proto__" against a plain {} returns Object.prototype (truthy, so a
+        // `!byOffice[cat]` guard passes) and then WRITES ONTO IT, poisoning every object in the
+        // process for the rest of the session. Verified reproducible.
         for (const c of candidates) {
           const cat = c.officeCategory
           if (!byOffice[cat]) byOffice[cat] = {}
@@ -129,7 +133,7 @@ export function registerSosTools(server: McpServer) {
         }
 
         // Add totals per office
-        const byOfficeWithTotals: Record<string, Record<string, number>> = {}
+        const byOfficeWithTotals: Record<string, Record<string, number>> = Object.create(null)
         for (const [cat, parties] of Object.entries(byOffice)) {
           const total = Object.values(parties).reduce((sum, n) => sum + n, 0)
           byOfficeWithTotals[cat] = { total, ...parties }

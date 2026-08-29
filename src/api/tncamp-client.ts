@@ -99,9 +99,16 @@ async function submitForm(
     return decodeBody(postResponse)
   }
 
-  const resultsUrl = location.startsWith('http') ? location : `https://apps.tn.gov${location}`
+  // ⚠️ Never follow a redirect off-host while re-attaching the session cookie. Manually
+  // re-adding Cookie also bypasses the cross-origin stripping an automatic redirect would do,
+  // so a hostile upstream could point this at a link-local or RFC1918 address and have the
+  // body parsed and returned to the model.
+  const resultsUrl = new URL(location, BASE)
+  if (resultsUrl.protocol !== 'https:' || resultsUrl.host !== 'apps.tn.gov') {
+    throw new Error(`Refusing to follow redirect off apps.tn.gov: ${resultsUrl.host}`)
+  }
 
-  const resultsResponse = await fetchWithTimeout(resultsUrl, {
+  const resultsResponse = await fetchWithTimeout(resultsUrl.toString(), {
     headers: { 'Cookie': session.cookie },
   })
 
@@ -287,7 +294,16 @@ export async function getReportDetail(reportId: number): Promise<TncampReportDet
 }
 
 export interface ContributionSearchParams {
-  candName?: string
+  /**
+   * Filter by the candidate/PAC that RECEIVED the contribution.
+   *
+   * ⚠️ There is deliberately NO `candName` here. tncamp IGNORES `candName` on the contributions
+   * form — measured 2026-08-29, `candName=HANCOCK` and `candName=ZZQXNONEXISTENT` both returned
+   * the identical unfiltered 912-record set. Omitting it from the type turns a silently wrong
+   * result into a compile error. `candName` remains valid on ExpenditureSearchParams, where it
+   * genuinely filters.
+   */
+  recipientName?: string
   contributorName?: string
   employer?: string
   occupation?: string
@@ -318,7 +334,9 @@ function buildCeFormData(
   const form = new URLSearchParams()
   form.set('searchType', searchType)
   form.set('toType', 'both')
-  form.set('candName', params.candName || '')
+  // candName is expenditure-only; it is inert on the contributions form (see
+  // ContributionSearchParams). Set per-branch below rather than off the union.
+  form.set('candName', '')
   form.set('yearSelection', params.year)
   form.set('electionYearSelection', params.electionYearId || '')
   form.set('typeOf', params.typeOf || 'all')
@@ -348,7 +366,11 @@ function buildCeFormData(
   if (searchType === 'contributions') {
     const cp = params as ContributionSearchParams
     form.set('contributorName', cp.contributorName || '')
-    form.set('recipientName', '')
+    // The contributions form filters by recipient via `recipientName`, NOT `candName`.
+    // `candName` is inert here (see ContributionSearchParams). Verified 2026-08-29 against
+    // apps.tn.gov: recipientName=HANCOCK -> 148 records, recipientName=ZZQXNONEXISTENT -> none,
+    // while candName varied not at all from the 912-record unfiltered baseline.
+    form.set('recipientName', cp.recipientName || '')
     form.set('employer', cp.employer || '')
     form.set('occupation', cp.occupation || '')
     form.set('zipCode', cp.zipCode || '')
@@ -366,6 +388,7 @@ function buildCeFormData(
     form.set('contributorEmployerField', 'true')
   } else {
     const ep = params as ExpenditureSearchParams
+    form.set('candName', ep.candName || '')
     form.set('contributorName', '')
     form.set('recipientName', '')
     form.set('employer', '')
