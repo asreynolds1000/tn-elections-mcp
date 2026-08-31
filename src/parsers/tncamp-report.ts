@@ -29,8 +29,9 @@ function extractAggregate(fullText: string, label: string): number {
 
 function cellText(td: string): string {
   // ⚠️ Only <br> is a line break. The source HTML is pretty-printed, so a single logical line
-  // ("ADELMAN" + ", WILLIAM") arrives split across several raw newlines — collapsing ALL
-  // whitespace first and splitting only on a <br> sentinel is what keeps names intact.
+  // (a surname and given name, e.g. "THORNBURY" + ", WYNN") arrives split across several raw
+  // newlines — collapsing ALL whitespace first and splitting only on a <br> sentinel is what
+  // keeps names intact.
   // Strip any literal U+0001 from the source first, so real data can never be mistaken for the
   // <br> sentinel. No fixture contains one; this closes the hole rather than relying on that.
   const BR = '\u0001'

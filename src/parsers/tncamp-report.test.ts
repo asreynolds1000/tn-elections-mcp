@@ -274,9 +274,13 @@ describe.each(ALL_GOLDEN)('parseReportDetail — $label (golden values)', (f) =>
 
 describe('parseReportDetail — regression: names and addresses are not shattered', () => {
   // The old parser split the whole cell on every raw HTML newline (the source is
-  // pretty-printed), not just on <br>, so "ADELMAN" + ", WILLIAM" — two lines in
-  // the raw HTML but one logical line — came out as name "ADELMAN" with
-  // ", WILLIAM" leaking into the first line of the address.
+  // pretty-printed), not just on <br>. A surname and given name sit on two raw lines
+  // but form one logical line, so the name came out truncated to the surname with
+  // ", <given name>" leaking into the first line of the address.
+  //
+  // ⚠️ Assert POSITIVELY on the synthetic values below, never negatively against the
+  // real name this fixture was scrubbed of. A blocklist test republishes the very name
+  // it protects, in a public repo. See publishing-safety.md > anonymized test fixtures.
 
   it('hancock receipts[0]: full name intact, address is two clean lines', () => {
     const d = parseReportDetail(HANCOCK_HTML, 128092)
@@ -288,8 +292,9 @@ describe('parseReportDetail — regression: names and addresses are not shattere
       occupation: 'EDITOR',
       employer: 'GRANARY WORKS',
     })
-    expect(d.receipts[0].name).not.toBe('ADELMAN')
-    expect(d.receipts[0].address).not.toContain(', WILLIAM')
+    // Name is one logical line, not shattered at the comma.
+    expect(d.receipts[0].name).toContain(',')
+    expect(d.receipts[0].address.startsWith(',')).toBe(false)
     // Not one-token-per-line: the address is 2 lines, not 4+ (street / city / , / state / zip).
     expect(d.receipts[0].address.split('\n')).toHaveLength(2)
   })
