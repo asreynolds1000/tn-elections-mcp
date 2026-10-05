@@ -292,7 +292,7 @@ export function registerTncampTools(server: McpServer) {
   // ============================================================
   server.tool(
     'search_state_expenditures',
-    'Search campaign expenditures across Tennessee state candidates and PACs. Search by vendor name, candidate name, purpose, or vendor zip. Year is REQUIRED. Fetches all pages (50/page, max 1000). IMPORTANT: candidate_name must be LAST NAME ONLY. Known limitation: "Candidate For" column is almost always empty — you cannot determine which candidate made a payment from search results alone. For county-level data, use EasyVote tools.',
+    'Search campaign expenditures across Tennessee state candidates and PACs. Search by vendor name, candidate name, purpose, or vendor zip. Year is REQUIRED. Fetches all pages (50/page, max 1000). IMPORTANT: candidate_name must be LAST NAME ONLY. Each record names its filerName: the candidate or PAC whose report lists the payment. Search vendor_name for a candidate to see which committees paid them (PAC contributions appear with purpose CONTRIBUTION on the report of the committee that gave). reportName and reportId identify the filing for get_report_detail. "Candidate For" and supportOppose are usually empty. For county-level data, use EasyVote tools.',
     {
       year: z.string().describe('Report year (REQUIRED, e.g., "2025")'),
       candidate_name: z.string().optional().describe('Candidate LAST NAME ONLY'),

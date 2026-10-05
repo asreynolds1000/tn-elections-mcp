@@ -327,7 +327,7 @@ export interface ExpenditureSearchParams {
   electionYearId?: string
 }
 
-function buildCeFormData(
+export function buildCeFormData(
   searchType: 'contributions' | 'expenditures',
   params: ContributionSearchParams | ExpenditureSearchParams,
 ): URLSearchParams {
@@ -404,6 +404,14 @@ function buildCeFormData(
     form.set('vendorAddressField', 'true')
     form.set('purposeField', 'true')
     form.set('candidateForField', 'true')
+    // Without these tncamp omits the filer ("Candidate/PAC Name") column, so a search by payee
+    // showed WHAT was paid but never WHO paid it. Found 2026-10-05 tracing a $15,400 PAC
+    // contribution to a state House candidate; the parser resolves columns by header.
+    form.set('candidatePACNameField', 'true')
+    form.set('reportNameField', 'true')
+    form.set('electionYearField', 'true')
+    form.set('adjustmentField', 'true')
+    form.set('soField', 'true')
   }
 
   form.set('_continue', 'Search')

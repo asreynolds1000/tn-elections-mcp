@@ -73,24 +73,68 @@ function parseContributionRow(cells: HTMLElement[]): TncampContribution | null {
   }
 }
 
-function parseExpenditureRow(cells: HTMLElement[]): TncampExpenditure | null {
-  if (cells.length < 7) return null
+/** Column headers (normalized) for each expenditure field. tncamp only renders the columns the
+ * search form asked for, so positions shift with the form; resolve by header, never by index. */
+const EXPENDITURE_COLUMNS: Record<string, string[]> = {
+  type: ['type'],
+  adjustment: ['adj'],
+  amount: ['amount'],
+  date: ['date'],
+  electionYear: ['election year'],
+  reportName: ['report name'],
+  filerName: ['candidate/pac name'],
+  vendorName: ['vendor name', 'vendor'],
+  vendorAddress: ['vendor address', 'address'],
+  purpose: ['purpose'],
+  candidateFor: ['candidate for'],
+  supportOppose: ['s/o'],
+}
+
+/** Layout before the form requested every column; used only when a table has no header row. */
+const LEGACY_EXPENDITURE_POSITIONS: Record<string, number> = {
+  type: 0, amount: 1, date: 2, vendorName: 3, vendorAddress: 4, purpose: 5, candidateFor: 6,
+}
+
+function parseExpenditureRow(cells: HTMLElement[], headers: Map<string, number>): TncampExpenditure | null {
+  const col = (field: string): HTMLElement | undefined => {
+    if (headers.size === 0) {
+      const pos = LEGACY_EXPENDITURE_POSITIONS[field]
+      return pos === undefined ? undefined : cells[pos]
+    }
+    for (const name of EXPENDITURE_COLUMNS[field]) {
+      const i = headers.get(name)
+      if (i !== undefined) return cells[i]
+    }
+    return undefined
+  }
+
+  if (headers.size === 0 ? cells.length < 7 : col('amount') === undefined) return null
+
+  const reportCell = col('reportName')
+  const reportHref = reportCell?.querySelector('a')?.getAttribute('href') || ''
+  const reportIdMatch = reportHref.match(/reportId=(\d+)/)
 
   return {
-    type: text(cells[0]),
-    amount: parseAmount(text(cells[1])),
-    date: text(cells[2]),
-    vendorName: text(cells[3]),
-    vendorAddress: text(cells[4]),
-    purpose: text(cells[5]),
-    candidateFor: text(cells[6]),
+    type: text(col('type')),
+    amount: parseAmount(text(col('amount'))),
+    date: text(col('date')),
+    vendorName: text(col('vendorName')),
+    vendorAddress: text(col('vendorAddress')),
+    purpose: text(col('purpose')),
+    candidateFor: text(col('candidateFor')),
+    filerName: text(col('filerName')),
+    reportName: text(reportCell),
+    reportId: reportIdMatch ? parseInt(reportIdMatch[1], 10) : 0,
+    electionYear: text(col('electionYear')),
+    adjustment: text(col('adjustment')),
+    supportOppose: text(col('supportOppose')),
   }
 }
 
 type TableType = 'candidate' | 'report' | 'contribution' | 'expenditure'
 type RowResult = TncampCandidate | TncampReport | TncampContribution | TncampExpenditure
 
-const ROW_PARSERS: Record<TableType, (cells: HTMLElement[]) => RowResult | null> = {
+const ROW_PARSERS: Record<TableType, (cells: HTMLElement[], headers: Map<string, number>) => RowResult | null> = {
   candidate: parseCandidateRow,
   report: parseReportRow,
   contribution: parseContributionRow,
@@ -108,12 +152,18 @@ export function parseResultsTable<T extends RowResult>(
   const rows = table.querySelectorAll('tbody tr')
   if (rows.length === 0) return []
 
+  // A Map, not an object: header text is scraped input and must never become an object key.
+  const headers = new Map<string, number>()
+  table.querySelectorAll('thead th').forEach((th, i) => {
+    headers.set(th.text.replace(/\s+/g, ' ').trim().toLowerCase(), i)
+  })
+
   const parser = ROW_PARSERS[tableType]
   const results: T[] = []
 
   for (const row of rows) {
     const cells = row.querySelectorAll('td')
-    const parsed = parser(cells)
+    const parsed = parser(cells, headers)
     if (parsed) results.push(parsed as T)
   }
 

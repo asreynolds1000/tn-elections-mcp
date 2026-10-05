@@ -1,4 +1,6 @@
 import { describe, it, expect } from 'vitest'
+import { readFileSync } from 'node:fs'
+import { fileURLToPath } from 'node:url'
 import { parseResultsTable, parsePaginationInfo } from './tncamp-results.js'
 import type { TncampCandidate, TncampContribution, TncampExpenditure } from '../types.js'
 
@@ -93,5 +95,49 @@ describe('parsePaginationInfo', () => {
 
   it('returns null for no pagination', () => {
     expect(parsePaginationInfo(EXPENDITURE_HTML)).toBeNull()
+  })
+})
+
+// Real page: apps.tn.gov ceresults.htm, expenditures, every column requested (see fixture header).
+const ALL_COLUMNS_HTML = readFileSync(
+  fileURLToPath(new URL('./__fixtures__/ceresults-expenditures-all-columns.html', import.meta.url)),
+  'utf8',
+)
+
+describe('parseResultsTable — expenditures, real page with every column', () => {
+  const results = parseResultsTable<TncampExpenditure>(ALL_COLUMNS_HTML, 'expenditure')
+
+  it('names the FILER (Candidate/PAC Name), not just the payee', () => {
+    const tea = results.find((r) => r.amount === 15400)
+    expect(tea).toBeDefined()
+    expect(tea!.filerName).toBe('TENNESSEE EDUC ASSN FUND FOR CHILDREN & PUBLIC EDU')
+    expect(tea!.vendorName).toBe('PROCTOR, MARK')
+    expect(tea!.date).toBe('09/08/2026')
+    expect(tea!.purpose).toBe('CONTRIBUTION')
+    expect(tea!.reportName).toBe('3rd Quarter')
+    expect(tea!.reportId).toBe(129336)
+    expect(tea!.adjustment).toBe('N')
+  })
+
+  it('reads every row and reconciles to the page', () => {
+    expect(results).toHaveLength(4)
+    expect(results.reduce((s, r) => s + r.amount, 0)).toBe(20400)
+    expect(results.map((r) => r.filerName)).toEqual([
+      "NASHVILLE CHILDREN'S ADVOCACY FUND",
+      'IRON WORKERS L.U. 492 PAC',
+      'IRON WORKERS L.U. 492 PAC',
+      'TENNESSEE EDUC ASSN FUND FOR CHILDREN & PUBLIC EDU',
+    ])
+    expect(results.every((r) => r.vendorAddress.includes('BRENTWOOD'))).toBe(true)
+  })
+
+  it('maps by header, so a reordered table still lands in the right fields', () => {
+    const reordered = `<table id="results"><thead><tr><th>Vendor Name</th><th>Amount</th><th>Candidate/PAC Name</th><th>Date</th></tr></thead>
+<tbody><tr><td>ACME</td><td>$10.00</td><td>SOME PAC</td><td>01/02/2026</td></tr></tbody></table>`
+    const [row] = parseResultsTable<TncampExpenditure>(reordered, 'expenditure')
+    expect(row.vendorName).toBe('ACME')
+    expect(row.filerName).toBe('SOME PAC')
+    expect(row.amount).toBe(10)
+    expect(row.date).toBe('01/02/2026')
   })
 })

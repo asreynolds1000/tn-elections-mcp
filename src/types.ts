@@ -197,6 +197,17 @@ export interface TncampExpenditure {
   vendorAddress: string
   purpose: string
   candidateFor: string
+  /** Candidate or PAC whose report lists this payment ("Candidate/PAC Name" column). */
+  filerName: string
+  /** Report the payment was filed on, e.g. "3rd Quarter". */
+  reportName: string
+  /** reportId from the report link, for get_report_detail. 0 if absent. */
+  reportId: number
+  electionYear: string
+  /** "Adj" column: N = original entry, Y = adjustment. */
+  adjustment: string
+  /** "S/O" column: support/oppose. */
+  supportOppose: string
 }
 
 /** Pagination metadata from DisplayTag results pages */
