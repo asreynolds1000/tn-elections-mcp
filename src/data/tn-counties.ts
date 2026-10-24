@@ -2,8 +2,7 @@
  * Tennessee county data: 95 county codes, 14 EasyVote campaign finance configs,
  * and resolution helpers.
  *
- * EasyVote tenant IDs verified via live API scan (2026-03-25).
- * See ~/Projects/_scratch/tn-easyvote-county-scan.md for details.
+ * EasyVote tenant IDs verified by a live scan of each county's EasyVote API (2026-03-25).
  */
 
 export interface EasyVoteCountyConfig {
